@@ -1,17 +1,14 @@
 package PCBuilder;
 
 
-public class Motherboard {
+public class Motherboard extends Component {
 
     private String usb;
     private String pciSlot;
     private String ideController;
 
-    public Motherboard(){
-    }
-
-    public Motherboard(String usb, String pciSlot, String ideController) {
-
+    public Motherboard(String serial, double height, double width, double length, double price, String usb, String pciSlot, String ideController) {
+        super(serial, height, width, length, price);
         this.usb = usb;
         this.pciSlot = pciSlot;
         this.ideController = ideController;

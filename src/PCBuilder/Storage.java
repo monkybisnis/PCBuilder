@@ -5,12 +5,8 @@ public class Storage extends Component{
     //data fields
     private int storageSize;
 
-    public Storage(){
-
-    }
-
-    public Storage(int storageSize){
-        this.storageSize = storageSize;
+    public Storage(String serial, double height, double width, double length, double price) {
+        super(serial, height, width, length, price);
     }
 
     public int getStorageSize(){
