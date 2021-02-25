@@ -17,4 +17,8 @@ public class Cooling extends Component {
         return fanStrength;
     }
 
+    public void setFanStrength(double fanStrength){
+        this.fanStrength = fanStrength;
+    }
+
 }
