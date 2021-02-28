@@ -2,7 +2,7 @@ package PCBuilder;
 
 public class SilverUser implements  DiscountCalculator {
     @Override
-    public double Discount1() {
+    public double discount1() {
         return 0;
     }
 
@@ -13,6 +13,11 @@ public class SilverUser implements  DiscountCalculator {
 
     @Override
     public double discount3() {
+        return 0;
+    }
+
+    @Override
+    public double totalDiscount(double cost) {
         return 0;
     }
 }

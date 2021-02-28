@@ -1,8 +1,9 @@
 package PCBuilder;
 
-public class Bronze  implements DiscountCalculator{
+public class Bronze  implements DiscountCalculator {
     @Override
-    public double Discount1() {
+    public double discount1() {
+
         return 0;
     }
 
@@ -16,13 +17,25 @@ public class Bronze  implements DiscountCalculator{
         return 0;
     }
 
-    public double totalDiscount(double cost){
+    public double totalDiscount(double cost) {
 
-        //switch ({
-       //  case1:  cost<300  return discount1
-       //  case 2   cost<600   return disount 2
-        // case 3: cost <1200  return discount 3
-       // })
-        return 0;
+        switch((int) cost) {
+                case 1:
+                    if(cost < 300) {
+                        return discount1();
+                    }
+                    break;
+                case 2:
+                  if(cost < 600) {
+                       return discount2();
+                   }
+                    break;
+                case 3:
+                    if(cost > 600) {
+                        return discount3();
+                    }
+                    break;
+            }
+                return 0;
+        }
     }
-}
