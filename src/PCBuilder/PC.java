@@ -25,6 +25,7 @@ public class PC {
 
     public double getTotalCost(){
         return 0;
+
     }
 
     public double getPowerConsumption(){

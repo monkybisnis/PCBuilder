@@ -15,4 +15,7 @@ public class GoldUser implements  DiscountCalculator{
     public double discount3() {
         return 0;
     }
+    public double totalDiscount(double cost){
+        return 0;
+    }
 }

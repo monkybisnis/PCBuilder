@@ -39,4 +39,8 @@ public class BudgetPC implements PC_BUild {
         return null;
     }
 
+    public double totalDiscount(double cost){
+        return 0;
+    }
+
 }
