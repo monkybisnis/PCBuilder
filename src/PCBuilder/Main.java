@@ -10,7 +10,7 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("parts.csv"));
+        Scanner sc = new Scanner(new File("PCParts/parts.csv"));
 
         //parse cpus
         while (sc.hasNextLine()) {
