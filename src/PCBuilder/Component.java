@@ -41,7 +41,7 @@ public abstract class Component {
         this.price = price;
     }
 
-    public double getPowerConsumption() {
+    public double getWattage() {
         return Wattage;
     }
 
