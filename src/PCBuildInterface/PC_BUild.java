@@ -1,10 +1,15 @@
 package PCBuildInterface;
 
-import PCBuilder.pc;
+import PCBuilder.*;
 
 public interface PC_BUild {
-    public double getCost();
-    public  double getWattage();
-    public pc BUildPC();
+    public Case getCase();
+    public CPU getCPU();
+    public GPU getGPU();
+    public Memory getRAM();
+    public Storage getStorage();
+    public PSU getPSU();
+    public Motherboard getMotherboard();
+
 
 }
