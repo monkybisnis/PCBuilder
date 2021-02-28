@@ -10,22 +10,22 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("cpu.csv"));
+        Scanner sc = new Scanner(new File("parts.csv"));
 
         //parse cpus
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
             String[] fields = line.split(",");
-            String serial = fields[0];
-            double height = Double.parseDouble(fields[1]);
-            double width = Double.parseDouble(fields[2]);
-            double length = Double.parseDouble(fields[3]);
-            double price = Double.parseDouble(fields[4]);
-
-            int clockSpeed = Integer.parseInt(fields[5]);
-            int cores = Integer.parseInt(fields[6]);
-            components.add(new CPU(serial, height, width, length, price, clockSpeed, cores));
-            System.out.printf("%s,%f,%f,%f,%f,%d,%d\n", serial, height, width, length, price, clockSpeed, cores);
+            String serial = fields[1];
+            String type= fields[2];
+            String Brand= fields[3];
+            String Socket= fields[4];
+            double price = Double.parseDouble(fields[5]);
+            double clockSpeed = Double.parseDouble(fields[9]);
+            int cores = Integer.parseInt(fields[10]);
+            double wattage= Double.parseDouble(fields[17]);
+           components.add(new CPU(serial,type,Brand,Socket, price, wattage,clockSpeed, cores));
+            System.out.printf("%s,%f,%f,%f,%f,%d,%d\n", serial,type,Brand,Socket, price, wattage,clockSpeed, cores);
         }
         sc.close();
     }

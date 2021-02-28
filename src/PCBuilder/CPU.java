@@ -1,16 +1,17 @@
 package PCBuilder;
 
 public class CPU extends Component {
-    private int clockSpeed;
+    private double clockSpeed;
     private int cores;
-
-    public CPU(String serial, double height, double width, double length, double price, int clockSpeed, int cores) {
-        super(serial, height, width, length, price);
+    private String Socket;
+    CPU(String serial, String Type, String brand, String Socket, double price, double Wattage, double clockSpeed, int cores) {
+        super(serial, Type,brand, price,Wattage);
         this.clockSpeed = clockSpeed;
         this.cores = cores;
+        this.Socket= Socket;
     }
 
-    public int getClockSpeed() {
+    public double getClockSpeed() {
         return clockSpeed;
     }
 
@@ -26,4 +27,13 @@ public class CPU extends Component {
         this.cores = cores;
     }
 
+    public String getSocket()
+    {
+        return Socket;
+    }
+
+    public void setSocket(String socket)
+    {
+        this.Socket=socket;
+    }
 }

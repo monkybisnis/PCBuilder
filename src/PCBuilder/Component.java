@@ -2,16 +2,58 @@ package PCBuilder;
 
 public abstract class Component {
     String serialNumber;
-    double height;
-    double width;
-    double length;
+    String Type;
     double price;
+    double Wattage;
+    String Brand;
 
-    public Component(String serialNumber, double height, double width, double length, double price) {
+    public Component(String serialNumber, String Type,String Brand, double price,double Wattage) {
         this.serialNumber = serialNumber;
-        this.height = height;
-        this.width = width;
-        this.length = length;
+        this.Type= Type;
         this.price = price;
+        this.Wattage=Wattage;
+        this.Brand=Brand;
+    }
+
+    public String getSerialNumber()
+    {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber)
+    {
+        this.serialNumber=serialNumber;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getPowerConsumption() {
+        return Wattage;
+    }
+
+    public void setWattage(double Wattage) {
+        Wattage = Wattage;
+    }
+
+    public String getBrand() {
+        return Brand;
+    }
+
+    public void setBrand(String brand) {
+        Brand = brand;
     }
 }

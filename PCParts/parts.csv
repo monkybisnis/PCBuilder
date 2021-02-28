@@ -1,0 +1,9 @@
+﻿Part;Serial;Type;Brand;socket;Price;style;nrOfFans;Fan strength;clockSpeed;Cores;memorySize;cache;USBs;PCI Slots;IDE Controller;Wattage;;;;
+Cooler;MAG Core;liqiud;CollerMaster;AM4;109;;;240;;;;;;;;4W;;;;
+Case;Vampiric;MDI;MSI;;50;gaming;4;;;;;;;;;10W;;;;
+cpu;Ryzen 3100;Gaming;AMD;AM4;152;;;;3.6ghz;4;;;;;;65W;;;;
+MotherB; B450M;ATX;Gigabyte;LGA1150;60;;;;;;;;;;;100W;;;;
+Graphics;1050ti;Nvidia;Gigabyte;;300;;;;1.6ghz;;4gb;3;;;;150W;;;;
+PowerSupply;bluebird;modular;Gigabyte;;150;;;;;;;;;;;300W;;;;
+storage;barracuda;SSD;Seagtae;m.2;70;;;;;;250Gb;;;;;20W;;;;
+RAM;IDRMX;DDR4;GoodRam;;100;;;;3000mhz;;16gb;;;;;10W;;;;

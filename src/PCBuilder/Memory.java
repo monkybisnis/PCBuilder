@@ -1,14 +1,14 @@
 package PCBuilder;
 
-public class Memory {
+public class Memory extends Component {
 
     private int speed;
     private int size;
 
-    public Memory(){
-    }
 
-    public Memory(int speed, int size){
+
+    public Memory(String serial, String type,String brand, double price, double Wattage, int speed, int size){
+        super(serial,type,brand,price,Wattage);
 
         this.speed = speed;
         this.size = size;

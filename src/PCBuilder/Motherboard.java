@@ -6,12 +6,15 @@ public class Motherboard extends Component {
     private String usb;
     private String pciSlot;
     private String ideController;
+    private String Socket;
 
-    public Motherboard(String serial, double height, double width, double length, double price, String usb, String pciSlot, String ideController) {
-        super(serial, height, width, length, price);
+
+    public Motherboard(String serial, String type,String brand,String Socket, double price,double Wattage, String usb, String pciSlot, String ideController) {
+        super(serial,type,brand ,price,Wattage);
         this.usb = usb;
         this.pciSlot = pciSlot;
         this.ideController = ideController;
+        this.Socket=Socket;
     }
 
     public String getUsb() {
@@ -37,4 +40,7 @@ public class Motherboard extends Component {
     public void setIdeController(String ideController) {
         this.ideController = ideController;
     }
+
+    public void setSocket(String socket){ this.Socket=socket;}
+    public String getSocket(){return Socket;}
 }

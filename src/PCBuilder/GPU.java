@@ -1,12 +1,14 @@
 package PCBuilder;
 
-public class GPU {
+public class GPU extends Component {
 
     private double clockSpeed;
     private int memory;
     private int cache;
 
-    public GPU(double clockSpeed, int memory, int cache) {
+    public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory, int cache) {
+        super(serial,Type,brand,price,Wattage);
+
         this.clockSpeed = clockSpeed;
         this.memory = memory;
         this.cache = cache;
