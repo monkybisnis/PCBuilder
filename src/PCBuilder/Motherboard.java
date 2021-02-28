@@ -11,9 +11,7 @@ public class Motherboard extends Component {
 
     public Motherboard(String serial, String type,String brand,String Socket, double price,double Wattage, String usb, String pciSlot, String ideController) {
         super(serial,type,brand ,price,Wattage);
-        this.usb = usb;
-        this.pciSlot = pciSlot;
-        this.ideController = ideController;
+
         this.Socket=Socket;
     }
 
