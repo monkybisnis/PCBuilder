@@ -24,7 +24,7 @@ public class Main {
             double clockSpeed = Double.parseDouble(fields[9]);
             int cores = Integer.parseInt(fields[10]);
             double wattage= Double.parseDouble(fields[17]);
-           components.add(new CPU(serial,type,Brand,Socket, price, wattage,clockSpeed, cores));
+           //components.add(new CPU(serial,type,Brand,Socket, price, wattage,clockSpeed, cores));
             System.out.printf("%s,%f,%f,%f,%f,%d,%d\n", serial,type,Brand,Socket, price, wattage,clockSpeed, cores);
         }
         sc.close();

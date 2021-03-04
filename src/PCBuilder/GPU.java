@@ -4,14 +4,14 @@ public class GPU extends Component {
 
     private double clockSpeed;
     private int memory;
-    private int cache;
 
-    public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory, int cache) {
+
+    public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory ) {
         super(serial,Type,brand,price,Wattage);
 
         this.clockSpeed = clockSpeed;
         this.memory = memory;
-        this.cache = cache;
+
     }
 
     public double getClockSpeed() {
@@ -30,13 +30,7 @@ public class GPU extends Component {
         this.memory = memory;
     }
 
-    public int getCache() {
-        return cache;
-    }
 
-    public void setCache(int cache) {
-        this.cache = cache;
-    }
 
 
 

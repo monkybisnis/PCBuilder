@@ -5,9 +5,10 @@ public class Motherboard extends Component {
 
 
     private String Socket;
+    private int RamSlots;
 
 
-    public Motherboard(String serial, String type,String brand,String Socket, double price,double Wattage, String usb, String pciSlot, String ideController) {
+    public Motherboard(String serial, String type,String brand,String Socket, double price,double Wattage,int  RAMSlots) {
         super(serial,type,brand ,price,Wattage);
 
         this.Socket=Socket;
