@@ -7,7 +7,7 @@ public class Cooling extends Component {
     private String Socket;
 
     public Cooling(String serial, String Type,String Brand,String Socket, double price,double Wattage) {
-        super(serial,Type,Brand ,price,Wattage);
+        super(serial,Type,price,Wattage,Brand );
 
         this.Socket=Socket;
     }
