@@ -4,15 +4,15 @@ public abstract class Component {
     String serialNumber;
     String Type;
     double price;
-    double Wattage;
-    String Brand;
+    double wattage;
+    String brand;
 
-    public Component(String serialNumber, String Type,String Brand, double price,double Wattage) {
+    public Component(String serialNumber, String Type, double price, double wattage, String brand) {
         this.serialNumber = serialNumber;
-        this.Type= Type;
+        this.Type = Type;
         this.price = price;
-        this.Wattage=Wattage;
-        this.Brand=Brand;
+        this.wattage = wattage;
+        this.brand = brand;
     }
 
     public String getSerialNumber()
@@ -42,18 +42,18 @@ public abstract class Component {
     }
 
     public double getWattage() {
-        return Wattage;
+        return wattage;
     }
 
-    public void setWattage(double Wattage) {
-        Wattage = Wattage;
+    public void setWattage(double wattage) {
+        wattage = wattage;
     }
 
     public String getBrand() {
-        return Brand;
+        return brand;
     }
 
     public void setBrand(String brand) {
-        Brand = brand;
+        brand = brand;
     }
 }
