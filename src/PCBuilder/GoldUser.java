@@ -2,7 +2,7 @@ package PCBuilder;
 
 public class GoldUser implements  DiscountCalculator{
     @Override
-    public double Discount1() {
+    public double discount1() {
         return 0;
     }
 
