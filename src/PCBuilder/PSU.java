@@ -6,7 +6,7 @@ public class PSU extends Component{
 
 
     public PSU(String serial,String type, String brand,double price,double Wattage) {
-        super(serial,type,brand,price,Wattage);
+        super(serial,type,price,Wattage,brand);
     }
 
 

@@ -6,7 +6,7 @@ public class Storage extends Component{
     private int storageSize;
 
     public Storage(String serial,String type,String Brand,double price,double Wattage,int storageSize) {
-        super(serial,type,Brand,price,Wattage);
+        super(serial,type,price,Wattage,Brand);
         this.storageSize=storageSize;
     }
 

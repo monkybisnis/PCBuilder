@@ -8,7 +8,7 @@ public class Memory extends Component {
 
 
     public Memory(String serial, String type,String brand, double price, double Wattage, int speed, int size){
-        super(serial,type,brand,price,Wattage);
+        super(serial,type,price,Wattage,brand);
 
         this.speed = speed;
         this.size = size;
