@@ -1,6 +1,6 @@
 package PCBuilder;
 
-public class Bronze  implements DiscountCalculator {
+public class BronzeUser implements DiscountCalculator {
     @Override
     public double discount1() {
 
