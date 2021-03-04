@@ -9,7 +9,7 @@ public class Motherboard extends Component {
 
 
     public Motherboard(String serial, String type,String brand,String Socket, double price,double Wattage,int  RAMSlots) {
-        super(serial,type,brand ,price,Wattage);
+        super(serial,type ,price,Wattage,brand);
 
         this.Socket=Socket;
     }

@@ -7,7 +7,7 @@ public class GPU extends Component {
 
 
     public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory ) {
-        super(serial,Type,brand,price,Wattage);
+        super(serial,Type,price,Wattage,brand);
 
         this.clockSpeed = clockSpeed;
         this.memory = memory;
