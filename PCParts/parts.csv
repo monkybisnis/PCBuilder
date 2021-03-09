@@ -2,7 +2,7 @@ Part,Serial,Type,Brand,socket,Price,clockSpeed,memorySize,Ram slots,Wattage
 Cooler,MAG Core,liqiud,CollerMaster,AM4,109,,,,4
 Case,Vampiric,MDI,MSI,,50,,,,10
 cpu,Ryzen 3100,Gaming,AMD,AM4,152,3.6,,,65
-MotherB, B450M,ATX,Gigabyte,LGA1150,60,,,,100
+MotherB,B450M,ATX,Gigabyte,LGA1150,60,,,,100
 Graphics,1050ti,Nvidia,Gigabyte,,300,1.6,4,3,150
 PowerSupply,bluebird,modular,Gigabyte,,150,,,,300
 storage,barracuda,SSD,Seagtae,m.2,70,,250,,20
