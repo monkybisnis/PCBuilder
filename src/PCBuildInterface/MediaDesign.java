@@ -2,40 +2,40 @@ package PCBuildInterface;
 
 import PCBuilder.*;
 
-public class MediaDesign implements PC_BUild{
+public class MediaDesign implements PC_Build {
 
     @Override
-    public Case getCase() {
+    public Case addCase() {
         return null;
     }
 
     @Override
-    public CPU getCPU() {
+    public CPU addCPU() {
         return null;
     }
 
     @Override
-    public GPU getGPU() {
+    public GPU addGPU() {
         return null;
     }
 
     @Override
-    public Memory getRAM() {
+    public Memory addRam() {
         return null;
     }
 
     @Override
-    public Storage getStorage() {
+    public Storage addStorage() {
         return null;
     }
 
     @Override
-    public PSU getPSU() {
+    public PSU addPSU() {
         return null;
     }
 
     @Override
-    public Motherboard getMotherboard() {
+    public Motherboard addMotherBoard() {
         return null;
     }
 }
