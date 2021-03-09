@@ -16,7 +16,7 @@ public class Components implements PC {
         components.add(component);
     }
 
-    public void removeDepartment(PC component) {
+    public void removeComponent(PC component) {
         components.remove(component);
     }
 }
