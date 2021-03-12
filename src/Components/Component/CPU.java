@@ -2,6 +2,7 @@ package Components.Component;
 
 import Components.Part;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CPU extends Component implements Part {
@@ -18,6 +19,7 @@ public class CPU extends Component implements Part {
         this.clockSpeed = clockSpeed;
         this.cores = cores;
         this.socket = socket;
+        this.fans = new ArrayList<Fan>();
     }
 
     public boolean addFan(Fan fan) {

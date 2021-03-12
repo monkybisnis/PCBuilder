@@ -2,6 +2,7 @@ package Components.Component;
 
 import Components.Part;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Case extends Component implements Part {
@@ -10,6 +11,7 @@ public class Case extends Component implements Part {
 
     public Case(String serialNumber, String Type,String Brand, double price, double Wattage, int fanSlots) {
         super(serialNumber,Type,price,Wattage,Brand);
+        this.fans = new ArrayList<Fan>();
         this.fanSlots = fanSlots;
     }
 
