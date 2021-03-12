@@ -4,8 +4,6 @@ import Components.*;
 import Components.Component.*;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -17,7 +15,7 @@ public class Main {
     static Motherboards motherboards;
     static PSUs psus;
     static StorageComponents storageComponents;
-    static CoolerComponents coolerComponents;
+    static Fans fans;
     //static List<Component> components = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
@@ -29,9 +27,9 @@ public class Main {
         motherboards = new Motherboards();
         psus = new PSUs();
         storageComponents = new StorageComponents();
-        coolerComponents = new CoolerComponents();
+        fans = new Fans();
 
-        components.addComponents(cases, cpus, gpus, memoryModules, motherboards, psus, storageComponents);
+        components.addComponents(cases, cpus, gpus, memoryModules, motherboards, psus, storageComponents, fans);
 
         Scanner sc = new Scanner(new File("PCParts/parts.csv"));
 
@@ -54,7 +52,9 @@ public class Main {
                     cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                  //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                     break;
-
+                case "Fan":
+                    fans.addFan(new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
+                    break;
                 case "Gpu":
                     gpus.addGPU(new GPU(serialNumber,type, brand, price, wattage,  Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
                     break;

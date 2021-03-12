@@ -7,12 +7,12 @@ public class PC   {
     private GPU gpu;
     private Motherboard motherboard;
     private Memory memory;
-    private Cooler cooling;
+    private Fan cooling;
     private PSU psu;
     private Storage storage;
     private Case aCase;
 
-    public PC(CPU cpu, GPU gpu, Motherboard motherboard, Memory memory, Cooler cooling, PSU psu, Storage storage, Case aCase){
+    public PC(CPU cpu, GPU gpu, Motherboard motherboard, Memory memory, Fan cooling, PSU psu, Storage storage, Case aCase){
         this.cpu = cpu;
         this.gpu = gpu;
         this.motherboard = motherboard;
