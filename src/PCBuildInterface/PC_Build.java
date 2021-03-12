@@ -1,7 +1,7 @@
 package PCBuildInterface;
 
 import PCBuilder.*;
-
+import Components.Component.*;
 public interface PC_Build {
     public Case addCase();
     public CPU addCPU();

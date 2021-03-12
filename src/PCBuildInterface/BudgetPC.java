@@ -1,5 +1,6 @@
 package PCBuildInterface;
 
+import Components.Component.*;
 import PCBuilder.*;
 
 public class BudgetPC implements PC_Build {

@@ -1,7 +1,7 @@
 package PCBuildInterface;
 
 import PCBuilder.*;
-
+import Components.Component.*;
 public class PowerSaver implements PC_Build {
 
     @Override
