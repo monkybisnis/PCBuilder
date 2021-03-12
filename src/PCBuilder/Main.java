@@ -46,7 +46,7 @@ public class Main {
 
             switch (fields[0]) {
                 case "Case":
-                    cases.addCase(new Case(serialNumber, type, brand, price, wattage));
+                    cases.addCase(new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
                     break;
                 case "Cpu":
                     cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
