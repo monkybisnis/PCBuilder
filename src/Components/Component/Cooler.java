@@ -2,12 +2,12 @@ package Components.Component;
 
 import Components.Part;
 
-public class Cooling extends Component implements Part {
+public class Cooler extends Component implements Part {
     //data fields
 
     private String Socket;
 
-    public Cooling(String serial, String Type,String Brand,String Socket, double price,double Wattage) {
+    public Cooler(String serial, String Type, String Brand, String Socket, double price, double Wattage) {
         super(serial,Type,price,Wattage,Brand );
 
         this.Socket=Socket;

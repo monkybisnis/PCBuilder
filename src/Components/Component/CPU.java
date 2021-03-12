@@ -6,9 +6,9 @@ public class CPU extends Component implements Part {
     private double clockSpeed;
     private int cores;
     private String socket;
-    //private Fan fans;
+    private Cooler cooler;
 
-    CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, int cores, String socket) {
+    public CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, int cores, String socket) {
         super(serial, type, price, wattage, brand);
         this.clockSpeed = clockSpeed;
         this.cores = cores;
@@ -33,10 +33,8 @@ public class CPU extends Component implements Part {
         this.socket = socket;
     }
 
-    public Fan addFan()
-    {
-        Fan fans= new Fan();
-        return fans;
+    public void addCooler(Cooler cooler) {
+        this.cooler = cooler;
     }
 
     public String printDetails() {

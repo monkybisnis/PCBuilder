@@ -1,6 +1,6 @@
 package PCBuilder;
 
-import Components.Part;
+import Components.Component.*;
 
 public class PC   {
 
@@ -8,13 +8,13 @@ public class PC   {
     private GPU gpu;
     private Motherboard motherboard;
     private Memory memory;
-    private Cooling cooling;
+    private Cooler cooling;
     private PSU psu;
     private Storage storage;
     private Case aCase;
 
 
-    public PC(CPU cpu, GPU gpu, Motherboard motherboard, Memory memory, Cooling cooling, PSU psu, Storage storage, Case aCase){
+    public PC(CPU cpu, GPU gpu, Motherboard motherboard, Memory memory, Cooler cooling, PSU psu, Storage storage, Case aCase){
         this.cpu = cpu;
         this.gpu = gpu;
         this.motherboard = motherboard;

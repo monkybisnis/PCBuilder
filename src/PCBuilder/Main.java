@@ -1,6 +1,7 @@
 package PCBuilder;
 
 import Components.*;
+import Components.Component.*;
 
 import java.io.*;
 import java.util.ArrayList;
