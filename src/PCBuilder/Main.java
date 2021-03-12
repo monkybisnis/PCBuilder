@@ -27,7 +27,7 @@ public class Main {
                     components.add(new Case(serialNumber, type, brand, price, wattage));
                     break;
                 case "Cpu":
-                    components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                 //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                     break;
                 case "Cooler":
                     components.add(new Cooling(serialNumber, type,brand, "socket", price, wattage));//  Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
