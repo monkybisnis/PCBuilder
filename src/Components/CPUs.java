@@ -5,7 +5,7 @@ import PCBuilder.CPU;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPUs implements PC {
+public class CPUs extends Components {
     private List<CPU> CPUs;
 
     public CPUs() {

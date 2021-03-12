@@ -1,13 +1,13 @@
 package PCBuilder;
 
-public class CPU extends Component {
+public class CPU implements Component {
     private double clockSpeed;
     private int cores;
     private String socket;
-    private Fan fan;
+    private Fan fans;
 
     CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, int cores, String socket, Fan fan) {
-        super(serial, type, price, wattage, brand);
+
         this.clockSpeed = clockSpeed;
         this.cores = cores;
         this.socket = socket;
@@ -34,7 +34,17 @@ public class CPU extends Component {
 
     public Fan addFan()
     {
-        Fan fan= new Fan();
-        return fan;
+        Fan fans= new Fan();
+        return fans;
+    }
+
+    @Override
+    public void showComponentProperties() {
+
+         String socket= getSocket();
+         Double speed= getClockSpeed();
+
+         System.out.println(socket);
+         System.out.println(speed);
     }
 }
