@@ -10,13 +10,26 @@ import java.util.Scanner;
 
 public class Main {
     static Components components;
+    static Cases cases;
     static CPUs cpus;
+    static GPUs gpus;
+    static MemoryModules memoryModules;
+    static Motherboards motherboards;
+    static PSUs psus;
+    static StorageComponents storageComponents;
     //static List<Component> components = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
         components = new Components();
+        cases = new Cases();
         cpus = new CPUs();
-        components.addComponent(cpus);
+        gpus = new GPUs();
+        memoryModules = new MemoryModules();
+        motherboards = new Motherboards();
+        psus = new PSUs();
+        storageComponents = new StorageComponents();
+
+        components.addComponents(cases, cpus, gpus, memoryModules, motherboards, psus, storageComponents);
 
         Scanner sc = new Scanner(new File("PCParts/parts.csv"));
 

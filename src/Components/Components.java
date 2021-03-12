@@ -12,6 +12,12 @@ public class Components implements Part {
         this.components = new ArrayList<>();
     }
 
+    public void addComponents(Part... parts) {
+        for (Part p : parts) {
+            components.add(p);
+        }
+    }
+
     public void addComponent(Part component) {
         components.add(component);
     }
