@@ -5,23 +5,23 @@ import PCBuilder.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Components implements Component {
-    private List<PC> components;
+public class Components implements Part {
+    private List<Part> components;
 
     public Components() {
         this.components = new ArrayList<>();
     }
 
-    public void addComponent(PC component) {
+    public void addComponent(Part component) {
         components.add(component);
     }
 
-    public void removeComponent(PC component) {
+    public void removeComponent(Part component) {
         components.remove(component);
     }
 
     @Override
-    public void showComponentProperties() {
-         // method to show properties of each comonent
+    public String printDetails() {
+         return "";
     }
 }

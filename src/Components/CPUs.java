@@ -5,7 +5,7 @@ import PCBuilder.CPU;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPUs extends Components {
+public class CPUs implements Part {
     private List<CPU> CPUs;
 
     public CPUs() {
@@ -18,5 +18,10 @@ public class CPUs extends Components {
 
     public void removeCPU(CPU cpu) {
         CPUs.remove(cpu);
+    }
+
+    @Override
+    public String printDetails() {
+        return "";
     }
 }
