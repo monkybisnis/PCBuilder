@@ -17,6 +17,7 @@ public class Main {
     static Motherboards motherboards;
     static PSUs psus;
     static StorageComponents storageComponents;
+    static CoolerComponents coolerComponents;
     //static List<Component> components = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
@@ -28,6 +29,7 @@ public class Main {
         motherboards = new Motherboards();
         psus = new PSUs();
         storageComponents = new StorageComponents();
+        coolerComponents = new CoolerComponents();
 
         components.addComponents(cases, cpus, gpus, memoryModules, motherboards, psus, storageComponents);
 
@@ -46,7 +48,7 @@ public class Main {
 
             switch (fields[0]) {
                 case "Case":
-                    //components.add(new Case(serialNumber, type, brand, price, wattage));
+                    cases.addCase(new Case(serialNumber, type, brand, price, wattage));
                     break;
                 case "Cpu":
                     cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));

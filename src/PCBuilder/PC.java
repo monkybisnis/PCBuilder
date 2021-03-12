@@ -3,7 +3,6 @@ package PCBuilder;
 import Components.Component.*;
 
 public class PC   {
-
     private CPU cpu;
     private GPU gpu;
     private Motherboard motherboard;
@@ -12,7 +11,6 @@ public class PC   {
     private PSU psu;
     private Storage storage;
     private Case aCase;
-
 
     public PC(CPU cpu, GPU gpu, Motherboard motherboard, Memory memory, Cooler cooling, PSU psu, Storage storage, Case aCase){
         this.cpu = cpu;
@@ -33,6 +31,4 @@ public class PC   {
     public double getPowerConsumption(){
         return 0;
     }
-
-
 }
