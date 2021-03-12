@@ -34,8 +34,8 @@ public class CPU implements Component {
 
     public Fan addFan()
     {
-        Fan fan= new Fan();
-        return fan;
+        Fan fans= new Fan();
+        return fans;
     }
 
     @Override
