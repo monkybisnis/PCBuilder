@@ -1,5 +1,7 @@
 package PCBuilder;
 
+import Components.Part;
+
 public abstract class Component {
    String serialNumber;
    String Type;

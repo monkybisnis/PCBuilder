@@ -1,6 +1,8 @@
 package PCBuilder;
 
-public class Case  extends  Component{
+import Components.Part;
+
+public class Case  extends  Component implements Part{
 
 
 
@@ -10,6 +12,8 @@ public class Case  extends  Component{
     }
 
 
-
-
+    @Override
+    public String printDetails() {
+        return null;
+    }
 }

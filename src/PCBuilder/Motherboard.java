@@ -1,7 +1,9 @@
 package PCBuilder;
 
 
-public class Motherboard extends Component {
+import Components.Part;
+
+public class Motherboard extends Component implements Part {
 
 
     private String Socket;
@@ -18,4 +20,9 @@ public class Motherboard extends Component {
 
     public void setSocket(String socket){ this.Socket=socket;}
     public String getSocket(){return Socket;}
+
+    @Override
+    public String printDetails() {
+        return null;
+    }
 }

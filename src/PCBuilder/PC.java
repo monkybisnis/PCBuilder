@@ -1,6 +1,8 @@
 package PCBuilder;
 
-public class PC {
+import Components.Part;
+
+public class PC   {
 
     private CPU cpu;
     private GPU gpu;
@@ -31,4 +33,6 @@ public class PC {
     public double getPowerConsumption(){
         return 0;
     }
+
+
 }

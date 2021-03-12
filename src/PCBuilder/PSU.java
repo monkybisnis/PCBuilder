@@ -1,6 +1,8 @@
 package PCBuilder;
 
-public class PSU extends Component{
+import Components.Part;
+
+public class PSU extends Component implements Part {
 
     //data fields
 
@@ -10,5 +12,8 @@ public class PSU extends Component{
     }
 
 
-
+    @Override
+    public String printDetails() {
+        return null;
+    }
 }

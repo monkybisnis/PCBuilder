@@ -1,6 +1,8 @@
 package PCBuilder;
 
-public class Cooling extends Component {
+import Components.Part;
+
+public class Cooling extends Component implements Part {
 
     //data fields
 
@@ -18,4 +20,8 @@ public class Cooling extends Component {
 
     public String getSocket(){return Socket;}
 
+    @Override
+    public String printDetails() {
+        return null;
+    }
 }

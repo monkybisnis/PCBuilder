@@ -1,6 +1,8 @@
 package PCBuilder;
 
-public class Memory extends Component {
+import Components.Part;
+
+public class Memory extends Component implements Part {
 
     private int speed;
     private int size;
@@ -28,5 +30,10 @@ public class Memory extends Component {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    @Override
+    public String printDetails() {
+        return null;
     }
 }
