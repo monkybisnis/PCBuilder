@@ -1,14 +1,14 @@
 package Components;
 
-import PCBuilder.Component;
+import PCBuilder.CPU;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPU implements PC {
+public class CPUs implements PC {
     private List<CPU> CPUs;
 
-    public CPU() {
+    public CPUs() {
         this.CPUs = new ArrayList<CPU>();
     }
 

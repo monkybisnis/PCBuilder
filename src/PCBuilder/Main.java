@@ -1,14 +1,22 @@
 package PCBuilder;
 
+import Components.*;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    static List<Component> components = new ArrayList<>();
+    static Components components;
+    static CPUs cpus;
+    //static List<Component> components = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
+        components = new Components();
+        cpus = new CPUs();
+        components.addComponent(cpus);
+
         Scanner sc = new Scanner(new File("PCParts/parts.csv"));
 
         //parse cpus
@@ -24,13 +32,14 @@ public class Main {
 
             switch (fields[0]) {
                 case "Case":
-                    components.add(new Case(serialNumber, type, brand, price, wattage));
+                    //components.add(new Case(serialNumber, type, brand, price, wattage));
                     break;
                 case "Cpu":
+                    cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                  //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                     break;
                 case "Cooler":
-                    components.add(new Cooling(serialNumber, type,brand, "socket", price, wattage));//  Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    //components.add(new Cooling(serialNumber, type,brand, "socket", price, wattage));//  Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                     break;
                 case "Gpu":
                     // components.add(new GPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
