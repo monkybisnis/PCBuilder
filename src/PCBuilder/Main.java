@@ -52,28 +52,28 @@ public class Main {
                     cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                  //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                     break;
-                case "Cooler":
-                    //components.add(new Cooling(serialNumber, type,brand, "socket", price, wattage));//  Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
-                    break;
+
                 case "Gpu":
-                    // components.add(new GPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    gpus.addGPU(new GPU(serialNumber,type, brand, price, wattage,  Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
                     break;
                 case "RAM":
-                    // components.add(new Memory(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    memoryModules.addMemory(new Memory(serialNumber, type, brand, price, wattage,Integer.parseInt(fields[6]),Integer.parseInt(fields[7])));
                     break;
                 case "MotherB":
-                    // components.add(new Motherboard(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    motherboards.addMotherboard(new Motherboard(serialNumber, type, brand ,price, wattage,fields[6], Integer.parseInt(fields[8])));
                     break;
                 case "PowerSupply":
-                    // components.add(new PSU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    psus.addPSU(new PSU(serialNumber, type,brand, price, wattage));
                     break;
                 case "Storage":
-                    // components.add(new Storage(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    storageComponents.addStorage(new Storage(serialNumber, type,brand, price, wattage, Integer.parseInt(fields[7])));
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + fields[0]);
 
             }
+
+
         }
         sc.close();
     }

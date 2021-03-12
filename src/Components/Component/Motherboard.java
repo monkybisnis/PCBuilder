@@ -7,7 +7,7 @@ public class Motherboard extends Component implements Part {
     private String Socket;
     private int RamSlots;
 
-    public Motherboard(String serial, String type,String brand,String Socket, double price,double Wattage,int  RAMSlots) {
+    public Motherboard(String serial, String type,String brand, double price,double Wattage,String Socket,int  RAMSlots) {
         super(serial,type ,price,Wattage,brand);
 
         this.Socket=Socket;
