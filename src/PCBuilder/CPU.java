@@ -1,13 +1,15 @@
 package PCBuilder;
 
-public class CPU implements Component {
+import Components.Part;
+
+public class CPU extends Component implements Part {
     private double clockSpeed;
     private int cores;
     private String socket;
-    private Fan fans;
+    //private Fan fans;
 
-    CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, int cores, String socket, Fan fan) {
-
+    CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, int cores, String socket) {
+        super(serial, type, price, wattage, brand);
         this.clockSpeed = clockSpeed;
         this.cores = cores;
         this.socket = socket;
@@ -38,13 +40,7 @@ public class CPU implements Component {
         return fans;
     }
 
-    @Override
-    public void showComponentProperties() {
-
-         String socket= getSocket();
-         Double speed= getClockSpeed();
-
-         System.out.println(socket);
-         System.out.println(speed);
+    public String printDetails() {
+        return "";
     }
 }

@@ -1,6 +1,5 @@
 package Components;
 
-import PCBuilder.CPU;
 import PCBuilder.Case;
 
 import java.util.ArrayList;
