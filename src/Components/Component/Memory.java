@@ -1,14 +1,13 @@
-package PCBuilder;
+package Components.Component;
 
-public class Memory extends Component {
+import Components.Part;
 
+public class Memory extends Component implements Part {
     private int speed;
     private int size;
 
-
-
-    public Memory(String serial, String type,String brand, double price, double Wattage, int speed, int size){
-        super(serial,type,price,Wattage,brand);
+    public Memory(String serial, String type, String brand, double price, double wattage, int speed, int size){
+        super(serial,type,price,wattage,brand);
 
         this.speed = speed;
         this.size = size;
@@ -28,5 +27,10 @@ public class Memory extends Component {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    @Override
+    public String printDetails() {
+        return null;
     }
 }

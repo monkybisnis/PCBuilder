@@ -1,14 +1,14 @@
 package Components;
 
-import PCBuilder.Component;
+import Components.Component.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPU implements PC {
+public class CPUs implements Part {
     private List<CPU> CPUs;
 
-    public CPU() {
+    public CPUs() {
         this.CPUs = new ArrayList<CPU>();
     }
 
@@ -18,5 +18,10 @@ public class CPU implements PC {
 
     public void removeCPU(CPU cpu) {
         CPUs.remove(cpu);
+    }
+
+    @Override
+    public String printDetails() {
+        return "";
     }
 }

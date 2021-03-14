@@ -1,6 +1,8 @@
-package PCBuilder;
+package Components.Component;
 
-public class GPU extends Component {
+import Components.Part;
+
+public class GPU extends Component implements Part {
 
     private double clockSpeed;
     private int memory;
@@ -31,7 +33,8 @@ public class GPU extends Component {
     }
 
 
-
-
-
+    @Override
+    public String printDetails() {
+        return null;
+    }
 }

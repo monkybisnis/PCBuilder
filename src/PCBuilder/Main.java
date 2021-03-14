@@ -1,14 +1,36 @@
 package PCBuilder;
 
+import Components.*;
+import Components.Component.*;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    static List<Component> components = new ArrayList<>();
+    static Components components;
+    static Cases cases;
+    static CPUs cpus;
+    static GPUs gpus;
+    static MemoryModules memoryModules;
+    static Motherboards motherboards;
+    static PSUs psus;
+    static StorageComponents storageComponents;
+    static Fans fans;
+    //static List<Component> components = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
+        components = new Components();
+        cases = new Cases();
+        cpus = new CPUs();
+        gpus = new GPUs();
+        memoryModules = new MemoryModules();
+        motherboards = new Motherboards();
+        psus = new PSUs();
+        storageComponents = new StorageComponents();
+        fans = new Fans();
+
+        components.addComponents(cases, cpus, gpus, memoryModules, motherboards, psus, storageComponents, fans);
+
         Scanner sc = new Scanner(new File("PCParts/parts.csv"));
 
         //parse cpus
@@ -24,33 +46,36 @@ public class Main {
 
             switch (fields[0]) {
                 case "Case":
-                    components.add(new Case(serialNumber, type, brand, price, wattage));
+                    cases.addCase(new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
                     break;
                 case "Cpu":
-                    components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                 //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                     break;
-                case "Cooler":
-                    components.add(new Cooling(serialNumber, type,brand, "socket", price, wattage));//  Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                case "Fan":
+                    fans.addFan(new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
                     break;
                 case "Gpu":
-                    // components.add(new GPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    gpus.addGPU(new GPU(serialNumber,type, brand, price, wattage,  Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
                     break;
                 case "RAM":
-                    // components.add(new Memory(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    memoryModules.addMemory(new Memory(serialNumber, type, brand, price, wattage,Integer.parseInt(fields[6]),Integer.parseInt(fields[7])));
                     break;
                 case "MotherB":
-                    // components.add(new Motherboard(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    motherboards.addMotherboard(new Motherboard(serialNumber, type, brand ,price, wattage,fields[6], Integer.parseInt(fields[8])));
                     break;
                 case "PowerSupply":
-                    // components.add(new PSU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    psus.addPSU(new PSU(serialNumber, type,brand, price, wattage));
                     break;
                 case "Storage":
-                    // components.add(new Storage(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                    storageComponents.addStorage(new Storage(serialNumber, type,brand, price, wattage, Integer.parseInt(fields[7])));
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + fields[0]);
 
             }
+
+
         }
         sc.close();
     }

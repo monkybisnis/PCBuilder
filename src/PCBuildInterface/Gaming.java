@@ -1,6 +1,7 @@
 package PCBuildInterface;
 
 import PCBuilder.*;
+import Components.Component.*;
 
 public class Gaming implements PC_Build {
 

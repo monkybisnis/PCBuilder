@@ -1,7 +1,8 @@
-package PCBuilder;
+package Components.Component;
 
-public class Storage extends Component{
+import Components.Part;
 
+public class Storage extends Component implements Part{
     //data fields
     private int storageSize;
 
@@ -14,4 +15,8 @@ public class Storage extends Component{
         return storageSize;
     }
 
+    @Override
+    public String printDetails() {
+        return null;
+    }
 }
