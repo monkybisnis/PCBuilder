@@ -11,18 +11,37 @@ class CustomerTest {
 
     @BeforeEach
     void setUp() {
-        customer = new Customer("joe", new GoldState());
+        customer = new Customer("joe");
     }
 
     @Test
-    void getName() {
+    void getNameTest() {
         assertEquals("joe", customer.getName(), "getName() should work");
     }
 
 
     @Test
-    void calculateActualCost() {
-        assertEquals(900, customer.calculateActualCost(1000), "right amount");
+    void calculateDiscountedCostTest() {
+        assertEquals(970, customer.calculateDiscountedCost(1000), "right amount");
+    }
+
+    @Test
+    void toSilverTest(){
+        customer.calculateDiscountedCost(3000);
+        assertEquals(SilverState.class, customer.getState().getClass());
+    }
+
+    @Test
+    void toGoldTest(){
+        customer.calculateDiscountedCost(5000);
+        assertEquals(GoldState.class, customer.getState().getClass());
+    }
+
+    @Test
+    void pointsTest(){
+        customer.calculateDiscountedCost(2500);
+        customer.calculateDiscountedCost(4000);
+        assertEquals(6500, customer.getPoints());
     }
 
 }
