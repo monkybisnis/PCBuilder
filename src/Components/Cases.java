@@ -20,6 +20,10 @@ public class Cases implements Part {
         cases.remove(c);
     }
 
+    public int size(){return cases.size();}
+
+    public Case extractCase(int x){ return cases.get(x);}
+
     @Override
     public String printDetails() {
         return "";

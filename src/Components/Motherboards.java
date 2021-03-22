@@ -20,6 +20,9 @@ public class Motherboards implements Part {
         motherboards.remove(motherboard);
     }
 
+    public int getAmmount(){return motherboards.size();}
+
+    public Motherboard extrractMotherboard(int x){return motherboards.get(x);}
     @Override
     public String printDetails() {
         return "";

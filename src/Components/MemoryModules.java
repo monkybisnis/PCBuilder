@@ -19,6 +19,9 @@ public class MemoryModules implements Part {
         memoryModules.remove(memoryModule);
     }
 
+    public int getAmmount(){ return  memoryModules.size();}
+
+    public Memory extractMemory(int x){return memoryModules.get(x);}
     @Override
     public String printDetails() {
         return "";

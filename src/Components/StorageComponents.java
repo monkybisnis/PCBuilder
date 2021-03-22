@@ -19,7 +19,10 @@ public class StorageComponents implements Part {
     public void removeStorage(Storage storageComponent) {
         StorageComponents.remove(storageComponent);
     }
+    public int getAmmount(){return StorageComponents.size(); }
 
+    public Storage extractStorage(int x){ return StorageComponents.get(x);
+    }
     @Override
     public String printDetails() {
         return "";

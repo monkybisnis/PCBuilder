@@ -20,6 +20,10 @@ public class CPUs implements Part {
         CPUs.remove(cpu);
     }
 
+    public int getAmmount(){return CPUs.size();}
+
+    public CPU extractCPU(int x){ return CPUs.get(x);}
+
     @Override
     public String printDetails() {
         return "";

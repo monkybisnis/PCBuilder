@@ -20,6 +20,9 @@ public class PSUs implements Part {
         psus.remove(psu);
     }
 
+    public int getAmmount(){return psus.size();}
+
+    public PSU extractPSU(int x){return psus.get(x);}
     @Override
     public String printDetails() {
         return "";

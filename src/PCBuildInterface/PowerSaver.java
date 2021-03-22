@@ -1,41 +1,42 @@
 package PCBuildInterface;
 
+import Components.*;
 import PCBuilder.*;
 import Components.Component.*;
 public class PowerSaver implements PC_Build {
 
     @Override
-    public Case addCase() {
+    public Case addCase(Cases cases) {
+
         return null;
     }
 
     @Override
-    public CPU addCPU() {
+    public CPU addCPU(CPUs cpus) {
         return null;
     }
 
     @Override
-    public GPU addGPU() {
+    public GPU addGPU(GPUs gpus) {
+        return null;
+    }
+
+    public Memory addRam(MemoryModules memories) {
         return null;
     }
 
     @Override
-    public Memory addRam() {
+    public Storage addStorage(StorageComponents disks) {
         return null;
     }
 
     @Override
-    public Storage addStorage() {
+    public PSU addPSU(PSUs psUs) {
         return null;
     }
 
     @Override
-    public PSU addPSU() {
-        return null;
-    }
-
-    @Override
-    public Motherboard addMotherBoard() {
+    public Motherboard addMotherBoard(Motherboards motherboards, CPU cpu) {
         return null;
     }
 }
