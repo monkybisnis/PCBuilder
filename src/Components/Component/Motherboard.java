@@ -13,9 +13,8 @@ public class Motherboard extends Component implements Part {
         this.Socket=Socket;
     }
 
-
-
     public void setSocket(String socket){ this.Socket=socket;}
+
     public String getSocket(){return Socket;}
 
     @Override

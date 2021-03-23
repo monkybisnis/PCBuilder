@@ -26,6 +26,6 @@ public class Cases implements Part {
 
     @Override
     public String printDetails() {
-        return "Cases";
+        return String.format("Cases: %d\n", cases.size());
     }
 }

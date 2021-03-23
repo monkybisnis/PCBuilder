@@ -26,6 +26,10 @@ public class Case extends Component implements Part {
 
     @Override
     public String printDetails() {
-        return null;
+        String fanList = "";
+        for (Fan fan : fans) {
+            fanList += fan.printDetails() + "\n";
+        }
+        return String.format("Case details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %.1f\nWattage: %.1f\nFan slots: %d\nFans:\n%s\n", serialNumber, Type, brand, price, wattage, fanSlots, fanList);
     }
 }

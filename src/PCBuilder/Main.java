@@ -84,9 +84,19 @@ public class Main {
         }
         sc.close();
 
-        BudgetPC test= new BudgetPC(components);
+        BudgetPC test = new BudgetPC(components);
 
-       double x= test.getPowerConsumption();
+        double x = test.getPowerConsumption();
         System.out.println(x);
+
+
+        for (Part component : components.components) {
+            if (component instanceof Cases) {
+                Cases cases = (Cases)component;
+                Case c = cases.extractCase(0);
+                System.out.println(c.printDetails());
+                break;
+            }
+        }
     }
 }
