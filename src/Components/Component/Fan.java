@@ -12,6 +12,6 @@ public class Fan extends Component implements Part {
 
     @Override
     public String printDetails() {
-        return null;
+        return String.format("Fan details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nRPMs: %d", serialNumber, Type, brand, price, wattage, RPMs);
     }
 }
