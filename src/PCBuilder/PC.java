@@ -93,4 +93,12 @@ public  abstract class PC   {
 
         else{return cpu.getWattage()+ motherboard.getWattage()+ cpu.getWattage()+ aCase.getWattage()+storage.getWattage()+ memory.getWattage();}
 }
+
+    public double getTotalPrice(){
+
+        if(gpu!= null){return cpu.getPrice()+gpu.getPrice()+ motherboard.getPrice()+ cpu.getPrice()+ aCase.getPrice()+storage.getPrice()+ memory.getPrice();
+        }
+
+        else{return cpu.getPrice()+ motherboard.getPrice()+ cpu.getPrice()+ aCase.getPrice()+storage.getPrice()+ memory.getPrice();}
+    }
 }
