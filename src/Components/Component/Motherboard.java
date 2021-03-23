@@ -20,6 +20,8 @@ public class Motherboard extends Component implements Part {
 
     @Override
     public String printDetails() {
-        return null;
+
+        return "Storage details:\n Name: "+ serialNumber+ "\n Type : "+ Type +"\n Socket : %d"+ brand+"\n Brand : %d"+ Socket+ "\n Power Consumption : "+wattage+
+                "\n Price : "+ price ;
     }
 }

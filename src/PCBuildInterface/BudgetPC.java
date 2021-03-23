@@ -39,7 +39,7 @@ public class BudgetPC extends PC implements PC_Build {
                 PSUs=(PSUs) component;
             }
         }
-        System.out.println(Cases.size());
+
        Case selectedCase=addCase(Cases);
        CPU selectedCPU=addCPU(CPUs);
       Motherboard  selectedMotherBoard=addMotherBoard(Motherboards,selectedCPU);
@@ -151,7 +151,7 @@ public class BudgetPC extends PC implements PC_Build {
         }
         int j = 0;
 
-        System.out.println(filteredMotherboards.getAmmount());
+
         Motherboard selectedMotherboard = filteredMotherboards.extrractMotherboard(0);
         while (j < filteredMotherboards.getAmmount()) {
             Motherboard comparisonMotherboard = filteredMotherboards.extrractMotherboard(j);

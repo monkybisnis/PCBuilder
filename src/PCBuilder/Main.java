@@ -41,7 +41,7 @@ public class Main {
 
             String[] fields = line.split(",");
 
-            System.out.println(fields.length);
+
              if(fields.length>1) {
                  String serialNumber = fields[1];
                  String type = fields[2];
@@ -86,7 +86,7 @@ public class Main {
 
         BudgetPC test= new BudgetPC(components);
 
-       double x= test.getPowerConsumption();
+       String x= test.getStorage().printDetails();
         System.out.println(x);
     }
 }

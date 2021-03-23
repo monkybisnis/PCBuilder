@@ -31,6 +31,7 @@ public class Memory extends Component implements Part {
 
     @Override
     public String printDetails() {
-        return null;
+        return "Storage details:\n Name: +"+serialNumber+ "\n Type : "+ Type +"\n Brand : "+ brand+ "\n Size : "+ size+"\n ClockSpeed : "+ speed+"\n Power Consumption : "+wattage+
+                "\n Price : "+ price ;
     }
 }

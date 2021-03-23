@@ -10,6 +10,7 @@ public class PSU extends Component implements Part {
 
     @Override
     public String printDetails() {
-        return null;
+        return "Storage details:\n Name: "+serialNumber+ "\n Type : "+ Type +"\n Brand : %d"+ brand+"\n Power Consumption : "+wattage+
+                "\n Price : "+ price ;
     }
 }
