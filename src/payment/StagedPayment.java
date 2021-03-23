@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 public class StagedPayment extends Payment {
 
-
+    private double realPrice;
     @Override
     public void payForPC(double amount) {
 
@@ -20,5 +20,9 @@ public class StagedPayment extends Payment {
         double stageAmount = (amount * 1.1) / 2;
         paymentImplementor.processPayment(stageAmount);
         paymentImplementor.futurePayment(stageAmount, future);
+    }
+
+    public double getRealPrice() {
+        return realPrice;
     }
 }

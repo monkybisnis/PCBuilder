@@ -6,12 +6,9 @@ import discount.strategy.NoSaleStrategy;
 import discount.strategy.SaleStrategy;
 import discount.strategy.Strategy;
 import discount.strategy.SuperSaleStrategy;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-
-
-
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
@@ -43,7 +40,7 @@ class CustomerTest {
         customer.calculateDiscount(3000, noSale);
         assertEquals(SilverState.class, customer.getState().getClass());
     }
-//
+
     @Test
     void toGoldTest(){
         Strategy noSale = new NoSaleStrategy();
@@ -89,10 +86,5 @@ class CustomerTest {
         assertEquals(90, discount);
         assertEquals(3000, customer.getPoints());
     }
-
-
-
-
-
 
 }

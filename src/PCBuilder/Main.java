@@ -3,6 +3,12 @@ package PCBuilder;
 import Components.*;
 import Components.Component.*;
 import PCBuildInterface.BudgetPC;
+import discount.Customer;
+import discount.strategy.SaleStrategy;
+import discount.strategy.Strategy;
+import payment.DebitCardPayment;
+import payment.Payment;
+import payment.StagedPayment;
 
 import java.io.*;
 import java.util.Scanner;
@@ -42,51 +48,68 @@ public class Main {
             String[] fields = line.split(",");
 
 
-             if(fields.length>1) {
-                 String serialNumber = fields[1];
-                 String type = fields[2];
-                 double price = Double.parseDouble(fields[5]);
-                 double wattage = Double.parseDouble(fields[9]);
-                 String brand = fields[3];
+            if (fields.length > 1) {
+                String serialNumber = fields[1];
+                String type = fields[2];
+                double price = Double.parseDouble(fields[5]);
+                double wattage = Double.parseDouble(fields[9]);
+                String brand = fields[3];
 
-                 switch (fields[0]) {
-                     case "Case":
-                         cases.addCase(new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
-                         break;
-                     case "CPU":
-                         cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
-                         //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
-                         break;
-                     case "Fan":
-                         fans.addFan(new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
-                         break;
-                     case "Graphics":
-                         gpus.addGPU(new GPU(serialNumber, type, brand, price, wattage, Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
-                         break;
-                     case "RAM":
-                         memoryModules.addMemory(new Memory(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6]), Integer.parseInt(fields[7])));
-                         break;
-                     case "MotherBoard":
-                         motherboards.addMotherboard(new Motherboard(serialNumber, type, brand, price, wattage, fields[6], Integer.parseInt(fields[8])));
-                         break;
-                     case "PowerSupply":
-                         psus.addPSU(new PSU(serialNumber, type, brand, price, wattage));
-                         break;
-                     case "Storage":
-                         storageComponents.addStorage(new Storage(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[7])));
-                         break;
-                     default:
-                         throw new IllegalStateException("Unexpected value: " + fields[0]);
+                switch (fields[0]) {
+                    case "Case":
+                        cases.addCase(new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
+                        break;
+                    case "CPU":
+                        cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
+                        //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                        break;
+                    case "Fan":
+                        fans.addFan(new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
+                        break;
+                    case "Graphics":
+                        gpus.addGPU(new GPU(serialNumber, type, brand, price, wattage, Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
+                        break;
+                    case "RAM":
+                        memoryModules.addMemory(new Memory(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6]), Integer.parseInt(fields[7])));
+                        break;
+                    case "MotherBoard":
+                        motherboards.addMotherboard(new Motherboard(serialNumber, type, brand, price, wattage, fields[6], Integer.parseInt(fields[8])));
+                        break;
+                    case "PowerSupply":
+                        psus.addPSU(new PSU(serialNumber, type, brand, price, wattage));
+                        break;
+                    case "Storage":
+                        storageComponents.addStorage(new Storage(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[7])));
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + fields[0]);
 
-                 }
-             }
+                }
+            }
 
         }
         sc.close();
 
-        BudgetPC test= new BudgetPC(components);
+        BudgetPC test = new BudgetPC(components);
 
-       String x= test.getStorage().printDetails();
+        String x = test.getStorage().printDetails();
         System.out.println(x);
+
+        double cost = test.getTotalCost();
+        System.out.println(cost);
+        cost = 1500;
+        System.out.println("list price " + cost);
+
+        Customer customer = new Customer("joe");
+        customer.addPoints(2000);
+        Strategy saleStrategy = new SaleStrategy();
+        double discount = customer.calculateDiscount(cost, saleStrategy);
+        double realPrice = cost - discount;
+        System.out.println("discounted price " + realPrice);
+        Payment payment = new StagedPayment();
+        payment.setPaymentImplementor(new DebitCardPayment());
+        payment.payForPC(realPrice);
+
+
     }
 }

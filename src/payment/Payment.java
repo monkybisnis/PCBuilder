@@ -11,5 +11,5 @@ public abstract class Payment {
         this.paymentImplementor = paymentImplementor;
     }
 
-    abstract void payForPC(double amount);
+    public abstract void payForPC(double amount);
 }
