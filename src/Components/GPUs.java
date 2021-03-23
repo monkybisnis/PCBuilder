@@ -19,7 +19,8 @@ public class GPUs implements Part {
     public void removeGPU(GPU gpu) {
         GPUs.remove(gpu);
     }
-
+public int getAmmount(){return GPUs.size(); }
+public GPU extractGPu(int x){return GPUs.get(x);}
     @Override
     public String printDetails() {
         return "";

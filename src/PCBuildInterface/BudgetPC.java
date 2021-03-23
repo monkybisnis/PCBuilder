@@ -5,14 +5,10 @@ import Components.Component.*;
 import PCBuilder.PC;
 
 public class BudgetPC extends PC implements PC_Build {
-   private Case selectedCase;
-private CPU selectedCPU;
-    private Motherboard selectedMotherBoard;
-    private Memory RAM;
+
     private  Cases Cases= new Cases();
     private  CPUs CPUs= new CPUs();
-    private  Storage disk;
-    private  PSU psu;
+
     private  Motherboards  Motherboards= new Motherboards();
     private  MemoryModules MemoryModules= new MemoryModules();
     private  StorageComponents StorageComponents = new StorageComponents();
@@ -44,12 +40,12 @@ private CPU selectedCPU;
             }
         }
         System.out.println(Cases.size());
-        selectedCase=addCase(Cases);
-        selectedCPU=addCPU(CPUs);
-        selectedMotherBoard=addMotherBoard(Motherboards,selectedCPU);
-        RAM= addRam(MemoryModules);
-        disk=addStorage(StorageComponents);
-        psu=addPSU(PSUs);
+       Case selectedCase=addCase(Cases);
+       CPU selectedCPU=addCPU(CPUs);
+      Motherboard  selectedMotherBoard=addMotherBoard(Motherboards,selectedCPU);
+       Memory RAM= addRam(MemoryModules);
+      Storage  disk=addStorage(StorageComponents);
+      PSU  psu=addPSU(PSUs);
 
         setaCase(selectedCase);
         setCpu(selectedCPU);
