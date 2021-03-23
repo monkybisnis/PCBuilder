@@ -26,6 +26,6 @@ public class Cases implements Part {
 
     @Override
     public String printDetails() {
-        return "";
+        return "Cases";
     }
 }

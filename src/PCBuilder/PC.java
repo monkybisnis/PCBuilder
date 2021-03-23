@@ -87,6 +87,10 @@ public  abstract class PC   {
     public  PC(){}
 
     public double getPowerConsumption(){
-        return cpu.getWattage()+gpu.getWattage()+ motherboard.getWattage()+ cpu.getWattage()+ aCase.getWattage()+storage.getWattage()+ memory.getWattage();
+
+        if(gpu!= null){return cpu.getWattage()+gpu.getWattage()+ motherboard.getWattage()+ cpu.getWattage()+ aCase.getWattage()+storage.getWattage()+ memory.getWattage();
     }
+
+        else{return cpu.getWattage()+ motherboard.getWattage()+ cpu.getWattage()+ aCase.getWattage()+storage.getWattage()+ memory.getWattage();}
+}
 }

@@ -14,7 +14,7 @@ public class CPU extends Component implements Part {
     private List<Fan> fans;
     static private int fanSlots = 2;
 
-    public CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, int cores, String socket) {
+    public CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed,  String socket) {
         super(serial, type, price, wattage, brand);
         this.clockSpeed = clockSpeed;
         this.cores = cores;

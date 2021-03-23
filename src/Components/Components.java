@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Components implements Part {
-    private List<Part> components;
+    public List<Part> components;
 
     public Components() {
         this.components = new ArrayList<>();
