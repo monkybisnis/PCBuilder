@@ -3,7 +3,7 @@ package PCBuildInterface;
 import Components.*;
 import Components.Part.*;
 
-public class MediaDesign implements PC_Build {
+public class Custom implements PC_Build {
 
     @Override
     public Case addCase(Cases cases) {
@@ -16,16 +16,16 @@ public class MediaDesign implements PC_Build {
     }
 
     @Override
-    public GPU addGPU(GPUs gpus) {
+    public GPUs addGPUs(GPUs gpus) {
         return null;
     }
 
-    public Memory addRam(MemoryModules memories) {
+    public MemoryModules addRam(MemoryModules memories) {
         return null;
     }
 
     @Override
-    public Storage addStorage(StorageComponents disks) {
+    public StorageComponents addStorage(StorageComponents disks) {
         return null;
     }
 
