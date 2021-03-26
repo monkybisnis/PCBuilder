@@ -2,7 +2,7 @@ package Components.Part;
 
 import Components.Component;
 
-public class Storage extends Part implements Component {
+public class Storage extends Part {
     //data fields
     private int storageSize;
 
@@ -16,7 +16,7 @@ public class Storage extends Part implements Component {
     }
 
     @Override
-    public String printDetails() {
+    public String toString() {
 
         return "Storage details:\n Name: "+ serialNumber+ "\n Type : "+ Type +"\n Brand : "+ brand+"\n Power Consumption : "+wattage+
                 "\n Size : "+ storageSize+"\n Price : "+ price;

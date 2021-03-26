@@ -3,7 +3,7 @@ package Components.Part;
 
 import Components.Component;
 
-public class Motherboard extends Part implements Component {
+public class Motherboard extends Part {
     private String Socket;
     private int RamSlots;
 
@@ -18,7 +18,7 @@ public class Motherboard extends Part implements Component {
     public String getSocket(){return Socket;}
 
     @Override
-    public String printDetails() {
+    public String toString() {
 
         return "Storage details:\n Name: "+ serialNumber+ "\n Type : "+ Type +"\n Socket : %d"+ brand+"\n Brand : %d"+ Socket+ "\n Power Consumption : "+wattage+
                 "\n Price : "+ price ;

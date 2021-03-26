@@ -16,12 +16,24 @@ public class Components implements Component {
         }
     }
 
-    public void addComponent(Component component) {
-        components.add(component);
+    @Override
+    public void add(Component c) {
+        components.add(c);
     }
 
-    public void removeComponent(Component component) {
-        components.remove(component);
+    @Override
+    public void remove(Component c) {
+        components.remove(c);
+    }
+
+    @Override
+    public int size() {
+        return components.size();
+    }
+
+    @Override
+    public Component extract(int x) {
+        return components.get(x);
     }
 
     @Override

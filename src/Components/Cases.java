@@ -12,17 +12,25 @@ public class Cases implements Component {
         this.cases = new ArrayList<Case>();
     }
 
-    public void addCase(Case c) {
-        cases.add(c);
+    @Override
+    public void add(Component c) {
+        cases.add((Case)c);
     }
 
-    public void removeCase(Case c) {
-        cases.remove(c);
+    @Override
+    public void remove(Component c) {
+        cases.remove((Case)c);
     }
 
-    public int size(){return cases.size();}
+    @Override
+    public int size() {
+        return cases.size();
+    }
 
-    public Case extractCase(int x){ return cases.get(x);}
+    @Override
+    public Component extract(int x) {
+        return (Component)cases.get(x);
+    }
 
     @Override
     public String printDetails() {

@@ -12,17 +12,25 @@ public class CPUs implements Component {
         this.CPUs = new ArrayList<CPU>();
     }
 
-    public void addCPU(CPU cpu) {
-        CPUs.add(cpu);
+    @Override
+    public void add(Component c) {
+        CPUs.add((CPU)c);
     }
 
-    public void removeCPU(CPU cpu) {
-        CPUs.remove(cpu);
+    @Override
+    public void remove(Component c) {
+        CPUs.remove((CPU)c);
     }
 
-    public int getAmmount(){return CPUs.size();}
+    @Override
+    public int size() {
+        return CPUs.size();
+    }
 
-    public CPU extractCPU(int x){ return CPUs.get(x);}
+    @Override
+    public Component extract(int x) {
+        return (Component)CPUs.get(x);
+    }
 
     @Override
     public String printDetails() {

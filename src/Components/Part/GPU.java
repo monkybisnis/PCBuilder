@@ -2,7 +2,7 @@ package Components.Part;
 
 import Components.Component;
 
-public class GPU extends Part implements Component {
+public class GPU extends Part {
     private double clockSpeed;
     private int memory;
 
@@ -29,7 +29,7 @@ public class GPU extends Part implements Component {
     }
 
     @Override
-    public String printDetails() {
+    public String toString() {
         return String.format("GPU details:\nSerial number: %s\nType: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nMemory: %d\n", serialNumber, Type, brand, price, wattage, clockSpeed, memory);
     }
 }

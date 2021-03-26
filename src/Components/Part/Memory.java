@@ -2,7 +2,7 @@ package Components.Part;
 
 import Components.Component;
 
-public class Memory extends Part implements Component {
+public class Memory extends Part {
     private int speed;
     private int size;
 
@@ -30,7 +30,7 @@ public class Memory extends Part implements Component {
     }
 
     @Override
-    public String printDetails() {
+    public String toString() {
         return "Storage details:\n Name: +"+serialNumber+ "\n Type : "+ Type +"\n Brand : "+ brand+ "\n Size : "+ size+"\n ClockSpeed : "+ speed+"\n Power Consumption : "+wattage+
                 "\n Price : "+ price ;
     }

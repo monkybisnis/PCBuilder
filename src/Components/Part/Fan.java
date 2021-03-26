@@ -2,7 +2,7 @@ package Components.Part;
 
 import Components.Component;
 
-public class Fan extends Part implements Component {
+public class Fan extends Part {
     private int RPMs;
 
     public Fan(String serial, String type, String brand, double price, double wattage, int RPMs) {
@@ -11,7 +11,7 @@ public class Fan extends Part implements Component {
     }
 
     @Override
-    public String printDetails() {
+    public String toString() {
         return String.format("Fan details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nRPMs: %d", serialNumber, Type, brand, price, wattage, RPMs);
     }
 }

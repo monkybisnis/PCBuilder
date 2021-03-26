@@ -5,7 +5,7 @@ import Components.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPU extends Part implements Component {
+public class CPU extends Part {
     private double clockSpeed;
     private int cores;
     private String socket;
@@ -53,7 +53,7 @@ public class CPU extends Part implements Component {
         this.fan = fan;
     }
 
-    public String printDetails() {
+    public String toString() {
         return String.format("CPU details:\nSerial number: %s\nType: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nSocket: %s\n", serialNumber, Type, brand, price, wattage, clockSpeed, socket);
     }
 }

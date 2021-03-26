@@ -12,12 +12,22 @@ public class Fans implements Component {
         this.fans = new ArrayList<Fan>();
     }
 
-    public void addFan(Fan fan) {
-        fans.add(fan);
+    @Override
+    public void add(Component c) {
+        fans.add((Fan)c);
     }
 
-    public void removeFan(Fan fan) {
-        fans.remove(fan);
+    @Override
+    public void remove(Component c) {
+        fans.remove((Fan)c);
+    }
+
+    public int size() {
+        return fans.size();
+    }
+
+    public Component extract(int x) {
+        return (Component)fans.get(x);
     }
 
     @Override

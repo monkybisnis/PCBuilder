@@ -5,7 +5,7 @@ import Components.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Case extends Part implements Component {
+public class Case extends Part {
     private List<Fan> fans;
     private int fanSlots;
 
@@ -25,7 +25,7 @@ public class Case extends Part implements Component {
     }
 
     @Override
-    public String printDetails() {
+    public String toString() {
         String fanList = "";
         for (Fan fan : fans) {
             fanList += fan.printDetails() + "\n";
