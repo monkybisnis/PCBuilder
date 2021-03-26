@@ -1,17 +1,21 @@
 package PCBuilder;
 
+import Components.Component.*;
+import Components.GPUs;
+import Components.MemoryModules;
 import Components.Part.*;
+import Components.StorageComponents;
 
 public  abstract class PC   {
     private CPU cpu;
-    private GPU gpu;
+    private GPUs gpu;
     private Motherboard motherboard;
-    private Memory memory;
+    private MemoryModules memory;
     private PSU psu;
-    private Storage storage;
+    private StorageComponents storage;
     private Case aCase;
 
-    public PC(CPU cpu, GPU gpu, Motherboard motherboard, Memory memory, PSU psu, Storage storage, Case aCase){
+    public PC(CPU cpu, GPUs gpu, Motherboard motherboard, MemoryModules memory, PSU psu, StorageComponents storage, Case aCase){
         this.cpu = cpu;
         this.gpu = gpu;
         this.motherboard = motherboard;
@@ -34,11 +38,11 @@ public  abstract class PC   {
         return cpu;
     }
 
-    public GPU getGpu() {
+    public GPUs getGpus() {
         return gpu;
     }
 
-    public Memory getMemory() {
+    public MemoryModules getMemories() {
         return memory;
     }
 
@@ -58,15 +62,15 @@ public  abstract class PC   {
         this.cpu = cpu;
     }
 
-    public void setGpu(GPU gpu) {
+    public void setGpus(GPUs gpu) {
         this.gpu = gpu;
     }
 
-    public Storage getStorage() {
+    public StorageComponents getStorage() {
         return storage;
     }
 
-    public void setMemory(Memory memory) {
+    public void setMemory(MemoryModules memory) {
         this.memory = memory;
     }
 
@@ -78,7 +82,7 @@ public  abstract class PC   {
         this.psu = psu;
     }
 
-    public void setStorage(Storage storage) {
+    public void setStorage(StorageComponents storage) {
         this.storage = storage;
     }
 

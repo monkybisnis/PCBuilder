@@ -12,26 +12,15 @@ public class GPUs implements Component {
         this.GPUs = new ArrayList<GPU>();
     }
 
-    @Override
-    public void add(Component c) {
-        GPUs.add(((GPU)c));
+    public void addGPU(GPU gpu) {
+        GPUs.add(gpu);
     }
 
-    @Override
-    public void remove(Component c) {
-        GPUs.remove((GPU)c);
+    public void removeGPU(GPU gpu) {
+        GPUs.remove(gpu);
     }
-
-    @Override
-    public int size() {
-        return GPUs.size();
-    }
-
-    @Override
-    public Component extract(int x) {
-        return (Component)GPUs.get(x);
-    }
-
+public int getAmmount(){return GPUs.size(); }
+public GPU extractGPu(int x){return GPUs.get(x);}
     @Override
     public String printDetails() {
         return "";

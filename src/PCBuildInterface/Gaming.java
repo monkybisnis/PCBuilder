@@ -1,6 +1,7 @@
 package PCBuildInterface;
 
 import Components.*;
+import Components.Part.*;
 import PCBuilder.*;
 
 public class Gaming extends  PC implements PC_Build {
@@ -43,17 +44,17 @@ public class Gaming extends  PC implements PC_Build {
         Case selectedCase=addCase(Cases);
         CPU selectedCPU=addCPU(CPUs);
         Motherboard  selectedMotherBoard=addMotherBoard(Motherboards,selectedCPU);
-        Memory RAM= addRam(MemoryModules);
-        Storage  disk=addStorage(StorageComponents);
+        MemoryModules RAM= addRam(MemoryModules);
+        StorageComponents  disk=addStorage(StorageComponents);
         PSU  psu=addPSU(PSUs);
-        GPU gpu= addGPU(Gpus);
+        GPUs gpu= addGPUs(Gpus);
         setaCase(selectedCase);
         setCpu(selectedCPU);
         setMemory(RAM);
         setPsu(psu);
         setStorage(disk);
         setMotherboard(selectedMotherBoard);
-        setGpu(gpu);
+        setGpus(gpu);
 
 
 
@@ -89,7 +90,7 @@ public class Gaming extends  PC implements PC_Build {
     }
 
     @Override
-    public GPU addGPU(GPUs gpus) {
+    public GPUs addGPUs(GPUs gpus) {
         GPU selectedGPU=  gpus.extractGPu(0);
         int i=1;
         while( i< gpus.getAmmount()) {
@@ -100,10 +101,12 @@ public class Gaming extends  PC implements PC_Build {
             }
             i++;
         }
+
+
         return selectedGPU;
     }
 
-    public Memory addRam(MemoryModules memories) {
+    public MemoryModules addRam(MemoryModules memories) {
         Memory selectedMemory= memories.extractMemory(0);
         int i=1;
         while( i< memories.getAmmount()) {
@@ -119,7 +122,7 @@ public class Gaming extends  PC implements PC_Build {
 
 
     @Override
-    public Storage addStorage(StorageComponents disks) {
+    public StorageComponents addStorage(StorageComponents disks) {
         Storage selectedStorage= disks.extractStorage(0);
         int i=1;
         while( i< disks.getAmmount()) {
