@@ -98,11 +98,26 @@ public  abstract class PC   {
         else{return cpu.getWattage()+ motherboard.getWattage()+ cpu.getWattage()+ aCase.getWattage()+storage.getWattage()+ memory.getWattage();}
 }
 
-    public double getTotalPrice(){
-
-        if(gpu!= null){return cpu.getPrice()+gpu.getPrice()+ motherboard.getPrice()+ cpu.getPrice()+ aCase.getPrice()+storage.getPrice()+ memory.getPrice();
+    public double getTotalPrice() {
+        double memoryTotal = 0.0;
+        double storageTotal = 0.0;
+        for (int i = 0; i < storage.size(); i++) {
+            Storage s = (Storage)storage.extract(i);
+            storageTotal += s.getPrice();
         }
-
-        else{return cpu.getPrice()+ motherboard.getPrice()+ cpu.getPrice()+ aCase.getPrice()+storage.getPrice()+ memory.getPrice();}
+        for (int i = 0; i < memory.size(); i++) {
+            Memory m = (Memory)memory.extract(i);
+            memoryTotal += m.getPrice();
+        }
+        if (gpu!= null) {
+            double gpuTotal = 0.0;
+            for (int i = 0; i < gpu.size(); i++) {
+                GPU g = (GPU)gpu.extract(i);
+                gpuTotal += g.getPrice();
+            }
+            return cpu.getPrice() + gpuTotal + motherboard.getPrice() + cpu.getPrice() + aCase.getPrice()+storageTotal + memoryTotal;
+        } else {
+            return cpu.getPrice() + motherboard.getPrice() + cpu.getPrice() + aCase.getPrice() + storageTotal + memoryTotal;
+        }
     }
 }

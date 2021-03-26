@@ -1,5 +1,6 @@
 package Components;
 
+import Components.Part.CPU;
 import Components.Part.GPU;
 
 import java.util.ArrayList;
@@ -8,19 +9,26 @@ import java.util.List;
 public class GPUs implements Component {
     private List<GPU> GPUs;
 
-    public GPUs() {
-        this.GPUs = new ArrayList<GPU>();
+    @Override
+    public void add(Component c) {
+        GPUs.add((GPU)c);
     }
 
-    public void addGPU(GPU gpu) {
-        GPUs.add(gpu);
+    @Override
+    public void remove(Component c) {
+        GPUs.remove((CPU)c);
     }
 
-    public void removeGPU(GPU gpu) {
-        GPUs.remove(gpu);
+    @Override
+    public int size() {
+        return GPUs.size();
     }
-public int getAmmount(){return GPUs.size(); }
-public GPU extractGPu(int x){return GPUs.get(x);}
+
+    @Override
+    public Component extract(int x) {
+        return (Component)GPUs.get(x);
+    }
+
     @Override
     public String printDetails() {
         return "";
