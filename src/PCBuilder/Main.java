@@ -1,7 +1,7 @@
 package PCBuilder;
 
 import Components.*;
-import Components.Component.*;
+import Components.Part.*;
 import PCBuildInterface.BudgetPC;
 import discount.Customer;
 import discount.strategy.SaleStrategy;

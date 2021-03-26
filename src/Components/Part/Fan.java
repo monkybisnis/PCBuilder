@@ -1,8 +1,8 @@
-package Components.Component;
+package Components.Part;
 
-import Components.Part;
+import Components.Component;
 
-public class Fan extends Component implements Part {
+public class Fan extends Part implements Component {
     private int RPMs;
 
     public Fan(String serial, String type, String brand, double price, double wattage, int RPMs) {

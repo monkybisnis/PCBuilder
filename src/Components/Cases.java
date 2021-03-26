@@ -1,11 +1,9 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cases implements Part {
+public class Cases implements Component {
     private List<Case> cases;
 
     public Cases() {

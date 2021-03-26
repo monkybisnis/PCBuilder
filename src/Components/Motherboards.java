@@ -1,11 +1,9 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Motherboards implements Part {
+public class Motherboards implements Component {
     private List<Motherboard> motherboards;
 
     public Motherboards() {

@@ -1,28 +1,26 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Components implements Part {
-    public List<Part> components;
+public class Components implements Component {
+    public List<Component> components;
 
     public Components() {
         this.components = new ArrayList<>();
     }
 
-    public void addComponents(Part... parts) {
-        for (Part p : parts) {
-            components.add(p);
+    public void addComponents(Component... components) {
+        for (Component p : components) {
+            this.components.add(p);
         }
     }
 
-    public void addComponent(Part component) {
+    public void addComponent(Component component) {
         components.add(component);
     }
 
-    public void removeComponent(Part component) {
+    public void removeComponent(Component component) {
         components.remove(component);
     }
 

@@ -1,11 +1,9 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class GPUs implements Part {
+public class GPUs implements Component {
     private List<GPU> GPUs;
 
     public GPUs() {

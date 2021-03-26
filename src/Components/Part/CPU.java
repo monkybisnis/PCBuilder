@@ -1,11 +1,11 @@
-package Components.Component;
+package Components.Part;
 
-import Components.Part;
+import Components.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPU extends Component implements Part {
+public class CPU extends Part implements Component {
     private double clockSpeed;
     private int cores;
     private String socket;

@@ -1,8 +1,8 @@
-package Components.Component;
+package Components.Part;
 
-import Components.Part;
+import Components.Component;
 
-public class Memory extends Component implements Part {
+public class Memory extends Part implements Component {
     private int speed;
     private int size;
 

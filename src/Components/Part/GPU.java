@@ -1,8 +1,8 @@
-package Components.Component;
+package Components.Part;
 
-import Components.Part;
+import Components.Component;
 
-public class GPU extends Component implements Part {
+public class GPU extends Part implements Component {
     private double clockSpeed;
     private int memory;
 

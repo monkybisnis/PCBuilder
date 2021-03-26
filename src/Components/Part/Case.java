@@ -1,11 +1,11 @@
-package Components.Component;
+package Components.Part;
 
-import Components.Part;
+import Components.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Case extends Component implements Part {
+public class Case extends Part implements Component {
     private List<Fan> fans;
     private int fanSlots;
 

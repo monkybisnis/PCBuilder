@@ -2,7 +2,6 @@ package PCBuildInterface;
 
 import Components.*;
 import PCBuilder.*;
-import Components.Component.*;
 
 public class Gaming extends  PC implements PC_Build {
 
@@ -17,7 +16,7 @@ public class Gaming extends  PC implements PC_Build {
     public Gaming(Components components){
 
 
-        for(Part component  : components.components){
+        for(Component component  : components.components){
             if(component instanceof Cases){
                 Cases=(Cases)component;
             }

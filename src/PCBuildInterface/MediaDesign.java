@@ -1,8 +1,7 @@
 package PCBuildInterface;
 
 import Components.*;
-import Components.Component.*;
-import PCBuilder.*;
+import Components.Part.*;
 
 public class MediaDesign implements PC_Build {
 

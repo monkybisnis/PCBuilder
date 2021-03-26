@@ -1,11 +1,9 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fans implements Part {
+public class Fans implements Component {
     private List<Fan> fans;
 
     public Fans() {

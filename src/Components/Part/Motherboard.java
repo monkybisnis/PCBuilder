@@ -1,9 +1,9 @@
-package Components.Component;
+package Components.Part;
 
 
-import Components.Part;
+import Components.Component;
 
-public class Motherboard extends Component implements Part {
+public class Motherboard extends Part implements Component {
     private String Socket;
     private int RamSlots;
 

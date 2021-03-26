@@ -1,10 +1,8 @@
-package Components.Component;
+package Components.Part;
 
-import Components.Part;
+import Components.Component;
 
-import java.net.Socket;
-
-public class Storage extends Component implements Part{
+public class Storage extends Part implements Component {
     //data fields
     private int storageSize;
 

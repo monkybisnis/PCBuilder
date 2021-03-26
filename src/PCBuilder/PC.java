@@ -1,6 +1,6 @@
 package PCBuilder;
 
-import Components.Component.*;
+import Components.Part.*;
 
 public  abstract class PC   {
     private CPU cpu;

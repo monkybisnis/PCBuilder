@@ -1,11 +1,9 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class StorageComponents implements Part {
+public class StorageComponents implements Component {
     private List<Storage> StorageComponents;
 
     public StorageComponents() {

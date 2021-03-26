@@ -1,6 +1,6 @@
 package Components;
 
-public interface Part {
+public interface Component {
     public String printDetails();
 
 

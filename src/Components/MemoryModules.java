@@ -1,10 +1,9 @@
 package Components;
 
-import Components.Component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemoryModules implements Part {
+public class MemoryModules implements Component {
     private List<Memory> memoryModules;
 
     public MemoryModules() {

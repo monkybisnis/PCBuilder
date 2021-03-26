@@ -1,11 +1,9 @@
 package Components;
 
-import Components.Component.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class PSUs implements Part {
+public class PSUs implements Component {
     private List<PSU> psus;
 
     public PSUs() {
