@@ -91,11 +91,11 @@ public class Gaming extends  PC implements PC_Build {
 
     @Override
     public GPUs addGPUs(GPUs gpus) {
-        GPU selectedGPU=  gpus.extractGPu(0);
+        GPU selectedGPU= (GPU) gpus.extract(0);
         int i=1;
-        while( i< gpus.getAmmount()) {
+        while( i< gpus.size()) {
 
-            GPU comparisonGPU= gpus.extractGPu(i);
+            GPU comparisonGPU= (GPU) gpus.extract(i);
             if(selectedGPU.getClockSpeed()< comparisonGPU.getClockSpeed()){
                 selectedGPU=comparisonGPU;
             }
