@@ -64,7 +64,7 @@ public class BudgetPC extends PC implements PC_Build {
         Case selectedCase= (Case) cases.extract(0);
         int i=0;
         while( i<cases.size()) {
-           //  if(i> cases.size()){break;}
+
            Case comparisonCase= (Case)cases.extract(i);
            if(selectedCase.getPrice()> comparisonCase.getPrice()){
                selectedCase=comparisonCase;
