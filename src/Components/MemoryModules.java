@@ -1,5 +1,7 @@
 package Components;
 
+import Components.Part.Memory;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,5 +1,7 @@
 package Components;
 
+import Components.Part.Case;
+
 import java.util.ArrayList;
 import java.util.List;
 
