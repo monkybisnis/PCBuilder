@@ -12,16 +12,24 @@ public class StorageComponents implements Component {
         this.StorageComponents = new ArrayList<Storage>();
     }
 
-    public void addStorage(Storage storageComponent) {
-        StorageComponents.add(storageComponent);
+    @Override
+    public void add(Component c) {
+        StorageComponents.add((Storage)c);
     }
 
-    public void removeStorage(Storage storageComponent) {
-        StorageComponents.remove(storageComponent);
+    @Override
+    public void remove(Component c) {
+        StorageComponents.remove((Storage)c);
     }
-    public int getAmmount(){return StorageComponents.size(); }
 
-    public Storage extractStorage(int x){ return StorageComponents.get(x);
+    @Override
+    public int size() {
+        return StorageComponents.size();
+    }
+
+    @Override
+    public Component extract(int x){
+        return (Component)StorageComponents.get(x);
     }
     @Override
     public String printDetails() {

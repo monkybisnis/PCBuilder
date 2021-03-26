@@ -12,17 +12,26 @@ public class MemoryModules implements Component {
         this.memoryModules = new ArrayList<Memory>();
     }
 
-    public void addMemory(Memory memoryModule) {
-        memoryModules.add(memoryModule);
+    @Override
+    public void add(Component c) {
+        memoryModules.add((Memory)c);
     }
 
-    public void removeMemory(Memory memoryModule) {
-        memoryModules.remove(memoryModule);
+    @Override
+    public void remove(Component c) {
+        memoryModules.remove((Memory)c);
     }
 
-    public int getAmmount(){ return  memoryModules.size();}
+    @Override
+    public int size() {
+        return memoryModules.size();
+    }
 
-    public Memory extractMemory(int x){return memoryModules.get(x);}
+    @Override
+    public Component extract(int x) {
+        return (Component)memoryModules.get(x);
+    }
+
     @Override
     public String printDetails() {
         return "";

@@ -12,17 +12,26 @@ public class Motherboards implements Component {
         this.motherboards = new ArrayList<Motherboard>();
     }
 
-    public void addMotherboard(Motherboard motherboard) {
-        motherboards.add(motherboard);
+    @Override
+    public void add(Component c) {
+        motherboards.add((Motherboard)c);
     }
 
-    public void removeMotherboard(Motherboard motherboard) {
-        motherboards.remove(motherboard);
+    @Override
+    public void remove(Component c) {
+        motherboards.remove((Motherboard)c);
     }
 
-    public int getAmmount(){return motherboards.size();}
+    @Override
+    public int size() {
+        return motherboards.size();
+    }
 
-    public Motherboard extrractMotherboard(int x){return motherboards.get(x);}
+    @Override
+    public Component extract(int x) {
+        return (Component)motherboards.get(x);
+    }
+
     @Override
     public String printDetails() {
         return "";

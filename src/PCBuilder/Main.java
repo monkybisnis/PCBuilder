@@ -57,29 +57,29 @@ public class Main {
 
                 switch (fields[0]) {
                     case "Case":
-                        cases.addCase(new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
+                        cases.add((Component)new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
                         break;
                     case "CPU":
-                        cpus.addCPU(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
+                        cpus.add((Component)new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
                         //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
                         break;
                     case "Fan":
-                        fans.addFan(new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
+                        fans.add((Component)new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
                         break;
                     case "Graphics":
-                        gpus.addGPU(new GPU(serialNumber, type, brand, price, wattage, Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
+                        gpus.add((Component)new GPU(serialNumber, type, brand, price, wattage, Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
                         break;
                     case "RAM":
-                        memoryModules.addMemory(new Memory(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6]), Integer.parseInt(fields[7])));
+                        memoryModules.add((Component)new Memory(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6]), Integer.parseInt(fields[7])));
                         break;
                     case "MotherBoard":
-                        motherboards.addMotherboard(new Motherboard(serialNumber, type, brand, price, wattage, fields[6], Integer.parseInt(fields[8])));
+                        motherboards.add((Component)new Motherboard(serialNumber, type, brand, price, wattage, fields[6], Integer.parseInt(fields[8])));
                         break;
                     case "PowerSupply":
-                        psus.addPSU(new PSU(serialNumber, type, brand, price, wattage));
+                        psus.add((Component)new PSU(serialNumber, type, brand, price, wattage));
                         break;
                     case "Storage":
-                        storageComponents.addStorage(new Storage(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[7])));
+                        storageComponents.add((Component)new Storage(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[7])));
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + fields[0]);
@@ -92,8 +92,8 @@ public class Main {
 
         BudgetPC test = new BudgetPC(components);
 
-        String x = test.getStorage().printDetails();
-        System.out.println(x);
+        //String x = test.getStorage().printDetails();
+       // System.out.println(x);
 
         double price = test.getTotalPrice();
         System.out.println(price + " Price");
