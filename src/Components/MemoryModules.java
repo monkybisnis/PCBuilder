@@ -1,6 +1,7 @@
 package Components;
 
 import Components.Part.Memory;
+import Components.Part.Storage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,5 +37,14 @@ public class MemoryModules implements Component {
     public String printDetails() {
         return "";
     }
+    public int getWattage()
+    {
 
+        int total=0;
+        for (Memory x:memoryModules)
+        {
+            total+= x.getWattage();
+        }
+        return  total;
+    }
 }

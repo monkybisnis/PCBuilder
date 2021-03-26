@@ -2,6 +2,7 @@ package Components;
 
 import Components.Part.CPU;
 import Components.Part.GPU;
+import Components.Part.Storage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +20,7 @@ public class GPUs implements Component {
         GPUs.remove((CPU)c);
     }
 
-    @Override
-    public int size() {
-        return GPUs.size();
-    }
+
 
     @Override
     public Component extract(int x) {
@@ -33,4 +31,21 @@ public class GPUs implements Component {
     public String printDetails() {
         return "";
     }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    public int getWattage()
+    {
+
+        int total=0;
+        for (GPU x: GPUs)
+        {
+            total+= x.getWattage();
+        }
+        return  total;
+    }
+   
 }

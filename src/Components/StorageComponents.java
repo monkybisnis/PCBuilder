@@ -35,4 +35,15 @@ public class StorageComponents implements Component {
     public String printDetails() {
         return "";
     }
+
+    public int getWattage()
+    {
+
+        int total=0;
+        for (Storage x:StorageComponents)
+        {
+            total+= x.getWattage();
+        }
+        return  total;
+    }
 }
