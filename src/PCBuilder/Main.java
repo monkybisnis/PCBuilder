@@ -95,21 +95,20 @@ public class Main {
         String x = test.getStorage().printDetails();
         System.out.println(x);
 
-        double cost = test.getTotalCost();
-        System.out.println(cost);
-        cost = 1500;
-        System.out.println("list price " + cost);
+        double price = test.getTotalPrice();
+        System.out.println(price + " Price");
+    //    price = 1500;
+        System.out.println("list price " + price);
 
         Customer customer = new Customer("joe");
         customer.addPoints(2000);
         Strategy saleStrategy = new SaleStrategy();
-        double discount = customer.calculateDiscount(cost, saleStrategy);
-        double realPrice = cost - discount;
+        double discount = customer.calculateDiscount(price, saleStrategy);
+        double realPrice = price - discount;
         System.out.println("discounted price " + realPrice);
         Payment payment = new StagedPayment();
         payment.setPaymentImplementor(new DebitCardPayment());
         payment.payForPC(realPrice);
-
 
     }
 }

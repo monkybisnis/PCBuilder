@@ -6,11 +6,15 @@ import discount.state.SilverState;
 import discount.state.State;
 import discount.strategy.Strategy;
 
+import java.text.DecimalFormat;
+
 public class Customer {
 
     String name;
     State state;
     private int points;
+
+    private static DecimalFormat df = new DecimalFormat("#.##");
 
     public Customer(String name, State state) {
         this.name = name;
@@ -29,11 +33,17 @@ public class Customer {
     }
 
     public double calculateStateDiscount(double cost){
-        return state.calculateDiscount(cost, this);
-    }
+
+        double discount = state.calculateDiscount(cost, this);
+        System.out.println("state discount: "+ df.format(discount));
+        return discount;
+
+}
 
     public double calculateStrategyDiscount(double cost, Strategy strategy){
-        return strategy.calculateStrategyDiscount(cost, this);
+        double discount = strategy.calculateStrategyDiscount(cost, this);
+        System.out.println("strategy discount " + df.format(discount));
+        return discount;
     }
 
     public State getState() {

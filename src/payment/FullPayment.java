@@ -8,3 +8,4 @@ public class FullPayment extends Payment {
         paymentImplementor.processPayment(amount);
     }
 }
+
