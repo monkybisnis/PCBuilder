@@ -6,7 +6,8 @@ import PCBuildInterface.BudgetPC;
 import discount.Customer;
 import discount.strategy.SaleStrategy;
 import discount.strategy.Strategy;
-import payment.DebitCardPayment;
+import loginService.LoginService;
+import payment.PaypalImplementor;
 import payment.Payment;
 import payment.StagedPayment;
 
@@ -100,14 +101,17 @@ public class Main {
         cost = 1500;
         System.out.println("list price " + cost);
 
-        Customer customer = new Customer("joe");
-        customer.addPoints(2000);
+//        Customer customer = new Customer("joe");
+//        customer.addPoints(2000);
+
+        Customer customer = LoginService.login("joe", "1234");
+
         Strategy saleStrategy = new SaleStrategy();
         double discount = customer.calculateDiscount(cost, saleStrategy);
         double realPrice = cost - discount;
         System.out.println("discounted price " + realPrice);
         Payment payment = new StagedPayment();
-        payment.setPaymentImplementor(new DebitCardPayment());
+        payment.setPaymentImplementor(new PaypalImplementor());
         payment.payForPC(realPrice);
 
 

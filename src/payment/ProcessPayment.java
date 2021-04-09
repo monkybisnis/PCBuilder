@@ -18,7 +18,7 @@ public class ProcessPayment {
         discount = customer.calculateDiscount(amount, saleStrategy);
         realPrice = amount - discount;
         Payment payment = new StagedPayment();
-        payment.setPaymentImplementor(new DebitCardPayment());
+        payment.setPaymentImplementor(new PaypalImplementor());
         payment.payForPC(realPrice);
 
     }

@@ -11,6 +11,7 @@ import java.text.DecimalFormat;
 public class Customer {
 
     String name;
+    String password;
     State state;
     private int points;
 
@@ -28,13 +29,19 @@ public class Customer {
         this.points = 0;
     }
 
+    public Customer(String name, String password, int points) {
+        this.name = name;
+        this.password = password;
+        this.points = points;
+    }
+
     public double calculateDiscount(double cost, Strategy strategy){
         return calculateStateDiscount(cost) + calculateStrategyDiscount(cost, strategy);
     }
 
     public double calculateStateDiscount(double cost){
 
-        double discount = state.calculateDiscount(cost, this);
+        double discount = state.calculateDiscount(cost);
         System.out.println("state discount: "+ df.format(discount));
         return discount;
 

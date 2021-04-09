@@ -2,21 +2,25 @@ package discount.strategy;
 
 import discount.Customer;
 
+
 public class SaleStrategy implements Strategy {
+
+    private final int CUT_OFF_POINT = 2000;
+    private final int POINT_CASH_DIVIDER = 100;
 
     @Override
     public double calculateStrategyDiscount(double cost, Customer customer) {
         int points = 0;
         //can can only cash in 2000 points
-        if(customer.getPoints() < 2000){
+        if(customer.getPoints() < CUT_OFF_POINT){
             points = customer.getPoints();
         }
         else{
-            points = 2000;
+            points = CUT_OFF_POINT;
         }
 
         customer.deductPoints(points);
         customer.addPoints((int)cost);
-        return points/100.0;
+        return points / POINT_CASH_DIVIDER;
     }
 }

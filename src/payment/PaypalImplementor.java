@@ -4,11 +4,11 @@ import java.text.DecimalFormat;
 import java.util.Date;
 
 
-public class DebitCardPayment implements PaymentImplementor{
+public class PaypalImplementor implements PaymentImplementor{
 
     private static DecimalFormat df = new DecimalFormat("#.##");
     @Override
-    public void processPayment(double amount) {
+    public void processPaymentNow(double amount) {
         System.out.println("Payment from Debit Card " + df.format(amount));
         System.out.println("YOur current balance is 100\nDo you want to proceed ");
 

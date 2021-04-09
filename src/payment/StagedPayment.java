@@ -1,10 +1,7 @@
 package payment;
 
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
-import java.time.LocalDate;
-
 
 
 public class StagedPayment extends Payment {
@@ -19,7 +16,7 @@ public class StagedPayment extends Payment {
         Date future = calendar.getTime() ;
         System.out.println("Future date " + future);
         double stageAmount = (amount * 1.1) / 2;
-        paymentImplementor.processPayment(stageAmount);
+        paymentImplementor.processPaymentNow(stageAmount);
         paymentImplementor.futurePayment(stageAmount, future);
     }
 

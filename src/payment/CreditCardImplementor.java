@@ -2,11 +2,11 @@ package payment;
 
 import java.util.Date;
 
-public class CreditCardPayment implements PaymentImplementor {
+public class CreditCardImplementor implements PaymentImplementor {
 
 
     @Override
-    public void processPayment(double amount) {
+    public void processPaymentNow(double amount) {
 
         System.out.println("Payment from Credit Card" + amount);
 
