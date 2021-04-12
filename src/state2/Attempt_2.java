@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 */
-
+/*
 enum ClientStates {
     BRONZE_STATE,
     SILVER_STATE,
@@ -26,7 +26,7 @@ enum Transition {
     BRONZE_TO_SILVER, BRONZE_TO_GOLD,
     SILVER_TO_GOLD, SILVER_TO_BRONZE,
     GOLD_TO_SILVER, GOLD_TO_BRONZE
-}
+}*/
 
 
 public class Attempt_2 {

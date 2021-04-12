@@ -1,5 +1,5 @@
 package state2;
 
 public enum State {
-    GOLD, SILVER, BRONZE
+    GOLD_MEMBER, SILVER_MEMBER, BRONZE_MEMBER
 }
