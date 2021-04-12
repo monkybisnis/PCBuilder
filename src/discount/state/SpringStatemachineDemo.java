@@ -4,11 +4,11 @@ package discount.state;
 
 
 
-
+/*
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.config.StateMachineBuilder;
 import org.springframework.statemachine.state.State;
-import org.springframework.statemachine.transition.Transition;
+import org.springframework.statemachine.transition.Transition;*/
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -17,7 +17,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// plural because SSM defines a class called State already
+/*// plural because SSM defines a class called State already
 enum States
 {
     OFF_HOOK, // starting
@@ -25,7 +25,7 @@ enum States
     CONNECTING,
     CONNECTED,
     ON_HOLD
-}
+}*/
 
 enum Events
 {
