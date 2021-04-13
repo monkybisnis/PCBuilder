@@ -10,7 +10,6 @@ public class PSU extends Part {
 
     @Override
     public String toString() {
-        return "Storage details:\n Name: "+serialNumber+ "\n Type : "+ Type +"\n Brand : %d"+ brand+"\n Power Consumption : "+wattage+
-                "\n Price : "+ price ;
+        return String.format("PSU details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\n", serialNumber, Type, brand, price, wattage);
     }
 }

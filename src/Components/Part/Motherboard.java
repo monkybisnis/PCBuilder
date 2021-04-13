@@ -21,8 +21,6 @@ public class Motherboard extends Part {
 
     @Override
     public String toString() {
-
-        return "Storage details:\n Name: "+ serialNumber+ "\n Type : "+ Type +"\n Socket : %d"+ brand+"\n Brand : %d"+ Socket+ "\n Power Consumption : "+wattage+
-                "\n Price : "+ price ;
+        return String.format("Motherboard details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nSocket: %s\n", serialNumber, Type, brand, price, wattage, Socket);
     }
 }

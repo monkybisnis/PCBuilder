@@ -57,7 +57,6 @@ public class UI extends Application {
         mb.getMenus().addAll(file, view, build);
         VBox menuVb = new VBox(mb);
 
-
         mainPane = new FlowPane();
         mainPane.setPadding(new Insets(10, 10, 10, 10));
         mainPane.setVgap(35);
@@ -70,6 +69,9 @@ public class UI extends Application {
         Label label = new Label("Available Parts:");
         label.setTextFill(Color.color(0, 0, 0));
         partsPane.setPrefSize(800, 700);
+
+        partsPane.setPadding(new Insets(5, 5, 5, 5));
+
         partsPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         VBox v = new VBox();
         v.setPadding(new Insets(10, 10, 10, 10));

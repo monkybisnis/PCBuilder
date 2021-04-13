@@ -17,8 +17,6 @@ public class Storage extends Part {
 
     @Override
     public String toString() {
-
-        return "Storage details:\n Name: "+ serialNumber+ "\n Type : "+ Type +"\n Brand : "+ brand+"\n Power Consumption : "+wattage+
-                "\n Size : "+ storageSize+"\n Price : "+ price;
+        return String.format("Storage details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\n", serialNumber, Type, brand, price, wattage);
     }
 }
