@@ -1,11 +1,12 @@
 package discount;
 
 import Components.Component;
+import PCBuilder.PC;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
+public class Cart implements java.io.Serializable {
 
     List<Component> components;
     public Cart() {
@@ -20,11 +21,10 @@ public class Cart {
         components.remove(c);
     }
 
-//    public double getTotalPrice(){
-//        double price = 0;
-//        for(Component c: components){
-//            price += c
-//        }
-//    }
+    public double getTotalPrice(PC pc){
+
+        double price = pc.getTotalPrice();
+        return price;
+    }
 
 }
