@@ -14,8 +14,8 @@ public class CPU extends Part {
 
     public CPU(){ }
 
-    public CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, String socket) {
-        super(serial, type, price, wattage, brand);
+    public CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, String socket, String icon) {
+        super(serial, type, price, wattage, brand, icon);
         this.clockSpeed = clockSpeed;
         this.cores = cores;
         this.socket = socket;
@@ -54,6 +54,6 @@ public class CPU extends Part {
     }
 
     public String toString() {
-        return String.format("CPU details:\nSerial number: %s\nType: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nSocket: %s\n", serialNumber, Type, brand, price, wattage, clockSpeed, socket);
+        return String.format("CPU details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nSocket: %s\n", serialNumber, Type, brand, price, wattage, clockSpeed, socket);
     }
 }

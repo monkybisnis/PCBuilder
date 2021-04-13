@@ -6,8 +6,8 @@ public class GPU extends Part {
 
     public GPU(){}
 
-    public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory ) {
-        super(serial,Type,price,Wattage,brand);
+    public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory, String icon) {
+        super(serial,Type,price,Wattage,brand, icon);
         this.clockSpeed = clockSpeed;
         this.memory = memory;
     }
@@ -30,6 +30,6 @@ public class GPU extends Part {
 
     @Override
     public String toString() {
-        return String.format("GPU details:\nSerial number: %s\nType: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nMemory: %d\n", serialNumber, Type, brand, price, wattage, clockSpeed, memory);
+        return String.format("GPU details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nMemory: %d\n", serialNumber, Type, brand, price, wattage, clockSpeed, memory);
     }
 }

@@ -10,8 +10,8 @@ public class Case extends Part implements Serializable {
 
     public Case(){}
 
-    public Case(String serialNumber, String Type, String Brand, double price, double Wattage, int fanSlots) {
-        super(serialNumber,Type,price,Wattage,Brand);
+    public Case(String serialNumber, String Type, String Brand, double price, double Wattage, int fanSlots, String icon) {
+        super(serialNumber,Type,price,Wattage,Brand, icon);
         this.fans = new ArrayList<Fan>();
         this.fanSlots = fanSlots;
     }
