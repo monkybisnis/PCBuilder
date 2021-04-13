@@ -1,5 +1,6 @@
 package loginService;
 
+import discount.Cart;
 import discount.Customer;
 
 import java.io.FileInputStream;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 
 public class LoginService {
     static Customer currentCustomer = null;
+    static Cart cart;
 
     public static Customer login(String name, String password){
         FileInputStream f = null;
@@ -29,8 +31,9 @@ public class LoginService {
             String [] parts = line.split(",");
 
             if(name.equals(parts[0]) && password.equals(parts[1])){
+                cart = new Cart();
                 int points =Integer.parseInt(parts[2]);
-                customer = new Customer(name, password, points);
+                customer = new Customer(name, password, points, cart);
                 customer.updateState();
                 currentCustomer = customer;
                 found = true;
@@ -87,7 +90,7 @@ public class LoginService {
             PrintWriter p = new PrintWriter(o);
             p.print("\n" + line);
             p.close();
-            customer = new Customer(name, password, 0);
+            customer = new Customer(name, password, 0, cart);
             return customer;
         }
     }

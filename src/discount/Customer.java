@@ -14,6 +14,7 @@ public class Customer {
     String password;
     State state;
     private int points;
+    private Cart cart;
 
     private static DecimalFormat df = new DecimalFormat("#.##");
 
@@ -29,10 +30,11 @@ public class Customer {
         this.points = 0;
     }
 
-    public Customer(String name, String password, int points) {
+    public Customer(String name, String password, int points, Cart cart) {
         this.name = name;
         this.password = password;
         this.points = points;
+        this.cart = cart;
     }
 
     public double calculateDiscount(double cost, Strategy strategy){
