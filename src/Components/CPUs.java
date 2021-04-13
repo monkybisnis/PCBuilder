@@ -5,7 +5,7 @@ import Components.Part.CPU;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPUs implements Component {
+public class CPUs implements Component  {
     private List<CPU> CPUs;
 
     public CPUs() {

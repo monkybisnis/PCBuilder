@@ -5,7 +5,7 @@ import Components.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Case extends Part {
+public class Case extends Part  {
     private List<Fan> fans;
     private int fanSlots;
 
@@ -31,5 +31,30 @@ public class Case extends Part {
             fanList += fan.toString() + "\n";
         }
         return String.format("Case details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %.1f\nWattage: %.1f\nFan slots: %d\nFans:\n%s\n", serialNumber, Type, brand, price, wattage, fanSlots, fanList);
+    }
+
+    @Override
+    public String printDetails() {
+        return null;
+    }
+
+    @Override
+    public void add(Component c) {
+
+    }
+
+    @Override
+    public void remove(Component c) {
+
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Component extract(int x) {
+        return null;
     }
 }

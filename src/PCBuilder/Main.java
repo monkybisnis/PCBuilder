@@ -2,6 +2,7 @@ package PCBuilder;
 
 import Components.*;
 import Components.Part.*;
+import GUI.Menu;
 import PCBuildInterface.BudgetPC;
 import discount.Customer;
 import discount.strategy.SaleStrategy;
@@ -58,7 +59,8 @@ public class Main {
 
                 switch (fields[0]) {
                     case "Case":
-                        cases.add((Component)new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
+
+                        cases.add( (Component)new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
                         break;
                     case "CPU":
                         cpus.add((Component)new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
@@ -114,6 +116,6 @@ public class Main {
         payment.setPaymentImplementor(new PaypalImplementor());
         payment.payForPC(realPrice);
 
-
+        new Menu();
     }
 }

@@ -1,6 +1,8 @@
 package Components;
 
-public interface Component {
+import Components.Part.Part;
+
+public interface Component  {
     public String printDetails();
 
     public void add(Component c);

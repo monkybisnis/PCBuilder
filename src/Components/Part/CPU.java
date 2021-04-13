@@ -56,4 +56,29 @@ public class CPU extends Part {
     public String toString() {
         return String.format("CPU details:\nSerial number: %s\nType: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nSocket: %s\n", serialNumber, Type, brand, price, wattage, clockSpeed, socket);
     }
+
+    @Override
+    public String printDetails() {
+        return null;
+    }
+
+    @Override
+    public void add(Component c) {
+
+    }
+
+    @Override
+    public void remove(Component c) {
+
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Component extract(int x) {
+        return null;
+    }
 }

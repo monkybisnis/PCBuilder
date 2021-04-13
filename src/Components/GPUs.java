@@ -2,6 +2,7 @@ package Components;
 
 import Components.Part.CPU;
 import Components.Part.GPU;
+import Components.Part.Motherboard;
 import Components.Part.Storage;
 
 import java.util.ArrayList;
@@ -9,10 +10,12 @@ import java.util.List;
 
 public class GPUs implements Component {
     private List<GPU> GPUs;
-
+    public GPUs() {
+        this.GPUs = new ArrayList<GPU>();
+    }
     @Override
     public void add(Component c) {
-        GPUs.add((GPU)c);
+        GPUs.add((GPU) c);
     }
 
     @Override
