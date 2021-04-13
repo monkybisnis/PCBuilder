@@ -1,10 +1,10 @@
 package Components.Part;
 
-import Components.Component;
-
 public class Storage extends Part {
     //data fields
     private int storageSize;
+
+    public Storage(){}
 
     public Storage(String serial,String type,String Brand,double price,double Wattage,int storageSize) {
         super(serial,type,price,Wattage,Brand);

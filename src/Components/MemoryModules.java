@@ -1,12 +1,12 @@
 package Components;
 
 import Components.Part.Memory;
-import Components.Part.Storage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemoryModules implements Component {
+public class MemoryModules implements Component, Serializable {
     private List<Memory> memoryModules;
 
     public MemoryModules() {

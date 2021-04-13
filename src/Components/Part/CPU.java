@@ -1,7 +1,5 @@
 package Components.Part;
 
-import Components.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +11,8 @@ public class CPU extends Part {
 
     private List<Fan> fans;
     static private int fanSlots = 2;
+
+    public CPU(){ }
 
     public CPU(String serial, String type, double price, double wattage, String brand, double clockSpeed, String socket) {
         super(serial, type, price, wattage, brand);

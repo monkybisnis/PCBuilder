@@ -1,11 +1,13 @@
 package Components.Part;
 
 
-import Components.Component;
+
 
 public class Motherboard extends Part {
     private String Socket;
     private int RamSlots;
+
+    public Motherboard(){}
 
     public Motherboard(String serial, String type,String brand, double price,double Wattage,String Socket,int  RAMSlots) {
         super(serial,type ,price,Wattage,brand);

@@ -1,15 +1,16 @@
 package Components.Part;
 
-import Components.Component;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Case extends Part  {
+public class Case extends Part implements Serializable {
     private List<Fan> fans;
     private int fanSlots;
 
-    public Case(String serialNumber, String Type,String Brand, double price, double Wattage, int fanSlots) {
+    public Case(){}
+
+    public Case(String serialNumber, String Type, String Brand, double price, double Wattage, int fanSlots) {
         super(serialNumber,Type,price,Wattage,Brand);
         this.fans = new ArrayList<Fan>();
         this.fanSlots = fanSlots;

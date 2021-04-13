@@ -1,10 +1,10 @@
 package Components.Part;
 
-import Components.Component;
-
 public class GPU extends Part {
     private double clockSpeed;
     private int memory;
+
+    public GPU(){}
 
     public GPU(String serial,String Type,String brand,double price,double Wattage,double clockSpeed, int memory ) {
         super(serial,Type,price,Wattage,brand);

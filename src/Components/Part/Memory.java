@@ -1,10 +1,11 @@
 package Components.Part;
 
-import Components.Component;
 
 public class Memory extends Part  {
     private int speed;
     private int size;
+
+    public Memory(){}
 
     public Memory(String serial, String type, String brand, double price, double wattage, int speed, int size){
         super(serial,type,price,wattage,brand);

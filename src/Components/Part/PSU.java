@@ -1,9 +1,9 @@
 package Components.Part;
 
-import Components.Component;
-
 public class PSU extends Part {
     //data fields
+    public PSU(){}
+
     public PSU(String serial,String type, String brand,double price,double Wattage) {
         super(serial,type,price,Wattage,brand);
     }

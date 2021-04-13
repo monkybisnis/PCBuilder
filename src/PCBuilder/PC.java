@@ -1,12 +1,13 @@
 package PCBuilder;
 
-import Components.Component.*;
 import Components.GPUs;
 import Components.MemoryModules;
 import Components.Part.*;
 import Components.StorageComponents;
 
-public  abstract class PC   {
+import java.io.Serializable;
+
+public  abstract class PC implements Serializable {
     private CPU cpu;
     private GPUs gpu;
     private Motherboard motherboard;

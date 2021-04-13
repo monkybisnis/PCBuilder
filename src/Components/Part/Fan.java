@@ -1,9 +1,10 @@
 package Components.Part;
 
-import Components.Component;
 
 public class Fan extends Part {
     private int RPMs;
+
+    public Fan(){}
 
     public Fan(String serial, String type, String brand, double price, double wattage, int RPMs) {
         super(serial, type, price, wattage, brand);

@@ -2,10 +2,11 @@ package Components;
 
 import Components.Part.PSU;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PSUs implements Component {
+public class PSUs implements Component, Serializable {
     private List<PSU> psus;
 
     public PSUs() {

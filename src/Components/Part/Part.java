@@ -1,13 +1,13 @@
 package Components.Part;
 
-import Components.Component;
-
 public abstract class Part {
    String serialNumber;
    String Type;
    double price;
    double wattage;
    String brand;
+
+   public Part() {}
 
    public Part(String serialNumber, String Type, double price, double wattage, String brand) {
       this.serialNumber = serialNumber;
