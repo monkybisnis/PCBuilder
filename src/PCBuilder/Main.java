@@ -3,6 +3,7 @@ package PCBuilder;
 import Components.*;
 import Components.Part.*;
 import GUI.Menu;
+import GUI.UI;
 import PCBuildInterface.BudgetPC;
 import discount.Customer;
 import discount.strategy.SaleStrategy;
@@ -45,10 +46,7 @@ public class Main {
         //parse cpus
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
-
-
             String[] fields = line.split(",");
-
 
             if (fields.length > 1) {
                 String serialNumber = fields[1];
@@ -90,7 +88,7 @@ public class Main {
 
         }
         sc.close();
-
+/*
         BudgetPC test = new BudgetPC(components);
 
         //String x = test.getStorage().printDetails();
@@ -115,5 +113,8 @@ public class Main {
         payment.payForPC(realPrice);
 
         new Menu();
+
+ */
+        UI.run();
     }
 }
