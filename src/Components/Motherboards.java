@@ -13,12 +13,12 @@ public class Motherboards implements Component {
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         motherboards.add((Motherboard)c);
     }
 
     @Override
-    public void remove(Component c) {
+    public void remove(Object c) {
         motherboards.remove((Motherboard)c);
     }
 
@@ -28,8 +28,8 @@ public class Motherboards implements Component {
     }
 
     @Override
-    public Component extract(int x) {
-        return (Component)motherboards.get(x);
+    public Motherboard extract(int x) {
+        return motherboards.get(x);
     }
 
     @Override

@@ -34,29 +34,4 @@ public class Memory extends Part  {
         return "Storage details:\n Name: +"+serialNumber+ "\n Type : "+ Type +"\n Brand : "+ brand+ "\n Size : "+ size+"\n ClockSpeed : "+ speed+"\n Power Consumption : "+wattage+
                 "\n Price : "+ price ;
     }
-
-    @Override
-    public String printDetails() {
-        return null;
-    }
-
-    @Override
-    public void add(Component c) {
-
-    }
-
-    @Override
-    public void remove(Component c) {
-
-    }
-
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public Component extract(int x) {
-        return null;
-    }
 }

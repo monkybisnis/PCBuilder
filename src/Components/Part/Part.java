@@ -2,7 +2,7 @@ package Components.Part;
 
 import Components.Component;
 
-public abstract class Part implements Component {
+public abstract class Part {
    String serialNumber;
    String Type;
    double price;

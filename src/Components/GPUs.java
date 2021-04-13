@@ -11,23 +11,22 @@ import java.util.List;
 public class GPUs implements Component {
     private List<GPU> GPUs;
     public GPUs() {
-        this.GPUs = new ArrayList<GPU>();
-    }
-    @Override
-    public void add(Component c) {
-        GPUs.add((GPU) c);
+        this.GPUs = new ArrayList<>();
     }
 
     @Override
-    public void remove(Component c) {
-        GPUs.remove((CPU)c);
+    public void add(Object c) {
+        GPUs.add((GPU)c);
     }
 
-
+    @Override
+    public void remove(Object c) {
+        GPUs.remove(c);
+    }
 
     @Override
-    public Component extract(int x) {
-        return (Component)GPUs.get(x);
+    public GPU extract(int x) {
+        return GPUs.get(x);
     }
 
     @Override
@@ -37,7 +36,7 @@ public class GPUs implements Component {
 
     @Override
     public int size() {
-        return 0;
+        return GPUs.size();
     }
 
     public int getWattage()

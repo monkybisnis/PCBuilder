@@ -14,29 +14,4 @@ public class Fan extends Part {
     public String toString() {
         return String.format("Fan details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nRPMs: %d", serialNumber, Type, brand, price, wattage, RPMs);
     }
-
-    @Override
-    public String printDetails() {
-        return null;
-    }
-
-    @Override
-    public void add(Component c) {
-
-    }
-
-    @Override
-    public void remove(Component c) {
-
-    }
-
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public Component extract(int x) {
-        return null;
-    }
 }

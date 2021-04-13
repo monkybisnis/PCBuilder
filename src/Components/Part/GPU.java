@@ -32,29 +32,4 @@ public class GPU extends Part {
     public String toString() {
         return String.format("GPU details:\nSerial number: %s\nType: %s\nPrice: %f\nWattage: %f\nClock Speed: %f\nMemory: %d\n", serialNumber, Type, brand, price, wattage, clockSpeed, memory);
     }
-
-    @Override
-    public String printDetails() {
-        return null;
-    }
-
-    @Override
-    public void add(Component c) {
-
-    }
-
-    @Override
-    public void remove(Component c) {
-
-    }
-
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public Component extract(int x) {
-        return null;
-    }
 }

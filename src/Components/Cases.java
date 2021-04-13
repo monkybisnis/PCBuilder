@@ -9,17 +9,17 @@ public class Cases implements Component {
     private List<Case> cases;
 
     public Cases() {
-        this.cases = new ArrayList<Case>();
+        this.cases = new ArrayList<>();
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         cases.add((Case)c);
     }
 
     @Override
-    public void remove(Component c) {
-        cases.remove((Case)c);
+    public void remove(Object c) {
+        cases.remove(c);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class Cases implements Component {
     }
 
     @Override
-    public Component extract(int x) {
-        return (Component)cases.get(x);
+    public Case extract(int x) {
+        return cases.get(x);
     }
 
     @Override

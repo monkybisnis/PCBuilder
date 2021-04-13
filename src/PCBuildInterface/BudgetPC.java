@@ -61,11 +61,11 @@ public class BudgetPC extends PC implements PC_Build {
 
     @Override
     public Case addCase(Cases cases) {
-        Case selectedCase= (Case) cases.extract(0);
+        Case selectedCase= cases.extract(0);
         int i=0;
         while( i<cases.size()) {
 
-           Case comparisonCase= (Case)cases.extract(i);
+           Case comparisonCase= cases.extract(i);
            if(selectedCase.getPrice()> comparisonCase.getPrice()){
                selectedCase=comparisonCase;
            }
@@ -95,46 +95,46 @@ public class BudgetPC extends PC implements PC_Build {
     }
 
     public MemoryModules addRam(MemoryModules memories) {
-        Memory selectedMemory= (Memory) memories.extract(0);
+        Memory selectedMemory= memories.extract(0);
         int i=1;
         while( i< memories.size()) {
 
-            Memory comparisonMemory= (Memory) memories.extract(i);
+            Memory comparisonMemory= memories.extract(i);
             if(selectedMemory.getPrice()> comparisonMemory.getPrice()){
                 selectedMemory=comparisonMemory;
             }
             i++;
         }
         MemoryModules selectedMemories= new MemoryModules();
-        selectedMemories.add((Component) selectedMemory);
+        selectedMemories.add(selectedMemory);
         return selectedMemories;
     }
 
 
     @Override
     public StorageComponents addStorage(StorageComponents disks) {
-        Storage selectedStorage= (Storage) disks.extract(0);
+        Storage selectedStorage= disks.extract(0);
         int i=1;
         while( i< disks.size()) {
 
-            Storage comparisonStorage= (Storage) disks.extract(i);
+            Storage comparisonStorage= disks.extract(i);
             if(selectedStorage.getPrice()> comparisonStorage.getPrice()){
                 selectedStorage=comparisonStorage;
             }
             i++;
         }
         StorageComponents chosenDisks=new StorageComponents();
-        chosenDisks.add((Component) selectedStorage);
+        chosenDisks.add(selectedStorage);
         return chosenDisks;
     }
 
     @Override
     public PSU addPSU(PSUs psUs) {
-       PSU selectedPSU= (PSU) psUs.extract(0);
+       PSU selectedPSU= psUs.extract(0);
         int i=1;
         while( i< psUs.size()) {
 
-            PSU comparisonPSU= (PSU) psUs.extract(i);
+            PSU comparisonPSU= psUs.extract(i);
             if(selectedPSU.getPrice()> comparisonPSU.getPrice()){
                 selectedPSU=comparisonPSU;
             }
@@ -148,18 +148,18 @@ public class BudgetPC extends PC implements PC_Build {
         Motherboards filteredMotherboards = new Motherboards();
         int i = 0;
         while( i < motherboards.size()) {
-            Motherboard temp = (Motherboard)motherboards.extract(i);
+            Motherboard temp = motherboards.extract(i);
             if (temp.getSocket().equals(cpu.getSocket())) {
-                filteredMotherboards.add((Component) temp);
+                filteredMotherboards.add(temp);
             }
              i++;
         }
         int j = 0;
 
 
-        Motherboard selectedMotherboard = (Motherboard) filteredMotherboards.extract(0);
+        Motherboard selectedMotherboard = filteredMotherboards.extract(0);
         while (j < filteredMotherboards.size()) {
-            Motherboard comparisonMotherboard = (Motherboard) filteredMotherboards.extract(j);
+            Motherboard comparisonMotherboard = filteredMotherboards.extract(j);
             if (selectedMotherboard.getPrice() > comparisonMotherboard.getPrice()) {
                 selectedMotherboard = comparisonMotherboard;
             }

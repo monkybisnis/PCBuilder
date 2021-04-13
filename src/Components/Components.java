@@ -17,12 +17,12 @@ public class Components implements Component {
     }
 
     @Override
-    public void add(Component c) {
-        components.add(c);
+    public void add(Object c) {
+        components.add((Component)c);
     }
 
     @Override
-    public void remove(Component c) {
+    public void remove(Object c) {
         components.remove(c);
     }
 

@@ -9,25 +9,25 @@ public class Fans implements Component {
     private List<Fan> fans;
 
     public Fans() {
-        this.fans = new ArrayList<Fan>();
+        this.fans = new ArrayList<>();
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         fans.add((Fan)c);
     }
 
     @Override
-    public void remove(Component c) {
-        fans.remove((Fan)c);
+    public void remove(Object c) {
+        fans.remove(c);
     }
 
     public int size() {
         return fans.size();
     }
 
-    public Component extract(int x) {
-        return (Component)fans.get(x);
+    public Fan extract(int x) {
+        return fans.get(x);
     }
 
     @Override

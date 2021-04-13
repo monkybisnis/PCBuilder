@@ -9,17 +9,17 @@ public class PSUs implements Component {
     private List<PSU> psus;
 
     public PSUs() {
-        this.psus = new ArrayList<PSU>();
+        this.psus = new ArrayList<>();
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         psus.add((PSU)c);
     }
 
     @Override
-    public void remove(Component c) {
-        psus.remove((PSU)c);
+    public void remove(Object c) {
+        psus.remove(c);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class PSUs implements Component {
     }
 
     @Override
-    public Component extract(int x) {
-        return (Component)psus.get(x);
+    public PSU extract(int x) {
+        return psus.get(x);
     }
 
     @Override

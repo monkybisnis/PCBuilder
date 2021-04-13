@@ -10,17 +10,17 @@ public class MemoryModules implements Component {
     private List<Memory> memoryModules;
 
     public MemoryModules() {
-        this.memoryModules = new ArrayList<Memory>();
+        this.memoryModules = new ArrayList<>();
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         memoryModules.add((Memory)c);
     }
 
     @Override
-    public void remove(Component c) {
-        memoryModules.remove((Memory)c);
+    public void remove(Object c) {
+        memoryModules.remove(c);
     }
 
     @Override
@@ -29,8 +29,8 @@ public class MemoryModules implements Component {
     }
 
     @Override
-    public Component extract(int x) {
-        return (Component)memoryModules.get(x);
+    public Memory extract(int x) {
+        return memoryModules.get(x);
     }
 
     @Override

@@ -61,11 +61,11 @@ public class Gaming extends  PC implements PC_Build {
     }
     @Override
     public Case addCase(Cases cases) {
-        Case selectedCase= (Case) cases.extract(0);
+        Case selectedCase= cases.extract(0);
         int i=0;
         while( i<cases.size()) {
             //  if(i> cases.size()){break;}
-            Case comparisonCase= (Case) cases.extract(i);
+            Case comparisonCase= cases.extract(i);
             if(selectedCase.getPrice()< comparisonCase.getPrice()){
                 selectedCase=comparisonCase;
             }
@@ -91,11 +91,11 @@ public class Gaming extends  PC implements PC_Build {
 
     @Override
     public GPUs addGPUs(GPUs gpus) {
-        GPU selectedGPU= (GPU) gpus.extract(0);
+        GPU selectedGPU= gpus.extract(0);
         int i=1;
         while( i< gpus.size()) {
 
-            GPU comparisonGPU= (GPU) gpus.extract(i);
+            GPU comparisonGPU= gpus.extract(i);
             if(selectedGPU.getClockSpeed()< comparisonGPU.getClockSpeed()){
                 selectedGPU=comparisonGPU;
             }
@@ -103,16 +103,16 @@ public class Gaming extends  PC implements PC_Build {
         }
 
         GPUs chosengpus=new GPUs();
-        chosengpus.add((Component) selectedGPU);
+        chosengpus.add(selectedGPU);
         return chosengpus;
     }
 
     public MemoryModules addRam(MemoryModules memories) {
-        Memory selectedMemory= (Memory) memories.extract(0);
+        Memory selectedMemory= memories.extract(0);
         int i=1;
         while( i< memories.size()) {
 
-            Memory comparisonMemory= (Memory) memories.extract(i);
+            Memory comparisonMemory= memories.extract(i);
             if(selectedMemory.getSize()< comparisonMemory.getSize()){
                 selectedMemory=comparisonMemory;
             }
@@ -120,36 +120,36 @@ public class Gaming extends  PC implements PC_Build {
         }
 
         MemoryModules chosenmemories=new MemoryModules();
-        chosenmemories.add((Component)selectedMemory );
-        chosenmemories.add((Component)selectedMemory );
+        chosenmemories.add(selectedMemory );
+        chosenmemories.add(selectedMemory );
         return chosenmemories;
     }
 
 
     @Override
     public StorageComponents addStorage(StorageComponents disks) {
-        Storage selectedStorage= (Storage) disks.extract(0);
+        Storage selectedStorage= disks.extract(0);
         int i=1;
         while( i< disks.size()) {
 
-            Storage comparisonStorage= (Storage) disks.extract(i);
+            Storage comparisonStorage= disks.extract(i);
             if(selectedStorage.getStorageSize()< comparisonStorage.getStorageSize()){
                 selectedStorage=comparisonStorage;
             }
             i++;
         }
         StorageComponents chosenStorgage=new StorageComponents();
-        chosenStorgage.add((Component) selectedStorage);
+        chosenStorgage.add(selectedStorage);
         return chosenStorgage;
     }
 
     @Override
     public PSU addPSU(PSUs psUs) {
-        PSU selectedPSU= (PSU) psUs.extract(0);
+        PSU selectedPSU= psUs.extract(0);
         int i=1;
         while( i< psUs.size()) {
 
-            PSU comparisonPSU= (PSU) psUs.extract(i);
+            PSU comparisonPSU= psUs.extract(i);
             if(selectedPSU.getWattage()< comparisonPSU.getWattage()){
                 selectedPSU=comparisonPSU;
             }
@@ -163,18 +163,18 @@ public class Gaming extends  PC implements PC_Build {
         Motherboards filteredMotherboards = new Motherboards();
         int i = 0;
         while( i < motherboards.size()) {
-            Motherboard temp = (Motherboard)motherboards.extract(i);
+            Motherboard temp = motherboards.extract(i);
             if (temp.getSocket().equals(cpu.getSocket())) {
-                filteredMotherboards.add((Component) temp);
+                filteredMotherboards.add(temp);
             }
             i++;
         }
         int j = 0;
 
         System.out.println(filteredMotherboards.size());
-        Motherboard selectedMotherboard = (Motherboard) filteredMotherboards.extract(0);
+        Motherboard selectedMotherboard = filteredMotherboards.extract(0);
         while (j < filteredMotherboards.size()) {
-            Motherboard comparisonMotherboard = (Motherboard) filteredMotherboards.extract(j);
+            Motherboard comparisonMotherboard = filteredMotherboards.extract(j);
             if (selectedMotherboard.getPrice() < comparisonMotherboard.getPrice()) {
                 selectedMotherboard = comparisonMotherboard;
             }

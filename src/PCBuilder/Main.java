@@ -59,30 +59,28 @@ public class Main {
 
                 switch (fields[0]) {
                     case "Case":
-
-                        cases.add( (Component)new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
+                        cases.add(new Case(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[10])));
                         break;
                     case "CPU":
-                        cpus.add((Component)new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
-                        //   components.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), Integer.parseInt(fields[7]), fields[8]));
+                        cpus.add(new CPU(serialNumber, type, price, wattage, brand, Double.parseDouble(fields[6]), fields[8]));
                         break;
                     case "Fan":
-                        fans.add((Component)new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
+                        fans.add(new Fan(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6])));
                         break;
                     case "Graphics":
-                        gpus.add((Component)new GPU(serialNumber, type, brand, price, wattage, Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
+                        gpus.add(new GPU(serialNumber, type, brand, price, wattage, Double.parseDouble(fields[6]), Integer.parseInt(fields[7])));
                         break;
                     case "RAM":
-                        memoryModules.add((Component)new Memory(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6]), Integer.parseInt(fields[7])));
+                        memoryModules.add(new Memory(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[6]), Integer.parseInt(fields[7])));
                         break;
                     case "MotherBoard":
-                        motherboards.add((Component)new Motherboard(serialNumber, type, brand, price, wattage, fields[6], Integer.parseInt(fields[8])));
+                        motherboards.add(new Motherboard(serialNumber, type, brand, price, wattage, fields[6], Integer.parseInt(fields[8])));
                         break;
                     case "PowerSupply":
-                        psus.add((Component)new PSU(serialNumber, type, brand, price, wattage));
+                        psus.add(new PSU(serialNumber, type, brand, price, wattage));
                         break;
                     case "Storage":
-                        storageComponents.add((Component)new Storage(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[7])));
+                        storageComponents.add(new Storage(serialNumber, type, brand, price, wattage, Integer.parseInt(fields[7])));
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + fields[0]);

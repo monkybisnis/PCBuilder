@@ -9,17 +9,17 @@ public class CPUs implements Component  {
     private List<CPU> CPUs;
 
     public CPUs() {
-        this.CPUs = new ArrayList<CPU>();
+        this.CPUs = new ArrayList<>();
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         CPUs.add((CPU)c);
     }
 
     @Override
-    public void remove(Component c) {
-        CPUs.remove((CPU)c);
+    public void remove(Object c) {
+        CPUs.remove(c);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class CPUs implements Component  {
     }
 
     @Override
-    public Component extract(int x) {
-        return (Component)CPUs.get(x);
+    public CPU extract(int x) {
+        return CPUs.get(x);
     }
 
     @Override

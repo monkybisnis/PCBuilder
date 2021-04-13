@@ -9,17 +9,17 @@ public class StorageComponents implements Component {
     private List<Storage> StorageComponents;
 
     public StorageComponents() {
-        this.StorageComponents = new ArrayList<Storage>();
+        this.StorageComponents = new ArrayList<>();
     }
 
     @Override
-    public void add(Component c) {
+    public void add(Object c) {
         StorageComponents.add((Storage)c);
     }
 
     @Override
-    public void remove(Component c) {
-        StorageComponents.remove((Storage)c);
+    public void remove(Object c) {
+        StorageComponents.remove(c);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class StorageComponents implements Component {
     }
 
     @Override
-    public Component extract(int x){
-        return (Component)StorageComponents.get(x);
+    public Storage extract(int x) {
+        return StorageComponents.get(x);
     }
     @Override
     public String printDetails() {

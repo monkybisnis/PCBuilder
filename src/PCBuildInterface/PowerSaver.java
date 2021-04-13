@@ -64,11 +64,11 @@ public class PowerSaver extends PC implements PC_Build {
     }
     @Override
     public Case addCase(Cases cases) {
-        Case selectedCase = (Case)cases.extract(0);
+        Case selectedCase = cases.extract(0);
         int i=0;
         while( i<cases.size()) {
             //  if(i> cases.size()){break;}
-            Case comparisonCase= (Case)cases.extract(i);
+            Case comparisonCase= cases.extract(i);
             if(selectedCase.getWattage()> comparisonCase.getWattage()){
                 selectedCase=comparisonCase;
             }
@@ -99,46 +99,46 @@ public class PowerSaver extends PC implements PC_Build {
 
     @Override
     public MemoryModules addRam(MemoryModules memories) {
-        Memory selectedMemory= (Memory) memories.extract(0);
+        Memory selectedMemory= memories.extract(0);
         int i=1;
         while( i< memories.size()) {
 
-            Memory comparisonMemory= (Memory) memories.extract(i);
+            Memory comparisonMemory= memories.extract(i);
             if(selectedMemory.getWattage() > comparisonMemory.getWattage()){
                 selectedMemory=comparisonMemory;
             }
             i++;
         }
         MemoryModules selectedMemories= new MemoryModules();
-        selectedMemories.add((Component) selectedMemory);
+        selectedMemories.add(selectedMemory);
         return selectedMemories;
     }
 
 
     @Override
     public StorageComponents addStorage(StorageComponents disks) {
-        Storage selectedStorage= (Storage)disks.extract(0);
+        Storage selectedStorage= disks.extract(0);
         int i=1;
         while( i< disks.size()) {
 
-            Storage comparisonStorage= (Storage)disks.extract(i);
+            Storage comparisonStorage= disks.extract(i);
             if(selectedStorage.getWattage()> comparisonStorage.getWattage()){
                 selectedStorage=comparisonStorage;
             }
             i++;
         }
         StorageComponents selectedComponents = new StorageComponents();
-        selectedComponents.add((Component)selectedStorage);
+        selectedComponents.add(selectedStorage);
         return selectedComponents;
     }
 
     @Override
     public PSU addPSU(PSUs psUs) {
-        PSU selectedPSU= (PSU)psUs.extract(0);
+        PSU selectedPSU= psUs.extract(0);
         int i=1;
         while( i< psUs.size()) {
 
-            PSU comparisonPSU= (PSU)psUs.extract(i);
+            PSU comparisonPSU= psUs.extract(i);
             if(selectedPSU.getWattage()> comparisonPSU.getWattage()){
                 selectedPSU=comparisonPSU;
             }
@@ -152,7 +152,7 @@ public class PowerSaver extends PC implements PC_Build {
         Motherboards filteredMotherboards = new Motherboards();
         int i = 0;
         while( i < motherboards.size()) {
-            Motherboard m = (Motherboard)motherboards.extract(i);
+            Motherboard m = motherboards.extract(i);
             if (m.getSocket().equals(cpu.getSocket())) {
                 filteredMotherboards.add(motherboards.extract(i));
             }
@@ -161,9 +161,9 @@ public class PowerSaver extends PC implements PC_Build {
         int j = 0;
 
         System.out.println(filteredMotherboards.size());
-        Motherboard selectedMotherboard = (Motherboard)filteredMotherboards.extract(0);
+        Motherboard selectedMotherboard = filteredMotherboards.extract(0);
         while (j < filteredMotherboards.size()) {
-            Motherboard comparisonMotherboard = (Motherboard)filteredMotherboards.extract(j);
+            Motherboard comparisonMotherboard = filteredMotherboards.extract(j);
             if (selectedMotherboard.getWattage() > comparisonMotherboard.getWattage()) {
                 selectedMotherboard = comparisonMotherboard;
             }
