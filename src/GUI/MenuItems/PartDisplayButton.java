@@ -4,11 +4,14 @@ import Components.*;
 import Components.Part.Case;
 import Components.Part.Part;
 import GUI.Command;
+import javafx.event.EventHandler;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -19,6 +22,7 @@ public class PartDisplayButton extends MenuItem implements Command {
     private Component component;
     private Stage stage;
     private FlowPane partsPane;
+    private int id;
 
     public PartDisplayButton(String label, Stage stage, FlowPane partsPane, Component component) {
         super(label);
@@ -28,6 +32,13 @@ public class PartDisplayButton extends MenuItem implements Command {
         this.setOnAction(event -> this.execute());
     }
 
+    private void setClickEvent(Label label, Part c) {
+        ContextMenu contextMenu = new ContextMenu();
+        ItemActionButton item = new ItemActionButton("Add to Cart", c);
+        contextMenu.getItems().addAll(item);
+        label.setOnContextMenuRequested(event -> contextMenu.show(label, event.getScreenX(), event.getScreenY()));
+    }
+
     private void displayParts() {
         partsPane.getChildren().clear();
         for (int i = 0; i < component.size(); i++) {
@@ -35,12 +46,7 @@ public class PartDisplayButton extends MenuItem implements Command {
             String display = c.toString();
             String path = "/resources/" + c.getIcon();
             Label label = new Label(display, new ImageView(new Image(path)));
-            label.setId("ID: " + i);
-            label.setOnMouseClicked(event -> {
-
-            });
-            //label.setPrefWidth(200);
-            //label.setPrefHeight(200);
+            label.setOnMouseClicked(event -> setClickEvent((Label)event.getSource(), c));
             label.setContentDisplay(ContentDisplay.TOP);
             label.setTextFill(Color.BLACK);
             partsPane.getChildren().add(label);
@@ -50,23 +56,5 @@ public class PartDisplayButton extends MenuItem implements Command {
     @Override
     public void execute() {
         displayParts();
-        /*
-        if (component instanceof Cases) {
-            displayParts();
-        } else if (component instanceof CPUs) {
-            System.out.println("CPUs");
-        } else if (component instanceof GPUs) {
-            System.out.println("GPUs");
-        } else if (component instanceof MemoryModules) {
-            System.out.println("MemoryModules");
-        } else if (component instanceof Motherboards) {
-            System.out.println("Motherboards");
-        } else if (component instanceof PSUs) {
-            System.out.println("PSUs");
-        } else if (component instanceof StorageComponents) {
-            System.out.println("StorageComponents");
-        }
-
-         */
     }
 }
