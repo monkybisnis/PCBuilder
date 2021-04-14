@@ -1,5 +1,7 @@
 package Components;
 
+import PCBuilder.PC;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,4 +42,5 @@ public class Components implements Component {
     public String printDetails() {
          return "";
     }
+
 }

@@ -1,20 +1,22 @@
 package Components.Part;
 
-import Components.Component;
-
 public abstract class Part {
    String serialNumber;
    String Type;
    double price;
    double wattage;
    String brand;
+   String icon;
 
-   public Part(String serialNumber, String Type, double price, double wattage, String brand) {
+   public Part() {}
+
+   public Part(String serialNumber, String Type, double price, double wattage, String brand, String icon) {
       this.serialNumber = serialNumber;
       this.Type = Type;
       this.price = price;
       this.wattage = wattage;
       this.brand = brand;
+      this.icon = icon;
    }
 
    public String getSerialNumber()
@@ -37,6 +39,10 @@ public abstract class Part {
 
    public double getPrice() {
       return price;
+   }
+
+   public String getIcon() {
+      return icon;
    }
 
    public void setPrice(double price) {

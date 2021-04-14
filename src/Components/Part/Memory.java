@@ -1,13 +1,14 @@
 package Components.Part;
 
-import Components.Component;
 
 public class Memory extends Part  {
     private int speed;
     private int size;
 
-    public Memory(String serial, String type, String brand, double price, double wattage, int speed, int size){
-        super(serial,type,price,wattage,brand);
+    public Memory(){}
+
+    public Memory(String serial, String type, String brand, double price, double wattage, int speed, int size, String icon){
+        super(serial,type,price,wattage,brand, icon);
 
         this.speed = speed;
         this.size = size;
@@ -31,7 +32,6 @@ public class Memory extends Part  {
 
     @Override
     public String toString() {
-        return "Storage details:\n Name: +"+serialNumber+ "\n Type : "+ Type +"\n Brand : "+ brand+ "\n Size : "+ size+"\n ClockSpeed : "+ speed+"\n Power Consumption : "+wattage+
-                "\n Price : "+ price ;
+        return String.format("Memory details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\n", serialNumber, Type, brand, price, wattage);
     }
 }

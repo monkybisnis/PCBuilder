@@ -2,10 +2,11 @@ package Components;
 
 import Components.Part.Motherboard;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Motherboards implements Component {
+public class Motherboards implements Component, Serializable {
     private List<Motherboard> motherboards;
 
     public Motherboards() {

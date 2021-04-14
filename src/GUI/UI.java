@@ -1,5 +1,10 @@
 package GUI;
 
+import Components.Components;
+import Components.Part.Part;
+import GUI.MenuItems.AutoBuildButton;
+import GUI.MenuItems.ExitButton;
+import GUI.MenuItems.PartDisplayButton;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -11,33 +16,46 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class UI extends Application {
+    static private Components components;
+
     private Stage stage;
 
     private FlowPane mainPane;
-    private FlowPane partsPane;
+    private FlowPane partsPane = new FlowPane();
     private FlowPane cartPane;
+
+    private void displayParts() {
+
+    }
 
     private void displayUI() {
         Menu file = new Menu("File");
         Menu view = new Menu("View");
+        Menu build = new Menu("Build");
 
-        MenuItem f1 = new MenuItem("Exit");
+        ExitButton f1 = new ExitButton("Exit");
 
-        MenuItem v1 = new MenuItem("Cases");
-        MenuItem v2 = new MenuItem("CPUs");
-        MenuItem v3 = new MenuItem("GPUs");
-        MenuItem v4 = new MenuItem("Memory Modules");
-        MenuItem v5 = new MenuItem("Motherboards");
-        MenuItem v6 = new MenuItem("PSUs");
-        MenuItem v7 = new MenuItem("Storage Components");
+        PartDisplayButton v1 = new PartDisplayButton("Cases", stage, partsPane, components.extract(0));
+        PartDisplayButton v2 = new PartDisplayButton("CPUs", stage, partsPane, components.extract(1));
+        PartDisplayButton v3 = new PartDisplayButton("GPUs", stage, partsPane, components.extract(2));
+        PartDisplayButton v4 = new PartDisplayButton("Memory Modules", stage, partsPane, components.extract(3));
+        PartDisplayButton v5 = new PartDisplayButton("Motherboards", stage, partsPane, components.extract(4));
+        PartDisplayButton v6 = new PartDisplayButton("PSUs", stage, partsPane, components.extract(5));
+        PartDisplayButton v7 = new PartDisplayButton("Storage Components", stage, partsPane, components.extract(6));
+
+        AutoBuildButton b1 = new AutoBuildButton("Auto Build Optimized Budget PC");
+        AutoBuildButton b2 = new AutoBuildButton("Auto Build Optimized Gaming PC");
+        AutoBuildButton b3 = new AutoBuildButton("Auto Build Optimized PowerSaver PC");
 
         file.getItems().addAll(f1);
         view.getItems().addAll(v1, v2, v3, v4, v5, v6, v7);
+        build.getItems().addAll(b1, b2, b3);
         MenuBar mb = new MenuBar();
-        mb.getMenus().addAll(file, view);
+        mb.getMenus().addAll(file, view, build);
         VBox menuVb = new VBox(mb);
-
 
         mainPane = new FlowPane();
         mainPane.setPadding(new Insets(10, 10, 10, 10));
@@ -48,10 +66,12 @@ public class UI extends Application {
 
         mainPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-        partsPane = new FlowPane();
         Label label = new Label("Available Parts:");
         label.setTextFill(Color.color(0, 0, 0));
         partsPane.setPrefSize(800, 700);
+
+        partsPane.setPadding(new Insets(5, 5, 5, 5));
+
         partsPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         VBox v = new VBox();
         v.setPadding(new Insets(10, 10, 10, 10));
@@ -85,7 +105,8 @@ public class UI extends Application {
         displayUI();
     }
 
-    public static void run() {
+    public static void run(Components components) {
+        UI.components = components;
         launch("");
     }
 }

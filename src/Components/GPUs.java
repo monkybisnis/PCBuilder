@@ -1,14 +1,12 @@
 package Components;
 
-import Components.Part.CPU;
 import Components.Part.GPU;
-import Components.Part.Motherboard;
-import Components.Part.Storage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GPUs implements Component {
+public class GPUs implements Component, Serializable {
     private List<GPU> GPUs;
     public GPUs() {
         this.GPUs = new ArrayList<>();

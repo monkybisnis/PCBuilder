@@ -1,14 +1,16 @@
 package Components.Part;
 
 
-import Components.Component;
+
 
 public class Motherboard extends Part {
     private String Socket;
     private int RamSlots;
 
-    public Motherboard(String serial, String type,String brand, double price,double Wattage,String Socket,int  RAMSlots) {
-        super(serial,type ,price,Wattage,brand);
+    public Motherboard(){}
+
+    public Motherboard(String serial, String type,String brand, double price,double Wattage,String Socket,int RAMSlots, String icon) {
+        super(serial,type ,price,Wattage,brand, icon);
 
         this.Socket=Socket;
     }
@@ -19,8 +21,6 @@ public class Motherboard extends Part {
 
     @Override
     public String toString() {
-
-        return "Storage details:\n Name: "+ serialNumber+ "\n Type : "+ Type +"\n Socket : %d"+ brand+"\n Brand : %d"+ Socket+ "\n Power Consumption : "+wattage+
-                "\n Price : "+ price ;
+        return String.format("Motherboard details:\nSerial number: %s\nType: %s\nBrand: %s\nPrice: %f\nWattage: %f\nSocket: %s\n", serialNumber, Type, brand, price, wattage, Socket);
     }
 }

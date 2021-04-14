@@ -2,10 +2,11 @@ package Components;
 
 import Components.Part.Storage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StorageComponents implements Component {
+public class StorageComponents implements Component, Serializable {
     private List<Storage> StorageComponents;
 
     public StorageComponents() {

@@ -31,10 +31,10 @@ public class LoginService {
             String [] parts = line.split(",");
 
             if(name.equals(parts[0]) && password.equals(parts[1])){
-                cart = new Cart();
                 int points =Integer.parseInt(parts[2]);
                 customer = new Customer(name, password, points, cart);
                 customer.updateState();
+                cart = new Cart(customer);
                 currentCustomer = customer;
                 found = true;
                 break;

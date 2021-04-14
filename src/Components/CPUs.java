@@ -2,10 +2,11 @@ package Components;
 
 import Components.Part.CPU;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPUs implements Component  {
+public class CPUs implements Component, Serializable {
     private List<CPU> CPUs;
 
     public CPUs() {
