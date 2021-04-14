@@ -17,7 +17,7 @@ class CustomerTest {
 
     @BeforeEach
     void setUp() {
-        customer = new Customer("joe");
+        //customer = new Customer("joe");
     }
 
     @Test

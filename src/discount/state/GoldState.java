@@ -5,4 +5,9 @@ public class GoldState implements State {
     public double calculateDiscount(double cost){
         return cost*discount;
     }
+
+    @Override
+    public String toString() {
+        return "Gold";
+    }
 }

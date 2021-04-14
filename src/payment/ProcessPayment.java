@@ -11,7 +11,7 @@ public class ProcessPayment {
 
 
     public void processPayment(double amount){
-
+/*
         Customer customer = new Customer("joe");
 
         Strategy saleStrategy = new SaleStrategy();
@@ -20,6 +20,8 @@ public class ProcessPayment {
         Payment payment = new StagedPayment();
         payment.setPaymentImplementor(new PaypalImplementor());
         payment.payForPC(realPrice);
+
+ */
 
     }
 

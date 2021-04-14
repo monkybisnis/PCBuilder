@@ -18,6 +18,12 @@ public class LoginService {
     // for incorrect login return null
     // for correct login return a customer object
     // and set the value of the static variable currentCustomer to this customer Object.
+    public static Customer login() {
+        cart = new Cart();
+        currentCustomer = new Customer("Guest", cart);
+        return currentCustomer;
+    }
+
     public static Customer login(String name, String password){
         FileInputStream f = null;
         try {
