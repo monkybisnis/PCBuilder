@@ -37,7 +37,7 @@ public class UI extends Application {
         Menu build = new Menu("Build");
 
         ExitButton f1 = new ExitButton("Exit");
-        LoginButton f2 = new LoginButton("Log in");
+        LoginButton f2 = new LoginButton("Log in", stage);
 
         PartDisplayButton v1 = new PartDisplayButton("Cases", stage, partsPane, components.extract(0));
         PartDisplayButton v2 = new PartDisplayButton("CPUs", stage, partsPane, components.extract(1));
