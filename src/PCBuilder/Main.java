@@ -109,7 +109,7 @@ public class Main {
 
  */
 
-        Customer c = LoginService.login("joe", "1234");
+        LoginService.login();
         UI.run(components);
     }
 }

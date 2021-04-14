@@ -9,7 +9,6 @@ import discount.strategy.Strategy;
 import java.text.DecimalFormat;
 
 public class Customer {
-
     String name;
     String password;
     State state;
@@ -24,10 +23,11 @@ public class Customer {
         this.points = 0;
     }
     //customer starts out as bronze
-    public Customer(String name){
+    public Customer(String name, Cart cart) {
         this.name = name;
         this.state = new BronzeState();
         this.points = 0;
+        this.cart = cart;
     }
 
     public Cart getCart() {
