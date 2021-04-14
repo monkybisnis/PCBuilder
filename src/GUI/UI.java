@@ -8,10 +8,8 @@ import GUI.MenuItems.PartDisplayButton;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -23,9 +21,9 @@ public class UI extends Application {
 
     private Stage stage;
 
-    private FlowPane mainPane;
+    private HBox mainPane;
     private FlowPane partsPane = new FlowPane();
-    private FlowPane cartPane;
+    private VBox cartPane = new VBox();
 
     private void displayParts() {
 
@@ -57,42 +55,61 @@ public class UI extends Application {
         mb.getMenus().addAll(file, view, build);
         VBox menuVb = new VBox(mb);
 
-        mainPane = new FlowPane();
+        mainPane = new HBox();
         mainPane.setPadding(new Insets(10, 10, 10, 10));
-        mainPane.setVgap(35);
-        mainPane.setHgap(50);
-        mainPane.setPrefSize(1200, 800);
-        mainPane.setBackground(new Background(new BackgroundFill(Color.GREY, CornerRadii.EMPTY, Insets.EMPTY)));
+        mainPane.setPrefSize(1200, 700);
+        mainPane.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
 
         mainPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         Label label = new Label("Available Parts:");
-        label.setTextFill(Color.color(0, 0, 0));
+        label.setTextFill(Color.WHITE);
         partsPane.setPrefSize(800, 700);
-
         partsPane.setPadding(new Insets(5, 5, 5, 5));
+        partsPane.setBackground(new Background(new BackgroundFill(Color.rgb(22, 9, 23), CornerRadii.EMPTY, Insets.EMPTY)));
 
-        partsPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+        ScrollPane sPartsPane = new ScrollPane();
+        sPartsPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        sPartsPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        sPartsPane.setContent(partsPane);
+
         VBox v = new VBox();
         v.setPadding(new Insets(10, 10, 10, 10));
-        v.getChildren().addAll(label, partsPane);
+        v.getChildren().addAll(label, sPartsPane);
+
         mainPane.getChildren().add(v);
 
-        cartPane = new FlowPane();
         label = new Label("Cart:");
-        label.setTextFill(Color.color(0, 0, 0));
+        label.setTextFill(Color.WHITE);
+
         cartPane.setPrefSize(280, 700);
-        cartPane.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+        cartPane.setBackground(new Background(new BackgroundFill(Color.rgb(22, 9, 23), CornerRadii.EMPTY, Insets.EMPTY)));
+
+        ScrollPane sCartPane = new ScrollPane();
+        sCartPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        sCartPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        sCartPane.setContent(cartPane);
+
         v = new VBox();
         v.setPadding(new Insets(10, 10, 10, 10));
-        v.getChildren().addAll(label, cartPane);
+        v.getChildren().addAll(label, sCartPane);
+
         mainPane.getChildren().add(v);
+
+        /*
+        ScrollPane sMainPane = new ScrollPane();
+        sMainPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        sMainPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        sMainPane.setStyle("-fx-background: rgb(255,255,255);\n -fx-background-color: rgb(255,255,255)");
+        sMainPane.setContent(mainPane);
+        */
 
         VBox split = new VBox();
         split.getChildren().addAll(menuVb, mainPane);
 
-        Scene scene = new Scene(split, 1200, 800);
+        Scene scene = new Scene(split, 1200, 700);
 
+        stage.getIcons().add(new Image("/resources/case.png"));
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

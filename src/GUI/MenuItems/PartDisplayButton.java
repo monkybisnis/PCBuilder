@@ -48,7 +48,7 @@ public class PartDisplayButton extends MenuItem implements Command {
             Label label = new Label(display, new ImageView(new Image(path)));
             label.setOnMouseClicked(event -> setClickEvent((Label)event.getSource(), c));
             label.setContentDisplay(ContentDisplay.TOP);
-            label.setTextFill(Color.BLACK);
+            label.setTextFill(Color.WHITE);
             partsPane.getChildren().add(label);
         }
     }
