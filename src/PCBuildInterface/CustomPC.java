@@ -86,8 +86,8 @@ public class CustomPC extends PC implements PC_Build {
     public CPU addCPU(CPUs cpus) {
         CPU selectedCPU = cpus.extract(0);
 
-        for(int i=1 ;i< cpus.size(); i++){
-            CPU comparisonCPU= cpus.extract(i);
+        for(int i =1; i< cpus.size(); i++){
+            CPU comparisonCPU = cpus.extract(i);
 
             if(selectedCPU.getPrice()> comparisonCPU.getPrice()){
                 selectedCPU = comparisonCPU;
@@ -102,39 +102,105 @@ public class CustomPC extends PC implements PC_Build {
      */
     @Override
     public GPUs addGPUs(GPUs gpus) {
-        GPUs chosenGpuS=new GPUs();
+        GPUs chosenGpuS = new GPUs();
         GPU selectedGPU = gpus.extract(0);
 
-        for(int i=1 ;i< gpus.size(); i++){
-            GPU comparisonGPU= gpus.extract(i);
+        for(int i =1; i < gpus.size(); i++){
+            GPU comparisonGPU = gpus.extract(i);
 
             if(selectedGPU.getClockSpeed() < comparisonGPU.getClockSpeed()){
-                selectedGPU=comparisonGPU;
+                selectedGPU = comparisonGPU;
                 chosenGpuS.add(selectedGPU);
             }
         }
         return chosenGpuS;
     }
 
-    // TODO: progress from this line
 
+    /**
+     * @param memories
+     * @return
+     */
     @Override
     public MemoryModules addRam(MemoryModules memories) {
-        return null;
+
+        Memory selectedMemory = memories.extract(0);
+        MemoryModules chosenMemories = new MemoryModules();
+        for(int i =1; i < memories.size(); i++) {
+            Memory comparisonMemory = memories.extract(i);
+            if(selectedMemory.getSize() < comparisonMemory.getSize()){
+                selectedMemory = comparisonMemory;
+                chosenMemories.add(selectedMemory);
+            }
+        }
+        return chosenMemories;
     }
 
+    /**
+     * @param disks
+     * @return
+     */
     @Override
     public StorageComponents addStorage(StorageComponents disks) {
-        return null;
+
+        Storage selectedStorage = disks.extract(0);
+        StorageComponents chosenStorage=new StorageComponents();
+        for (int i =1; i < disks.size(); i++) {
+
+            Storage comparisonStorage= disks.extract(i);
+            if(selectedStorage.getStorageSize()< comparisonStorage.getStorageSize()){
+                selectedStorage = comparisonStorage;
+            }
+        }
+
+        chosenStorage.add(selectedStorage);
+        return chosenStorage;
     }
 
+    /**
+     * @param psuS
+     * @return
+     */
     @Override
-    public PSU addPSU(PSUs psUs) {
-        return null;
+    public PSU addPSU(PSUs psuS) {
+        PSU selectedPSU = psuS.extract(0);
+
+        for(int i =1; i < psuS.size(); i++) {
+
+            PSU comparisonPSU = psuS.extract(i);
+            if(selectedPSU.getWattage()< comparisonPSU.getWattage()){
+                selectedPSU=comparisonPSU;
+            }
+        }
+        return selectedPSU;
     }
 
+    /**
+     * @param motherboards
+     * @param cpu
+     * @return
+     */
     @Override
     public Motherboard addMotherBoard(Motherboards motherboards, CPU cpu) {
-        return null;
+        Motherboards filteredMotherboards = new Motherboards();
+
+        for(int i = 0; i < motherboards.size(); i++) {
+            Motherboard temp = motherboards.extract(i);
+            if (temp.getSocket().equals(cpu.getSocket())) {
+                filteredMotherboards.add(temp);
+            }
+        }
+
+        System.out.println(filteredMotherboards.size());
+
+        Motherboard selectedMotherboard = filteredMotherboards.extract(0);
+
+        for(int j = 0; j < filteredMotherboards.size(); j++) {
+            Motherboard comparisonMotherboard = filteredMotherboards.extract(j);
+            if (selectedMotherboard.getPrice() < comparisonMotherboard.getPrice()) {
+                selectedMotherboard = comparisonMotherboard;
+            }
+        }
+        return selectedMotherboard;
     }
 }
