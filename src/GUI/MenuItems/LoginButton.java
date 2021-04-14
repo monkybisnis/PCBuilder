@@ -33,6 +33,7 @@ public class LoginButton extends MenuItem implements Command {
         dialog.getDialogPane().getButtonTypes().addAll(loginButtonType, ButtonType.CANCEL);
 
         VBox vBox = new VBox();
+        vBox.setSpacing(10);
         TextField userName = new TextField();
         userName.setPromptText("Username");
         PasswordField password = new PasswordField();
