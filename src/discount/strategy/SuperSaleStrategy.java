@@ -4,17 +4,17 @@ import discount.Customer;
 
 public class SuperSaleStrategy implements Strategy {
 
-
+    private int MAX = 4000;
     @Override
     public double calculateStrategyDiscount(double cost, Customer customer) {
 
         int points = 0;
         //can can only cash in 4000 points
-        if(customer.getPoints() < 4000){
+        if(customer.getPoints() < MAX){
             points = customer.getPoints();
         }
         else{
-            points = 4000;
+            points = MAX;
         }
 
         customer.deductPoints(points);

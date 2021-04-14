@@ -2,7 +2,9 @@ package GUI.MenuItems;
 
 import Components.Part.Part;
 import GUI.Command;
+import discount.Cart;
 import javafx.scene.control.MenuItem;
+import loginService.LoginService;
 
 public class ItemActionButton extends MenuItem implements Command {
     private Part item;
@@ -17,6 +19,7 @@ public class ItemActionButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
-        System.out.println(item.toString());
+        Cart cart = LoginService.currentCustomer.getCart();
+        cart.addItem(item);
     }
 }

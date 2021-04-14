@@ -3,8 +3,10 @@ package PCBuilder;
 import Components.*;
 import Components.Part.*;
 import GUI.UI;
+import discount.Customer;
+import loginService.LoginService;
 
-import java.io.*;
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -106,6 +108,8 @@ public class Main {
         new Menu();
 
  */
+
+        Customer c = LoginService.login("joe", "1234");
         UI.run(components);
     }
 }

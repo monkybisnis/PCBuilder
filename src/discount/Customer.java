@@ -30,6 +30,14 @@ public class Customer {
         this.points = 0;
     }
 
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
     public Customer(String name, String password, int points, Cart cart) {
         this.name = name;
         this.password = password;

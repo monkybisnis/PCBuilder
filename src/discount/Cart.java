@@ -109,4 +109,10 @@ public class Cart {
             e.printStackTrace();
         }
     }
+    public void printParts(){
+        System.out.println("Content of the cart");
+        for(Part p : parts){
+            System.out.println(p.toString());
+        }
+    }
 }

@@ -1,15 +1,12 @@
 package Components;
-
-import PCBuilder.PC;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Components implements Component {
     public List<Component> components;
 
-    public Components() {
-        this.components = new ArrayList<>();
+    public Components(){
+     this.components = new ArrayList<>();
     }
 
     public void addComponents(Component... components) {

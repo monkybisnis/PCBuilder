@@ -9,10 +9,15 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+//class  LoginService provides 3 static methods, login, logout and register
 public class LoginService {
-    static Customer currentCustomer = null;
+    public static Customer currentCustomer = null;
     static Cart cart;
 
+    // incorrect login if either name does not exist or pw does not exist
+    // for incorrect login return null
+    // for correct login return a customer object
+    // and set the value of the static variable currentCustomer to this customer Object.
     public static Customer login(String name, String password){
         FileInputStream f = null;
         try {
@@ -25,16 +30,17 @@ public class LoginService {
         Scanner scan = new Scanner(f);
         Customer customer = null;
         Boolean found = false;
-        while(scan.hasNext()){
 
+        while(scan.hasNext()){
             String line = scan.nextLine();
             String [] parts = line.split(",");
 
             if(name.equals(parts[0]) && password.equals(parts[1])){
                 int points =Integer.parseInt(parts[2]);
+                cart = new Cart();
                 customer = new Customer(name, password, points, cart);
                 customer.updateState();
-                cart = new Cart(customer);
+                cart.setCustomer(customer);
                 currentCustomer = customer;
                 found = true;
                 break;
@@ -53,6 +59,8 @@ public class LoginService {
         currentCustomer = null;
     }
 
+    // if customer with this name already exists in pw file, returns null
+    // otherwise returns customer object with name and points fields set
     public static Customer register(String name, String password){
         FileOutputStream o = null;
         FileInputStream f = null;
@@ -69,9 +77,9 @@ public class LoginService {
 
         while(scan.hasNext()){
             String line = scan.nextLine();
-            String [] parts = line.split(",");
+            String [] customerAuth = line.split(",");
 
-            if(name.equals(parts[0])){
+            if(name.equals(customerAuth[0])){
                 found = true;
                 break;
             }
@@ -91,6 +99,7 @@ public class LoginService {
             p.print("\n" + line);
             p.close();
             customer = new Customer(name, password, 0, cart);
+            currentCustomer = customer;
             return customer;
         }
     }
