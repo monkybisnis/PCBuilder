@@ -5,12 +5,12 @@ import Components.Part.*;
 import PCBuilder.PC;
 
 public class CustomPC extends PC implements PC_Build {
-    private  Cases cases = new Cases();
-    private  CPUs cpuS = new CPUs();
 
-    private  Motherboards motherboards = new Motherboards();
-    private  MemoryModules memoryModules = new MemoryModules();
-    private  StorageComponents storageComponents = new StorageComponents();
+    private Cases cases = new Cases();
+    private CPUs cpuS = new CPUs();
+    private Motherboards motherboards = new Motherboards();
+    private MemoryModules memoryModules = new MemoryModules();
+    private StorageComponents storageComponents = new StorageComponents();
     private GPUs gpus =new GPUs();
     private PSUs psuS = new PSUs();
 
@@ -48,6 +48,7 @@ public class CustomPC extends PC implements PC_Build {
 
         Case selectedCase               = addCase(cases);
         CPU selectedCPU                 = addCPU(cpuS);
+        GPUs selectedGPU                = addGPUs(gpus);
         Motherboard selectedMotherBoard = addMotherBoard(motherboards,selectedCPU);
         MemoryModules ramModule         = addRam(memoryModules);
         StorageComponents disks         = addStorage(storageComponents);
@@ -55,6 +56,7 @@ public class CustomPC extends PC implements PC_Build {
 
         setaCase(selectedCase);
         setCpu(selectedCPU);
+        setGpus(selectedGPU);
         setMemory(ramModule);
         setPsu(psu);
         setStorage(disks);
@@ -62,8 +64,10 @@ public class CustomPC extends PC implements PC_Build {
     }
 
     /**
-     * @param cases
-     * @return
+     * @param cases Accept object Cases
+     *
+     * This method add chosen case to the PC
+     * @return selected Case
      */
     @Override
     public Case addCase(Cases cases) {
@@ -79,8 +83,10 @@ public class CustomPC extends PC implements PC_Build {
     }
 
     /**
-     * @param cpus
-     * @return
+     * @param cpus Accept object CPU
+     *
+     * This method add chosen CPU to PC
+     * @return selected CPU
      */
     @Override
     public CPU addCPU(CPUs cpus) {
@@ -97,8 +103,10 @@ public class CustomPC extends PC implements PC_Build {
     }
 
     /**
-     * @param gpus
-     * @return
+     * @param gpus Accept objet GPUs
+     *
+     * This method add chosen GPU to PC
+     * @return selected GPU
      */
     @Override
     public GPUs addGPUs(GPUs gpus) {
@@ -118,8 +126,10 @@ public class CustomPC extends PC implements PC_Build {
 
 
     /**
-     * @param memories
-     * @return
+     * @param memories Accept object MemoryModules
+     *
+     * This method add chosen RAM module to PC
+     * @return selected Memories
      */
     @Override
     public MemoryModules addRam(MemoryModules memories) {
@@ -137,8 +147,10 @@ public class CustomPC extends PC implements PC_Build {
     }
 
     /**
-     * @param disks
-     * @return
+     * @param disks Accept object StorageComponents
+     *
+     * This method add chosen Disk Storage to PC
+     * @return chosen Storage disk
      */
     @Override
     public StorageComponents addStorage(StorageComponents disks) {
@@ -158,8 +170,10 @@ public class CustomPC extends PC implements PC_Build {
     }
 
     /**
-     * @param psuS
-     * @return
+     * @param psuS Accept objet PSUs
+     *
+     * This method add chosen Power Unit to PC
+     * @return chosen PSU unit object
      */
     @Override
     public PSU addPSU(PSUs psuS) {
@@ -176,9 +190,11 @@ public class CustomPC extends PC implements PC_Build {
     }
 
     /**
-     * @param motherboards
-     * @param cpu
-     * @return
+     * @param motherboards Accept object Motherboard
+     * @param cpu Accept object CPU
+     *
+     * This method add chosen Mother board depend of chosen CPU to PC
+     * @return selected Motherboard
      */
     @Override
     public Motherboard addMotherBoard(Motherboards motherboards, CPU cpu) {
@@ -191,7 +207,6 @@ public class CustomPC extends PC implements PC_Build {
             }
         }
 
-        System.out.println(filteredMotherboards.size());
 
         Motherboard selectedMotherboard = filteredMotherboards.extract(0);
 

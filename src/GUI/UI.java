@@ -99,14 +99,6 @@ public class UI extends Application {
 
         mainPane.getChildren().add(v);
 
-        /*
-        ScrollPane sMainPane = new ScrollPane();
-        sMainPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        sMainPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        sMainPane.setStyle("-fx-background: rgb(255,255,255);\n -fx-background-color: rgb(255,255,255)");
-        sMainPane.setContent(mainPane);
-        */
-
         VBox userInfo = new VBox();
         Label userName = new Label("Logged in as: " + LoginService.currentCustomer.getName());
         userName.setTextFill(Color.WHITE);
@@ -123,6 +115,7 @@ public class UI extends Application {
 
         Scene scene = new Scene(split, 1200, 700);
 
+        stage.setTitle("PC Builder");
         stage.getIcons().add(new Image("/resources/case.png"));
         stage.setScene(scene);
         stage.setResizable(false);

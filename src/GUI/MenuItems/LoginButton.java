@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -27,6 +28,10 @@ public class LoginButton extends MenuItem implements Command {
 
     public void displayLoginDialog() {
         Dialog<Pair<String, String>> dialog = new Dialog<>();
+
+        Stage st = (Stage)dialog.getDialogPane().getScene().getWindow();
+        st.getIcons().add(new Image("/resources/case.png"));
+
         dialog.setTitle("Login");
 
         ButtonType loginButtonType = new ButtonType("Log in", ButtonBar.ButtonData.OK_DONE);
