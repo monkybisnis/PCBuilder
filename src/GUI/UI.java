@@ -1,7 +1,6 @@
 package GUI;
 
 import Components.Components;
-import Components.Part.Part;
 import GUI.MenuItems.AutoBuildButton;
 import GUI.MenuItems.ExitButton;
 import GUI.MenuItems.LoginButton;
@@ -9,14 +8,15 @@ import GUI.MenuItems.PartDisplayButton;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import loginService.LoginService;
-
-import java.util.List;
 
 public class UI extends Application {
     static private Components components;
@@ -35,6 +35,7 @@ public class UI extends Application {
         Menu file = new Menu("File");
         Menu view = new Menu("View");
         Menu build = new Menu("Build");
+        Menu review = new Menu("Review");
 
         ExitButton f1 = new ExitButton("Exit");
         LoginButton f2 = new LoginButton("Log in", stage);
@@ -51,11 +52,15 @@ public class UI extends Application {
         AutoBuildButton b2 = new AutoBuildButton("Auto Build Optimized Gaming PC");
         AutoBuildButton b3 = new AutoBuildButton("Auto Build Optimized PowerSaver PC");
 
+        AutoBuildButton r1 = new AutoBuildButton("Show reviews window");
+
         file.getItems().addAll(f1, f2);
         view.getItems().addAll(v1, v2, v3, v4, v5, v6, v7);
         build.getItems().addAll(b1, b2, b3);
+        review.getItems().addAll(r1);
+
         MenuBar mb = new MenuBar();
-        mb.getMenus().addAll(file, view, build);
+        mb.getMenus().addAll(file, view, build, review);
         VBox menuVb = new VBox(mb);
 
         mainPane = new HBox();
