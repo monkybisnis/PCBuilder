@@ -2,6 +2,7 @@ package GUI.MenuItems;
 
 import GUI.Command;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ReviewButton extends MenuItem implements Command {
@@ -14,7 +15,17 @@ public class ReviewButton extends MenuItem implements Command {
     }
     @Override
     public void execute() {
-        displayLoginDialog();
+        // Stage st = (Stage)dialog.getDialogPane().getScene().getWindow();
+        // st.getIcons().add(new Image("/resources/case.png"));
+
+        // dialog.setTitle("Reviews");
+
+        VBox vBox = new VBox();
+
+        for (;;){
+
+        }
+
     }
 
 
