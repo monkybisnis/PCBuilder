@@ -31,6 +31,6 @@ public class LoginButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
-        displayLoginDialog();
+        displayLoginDialog(stage);
     }
 }
