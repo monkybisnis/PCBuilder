@@ -19,7 +19,6 @@ public class ItemActionButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
-        Cart cart = LoginService.currentCustomer.getCart();
-        cart.addItem(item);
+         AddtoCart(item);
     }
 }

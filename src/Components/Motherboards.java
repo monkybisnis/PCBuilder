@@ -1,14 +1,26 @@
 package Components;
 
 import Components.Part.Motherboard;
+import Components.Part.Part;
+import GUI.MenuItems.ItemActionButton;
+import javafx.scene.Node;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Motherboards implements Component, Serializable {
     private List<Motherboard> motherboards;
-
+    private void setClickEvent(Label label, Part c) {
+        ContextMenu contextMenu = new ContextMenu();
+        ItemActionButton item = new ItemActionButton("Add to Cart", c);
+        contextMenu.getItems().addAll(item);
+        label.setOnContextMenuRequested(event -> contextMenu.show(label, event.getScreenX(), event.getScreenY()));
+    }
     public Motherboards() {
         this.motherboards = new ArrayList<Motherboard>();
     }
@@ -32,6 +44,8 @@ public class Motherboards implements Component, Serializable {
     public Motherboard extract(int x) {
         return motherboards.get(x);
     }
+
+
 
     @Override
     public String printDetails() {

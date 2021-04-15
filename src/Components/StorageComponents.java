@@ -1,14 +1,27 @@
 package Components;
 
+import Components.Part.Part;
 import Components.Part.Storage;
+import GUI.MenuItems.ItemActionButton;
+import javafx.scene.Node;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class StorageComponents implements Component, Serializable {
     private List<Storage> StorageComponents;
 
+    private void setClickEvent(Label label, Part c) {
+        ContextMenu contextMenu = new ContextMenu();
+        ItemActionButton item = new ItemActionButton("Add to Cart", c);
+        contextMenu.getItems().addAll(item);
+        label.setOnContextMenuRequested(event -> contextMenu.show(label, event.getScreenX(), event.getScreenY()));
+    }
     public StorageComponents() {
         this.StorageComponents = new ArrayList<>();
     }
@@ -32,6 +45,9 @@ public class StorageComponents implements Component, Serializable {
     public Storage extract(int x) {
         return StorageComponents.get(x);
     }
+
+
+
     @Override
     public String printDetails() {
         return "";

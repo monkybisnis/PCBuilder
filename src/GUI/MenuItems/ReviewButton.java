@@ -17,6 +17,6 @@ public class ReviewButton extends MenuItem implements Command {
         displayLoginDialog();
     }
 
-    private void displayLoginDialog() {
+
     }
-}
+

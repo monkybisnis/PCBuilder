@@ -91,6 +91,7 @@ public class Gaming extends  PC implements PC_Build {
 
     @Override
     public GPUs addGPUs(GPUs gpus) {
+        GPUs chosengpus=new GPUs();
         GPU selectedGPU= gpus.extract(0);
         int i=1;
         while( i< gpus.size()) {
@@ -102,7 +103,7 @@ public class Gaming extends  PC implements PC_Build {
             i++;
         }
 
-        GPUs chosengpus=new GPUs();
+
         chosengpus.add(selectedGPU);
         return chosengpus;
     }

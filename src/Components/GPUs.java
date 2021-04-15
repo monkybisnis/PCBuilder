@@ -1,9 +1,16 @@
 package Components;
 
 import Components.Part.GPU;
+import Components.Part.Part;
+import GUI.MenuItems.ItemActionButton;
+import javafx.scene.Node;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class GPUs implements Component, Serializable {
@@ -11,7 +18,12 @@ public class GPUs implements Component, Serializable {
     public GPUs() {
         this.GPUs = new ArrayList<>();
     }
-
+    private void setClickEvent(Label label, Part c) {
+        ContextMenu contextMenu = new ContextMenu();
+        ItemActionButton item = new ItemActionButton("Add to Cart", c);
+        contextMenu.getItems().addAll(item);
+        label.setOnContextMenuRequested(event -> contextMenu.show(label, event.getScreenX(), event.getScreenY()));
+    }
     @Override
     public void add(Object c) {
         GPUs.add((GPU)c);
@@ -26,6 +38,8 @@ public class GPUs implements Component, Serializable {
     public GPU extract(int x) {
         return GPUs.get(x);
     }
+
+
 
     @Override
     public String printDetails() {
