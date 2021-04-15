@@ -3,6 +3,7 @@ package GUI.MenuItems;
 import Components.Component;
 import Components.Part.Part;
 import GUI.Loginpage;
+import discount.Cart;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -11,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import loginService.LoginService;
 
 import java.util.Optional;
 
@@ -19,7 +21,12 @@ public interface UIViewModel
 
 {
 
-    default void displayLoginDialog(Stage stage) {
+    default void AddtoCart(Part item){
+        Cart cart = LoginService.currentCustomer.getCart();
+        cart.addItem(item);
+    }
+
+    default void displayLoginDialog() {
 
         Loginpage login= new Loginpage();
         login.execute();
