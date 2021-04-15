@@ -5,6 +5,7 @@ import Components.Part.Case;
 import Components.Part.Part;
 import GUI.Command;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -18,10 +19,10 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
-public class PartDisplayButton extends MenuItem implements Command {
+public class PartDisplayButton  extends MenuItem implements Command  {
     private Component component;
     private Stage stage;
-    private FlowPane partsPane;
+    public FlowPane partsPane;
     private int id;
 
     public PartDisplayButton(String label, Stage stage, FlowPane partsPane, Component component) {
@@ -32,29 +33,15 @@ public class PartDisplayButton extends MenuItem implements Command {
         this.setOnAction(event -> this.execute());
     }
 
-    private void setClickEvent(Label label, Part c) {
-        ContextMenu contextMenu = new ContextMenu();
-        ItemActionButton item = new ItemActionButton("Add to Cart", c);
-        contextMenu.getItems().addAll(item);
-        label.setOnContextMenuRequested(event -> contextMenu.show(label, event.getScreenX(), event.getScreenY()));
-    }
 
-    private void displayParts() {
-        partsPane.getChildren().clear();
-        for (int i = 0; i < component.size(); i++) {
-            Part c = (Part)component.extract(i);
-            String display = c.toString();
-            String path = "/resources/" + c.getIcon();
-            Label label = new Label(display, new ImageView(new Image(path)));
-            label.setOnMouseClicked(event -> setClickEvent((Label)event.getSource(), c));
-            label.setContentDisplay(ContentDisplay.TOP);
-            label.setTextFill(Color.WHITE);
-            partsPane.getChildren().add(label);
-        }
-    }
 
     @Override
     public void execute() {
-        displayParts();
+       partsPane.getChildren().clear();
+
+       partsPane.getChildren().addAll(displayParts(component));
+
+
+
     }
 }
