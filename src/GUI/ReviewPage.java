@@ -31,6 +31,7 @@ private Stage stage;
 
 
         ButtonType reviewButtonType = new ButtonType("Save Review", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(reviewButtonType, ButtonType.CANCEL);
 
         // TODO: 2, Submission part, condition only if user is log-in
         TextArea textReviewInputArea = new TextArea();
@@ -39,9 +40,11 @@ private Stage stage;
         textReviewInputArea.setPrefHeight(250);
         textReviewInputArea.setPrefWidth(70);
         textReviewInputArea.getText();
+        Button button = new Button("Show Dialog");
 
         GridPane.setConstraints(textReviewInputArea, 0, 0); // column=0 row=0
-        userGrid.getChildren().add(textReviewInputArea);
+        GridPane.setConstraints(button, 1, 0);
+        userGrid.getChildren().addAll(textReviewInputArea);
 
 
 
