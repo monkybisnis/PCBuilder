@@ -17,6 +17,9 @@ import loginService.LoginService;
 
 
 public class UI extends Application {
+    static Label userName;
+    static Label points;
+    static Label state;
     static private Components components;
 
     private Stage stage;
@@ -103,11 +106,11 @@ public class UI extends Application {
         mainPane.getChildren().add(v);
 
         VBox userInfo = new VBox();
-        Label userName = new Label("Logged in as: " + LoginService.currentCustomer.getName());
+        userName = new Label("Logged in as: " + LoginService.currentCustomer.getName());
         userName.setTextFill(Color.WHITE);
-        Label points = new Label("Points: " + LoginService.currentCustomer.getPoints());
+        points = new Label("Points: " + LoginService.currentCustomer.getPoints());
         points.setTextFill(Color.WHITE);
-        Label state = new Label("State: " + LoginService.currentCustomer.getState().toString());
+        state = new Label("State: " + LoginService.currentCustomer.getState().toString());
         state.setTextFill(Color.WHITE);
 
         userInfo.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
