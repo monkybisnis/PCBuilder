@@ -17,6 +17,6 @@ public class ItemActionButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
-         AddtoCart(item);
+         addToCart(item);
     }
 }

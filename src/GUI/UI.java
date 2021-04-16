@@ -26,7 +26,8 @@ public class UI extends Application {
 
     private HBox mainPane;
     private FlowPane partsPane = new FlowPane();
-    private VBox cartPane = new VBox();
+//    public VBox cartPane = new VBox();
+    public static FlowPane cartPane = new FlowPane();
 
     private void displayParts() {
 
@@ -95,6 +96,7 @@ public class UI extends Application {
         cartPane.setBackground(new Background(new BackgroundFill(Color.rgb(22, 9, 23), CornerRadii.EMPTY, Insets.EMPTY)));
 
         ScrollPane sCartPane = new ScrollPane();
+        // sCartPane = new ScrollPane();
         sCartPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         sCartPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         sCartPane.setContent(cartPane);
