@@ -23,15 +23,14 @@ public interface UIViewModel
     }
 
     default void displayLoginDialog() {
-
         Loginpage login= new Loginpage();
         login.execute();
-//
-//    }
     }
 
     default void displayReviewDialog() {
-        ReviewPage review= new ReviewPage();
+        ReviewPage review = new ReviewPage();
+        /* TemporaryReviewWindow temp = new TemporaryReviewWindow();
+        temp.execute(); */
         review.execute();
     }
 
