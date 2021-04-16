@@ -1,6 +1,8 @@
 package Components.Part;
 
-public class Storage extends Part {
+import java.io.Serializable;
+
+public class Storage extends Part implements Serializable {
     //data fields
     private int storageSize;
 

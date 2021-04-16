@@ -3,6 +3,7 @@ package GUI.MenuItems;
 import Components.Part.Part;
 import GUI.Command;
 import javafx.scene.control.MenuItem;
+import loginService.LoginService;
 
 public class ItemActionButton extends MenuItem implements Command {
     private Part item;
@@ -17,6 +18,6 @@ public class ItemActionButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
-         addToCart(item);
+         LoginService.currentCustomer.getCart().addToUICart(item);
     }
 }

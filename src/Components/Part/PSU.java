@@ -1,6 +1,8 @@
 package Components.Part;
 
-public class PSU extends Part {
+import java.io.Serializable;
+
+public class PSU extends Part implements Serializable {
     //data fields
     public PSU(){}
 

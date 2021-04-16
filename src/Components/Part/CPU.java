@@ -1,9 +1,10 @@
 package Components.Part;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CPU extends Part {
+public class CPU extends Part implements Serializable {
     private double clockSpeed;
     private int cores;
     private String socket;

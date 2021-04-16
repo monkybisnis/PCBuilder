@@ -1,6 +1,8 @@
 package Components.Part;
 
-public abstract class Part {
+import java.io.Serializable;
+
+public abstract class Part implements Serializable {
    String serialNumber;
    String Type;
    double price;

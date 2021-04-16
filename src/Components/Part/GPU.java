@@ -1,6 +1,8 @@
 package Components.Part;
 
-public class GPU extends Part {
+import java.io.Serializable;
+
+public class GPU extends Part implements Serializable {
     private double clockSpeed;
     private int memory;
 

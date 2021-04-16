@@ -1,7 +1,9 @@
 package Components.Part;
 
 
-public class Memory extends Part  {
+import java.io.Serializable;
+
+public class Memory extends Part implements Serializable {
     private int speed;
     private int size;
 

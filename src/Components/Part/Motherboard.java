@@ -1,9 +1,9 @@
 package Components.Part;
 
 
+import java.io.Serializable;
 
-
-public class Motherboard extends Part {
+public class Motherboard extends Part implements Serializable {
     private String Socket;
     private int RamSlots;
 

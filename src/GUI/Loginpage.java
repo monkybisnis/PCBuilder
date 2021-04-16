@@ -1,5 +1,6 @@
 package GUI;
 
+import discount.Cart;
 import discount.Customer;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -44,6 +45,8 @@ public class Loginpage extends MenuItem {
         result.ifPresent(pair -> {
                     System.out.println("Username: " + pair.getKey() + " Password: " + pair.getValue());
                     Customer c = LoginService.login(pair.getKey(), pair.getValue());
+                    Cart cart = c.getCart();
+                    cart.loadCart();
                     System.out.println("Current Customer Name: " + LoginService.currentCustomer.getName());
                     UI.userName.setText("Logged in as "+ LoginService.currentCustomer.getName());
                     UI.points.setText("Points: "+ LoginService.currentCustomer.getPoints());

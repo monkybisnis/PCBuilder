@@ -1,7 +1,9 @@
 package Components.Part;
 
 
-public class Fan extends Part {
+import java.io.Serializable;
+
+public class Fan extends Part implements Serializable {
     private int RPMs;
 
     public Fan(){}

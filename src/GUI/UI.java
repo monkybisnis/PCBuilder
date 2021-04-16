@@ -17,9 +17,9 @@ import loginService.LoginService;
 
 
 public class UI extends Application {
-    static Label userName;
-    static Label points;
-    static Label state;
+    public static Label userName;
+    public static Label points;
+    public static Label state;
     static private Components components;
 
     private Stage stage;
@@ -41,6 +41,7 @@ public class UI extends Application {
 
         ExitButton f1 = new ExitButton("Exit");
         LoginButton f2 = new LoginButton("Log in", stage);
+        LogoutButton f3 = new LogoutButton("Log out", stage);
 
         PartDisplayButton v1 = new PartDisplayButton("Cases", stage, partsPane, components.extract(0));
         PartDisplayButton v2 = new PartDisplayButton("CPUs", stage, partsPane, components.extract(1));
@@ -56,7 +57,7 @@ public class UI extends Application {
 
         ReviewButton r1 = new ReviewButton("Show reviews window", stage);
 
-        file.getItems().addAll(f1, f2);
+        file.getItems().addAll(f1, f2, f3);
         view.getItems().addAll(v1, v2, v3, v4, v5, v6, v7);
         build.getItems().addAll(b1, b2, b3);
         review.getItems().addAll(r1);
@@ -93,6 +94,7 @@ public class UI extends Application {
         label.setTextFill(Color.WHITE);
 
         cartPane.setPrefSize(280, 700);
+        cartPane.setPadding(new Insets(5, 5, 5, 5));
         cartPane.setBackground(new Background(new BackgroundFill(Color.rgb(22, 9, 23), CornerRadii.EMPTY, Insets.EMPTY)));
 
         ScrollPane sCartPane = new ScrollPane();
