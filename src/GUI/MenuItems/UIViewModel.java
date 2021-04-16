@@ -3,22 +3,18 @@ package GUI.MenuItems;
 import Components.Component;
 import Components.Part.Part;
 import GUI.Loginpage;
+import GUI.ReviewPage;
 import discount.Cart;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.util.Pair;
 import loginService.LoginService;
 
-import java.util.Optional;
-
 public interface UIViewModel
-
-
 {
 
     default void AddtoCart(Part item){
@@ -30,10 +26,13 @@ public interface UIViewModel
 
         Loginpage login= new Loginpage();
         login.execute();
-
-
 //
 //    }
+    }
+
+    default void displayReviewDialog() {
+        ReviewPage review= new ReviewPage();
+        review.execute();
     }
 
     public default void setClickEvent(Label label, Part c) {

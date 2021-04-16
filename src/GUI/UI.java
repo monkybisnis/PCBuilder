@@ -1,10 +1,7 @@
 package GUI;
 
 import Components.Components;
-import GUI.MenuItems.AutoBuildButton;
-import GUI.MenuItems.ExitButton;
-import GUI.MenuItems.LoginButton;
-import GUI.MenuItems.PartDisplayButton;
+import GUI.MenuItems.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -17,6 +14,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import loginService.LoginService;
+
 
 public class UI extends Application {
     static private Components components;
@@ -52,7 +50,7 @@ public class UI extends Application {
         AutoBuildButton b2 = new AutoBuildButton("Auto Build Optimized Gaming PC");
         AutoBuildButton b3 = new AutoBuildButton("Auto Build Optimized PowerSaver PC");
 
-        AutoBuildButton r1 = new AutoBuildButton("Show reviews window");
+        ReviewButton r1 = new ReviewButton("Show reviews window", stage);
 
         file.getItems().addAll(f1, f2);
         view.getItems().addAll(v1, v2, v3, v4, v5, v6, v7);
