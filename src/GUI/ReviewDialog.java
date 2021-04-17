@@ -16,7 +16,7 @@ import loginService.LoginService;
 
 import java.util.Optional;
 
-public class ReviewDialog extends MenuItem {
+public class ReviewDialog {
 //private Stage stage;
 
     //Here need to add a review for an item, save to file so it can be viewed later etc

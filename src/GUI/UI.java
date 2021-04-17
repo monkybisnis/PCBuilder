@@ -4,6 +4,7 @@ import Components.Components;
 import GUI.MenuItems.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -14,6 +15,8 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import loginService.LoginService;
+
+import javax.swing.*;
 
 
 public class UI extends Application {
@@ -105,7 +108,13 @@ public class UI extends Application {
 
         v = new VBox();
         v.setPadding(new Insets(10, 10, 10, 10));
-        v.getChildren().addAll(label, sCartPane);
+
+        HBox hBox = new HBox();
+        CheckoutButton checkout = new CheckoutButton("Checkout");
+        hBox.setAlignment(Pos.BASELINE_RIGHT);
+        hBox.getChildren().add(checkout);
+
+        v.getChildren().addAll(label, sCartPane, hBox);
 
         mainPane.getChildren().add(v);
 

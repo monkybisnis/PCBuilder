@@ -2,6 +2,7 @@ package GUI.MenuItems;
 
 import Components.Component;
 import Components.Part.Part;
+import GUI.CheckoutDialog;
 import GUI.LoginDialog;
 import GUI.ReviewDialog;
 import javafx.scene.Node;
@@ -13,6 +14,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
 public interface UIViewModel {
+    default void displayCheckoutDialog() {
+        CheckoutDialog.runDialog();
+    }
+
     default void displayLoginDialog() {
         LoginDialog.runDialog();
     }

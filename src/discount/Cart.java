@@ -60,6 +60,10 @@ public class Cart {
         return price;
     }
 
+    public int getTotalItems() {
+        return parts.size();
+    }
+
     public Customer getCustomer() {
         return customer;
     }
