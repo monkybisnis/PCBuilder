@@ -1,5 +1,5 @@
 package interceptor;
 
 public interface Interceptor {
-    public boolean execute(String request) ;
+    public String execute(String request) ;
 }

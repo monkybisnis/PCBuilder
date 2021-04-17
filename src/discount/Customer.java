@@ -22,6 +22,7 @@ public class Customer {
         this.state = state;
         this.points = 0;
     }
+
     //customer starts out as bronze
     public Customer(String name, Cart cart) {
         this.name = name;
