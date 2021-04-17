@@ -7,13 +7,9 @@ import javafx.stage.Stage;
 import loginService.LoginService;
 
 public class LogoutButton extends MenuItem implements Command {
-    private Stage stage;
-
-    public LogoutButton(String label, Stage stage) {
+    public LogoutButton(String label) {
         super(label);
         this.setOnAction(event -> this.execute());
-        this.stage = stage;
-
     }
 
     @Override

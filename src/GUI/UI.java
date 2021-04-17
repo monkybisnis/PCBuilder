@@ -37,33 +37,33 @@ public class UI extends Application {
         Menu file = new Menu("File");
         Menu view = new Menu("View");
         Menu build = new Menu("Build");
-        Menu review = new Menu("Review");
+        //Menu review = new Menu("Review");
 
         ExitButton f1 = new ExitButton("Exit");
-        LoginButton f2 = new LoginButton("Log in", stage);
-        LogoutButton f3 = new LogoutButton("Log out", stage);
+        LoginButton f2 = new LoginButton("Log in");
+        LogoutButton f3 = new LogoutButton("Log out");
 
-        PartDisplayButton v1 = new PartDisplayButton("Cases", stage, partsPane, components.extract(0));
-        PartDisplayButton v2 = new PartDisplayButton("CPUs", stage, partsPane, components.extract(1));
-        PartDisplayButton v3 = new PartDisplayButton("GPUs", stage, partsPane, components.extract(2));
-        PartDisplayButton v4 = new PartDisplayButton("Memory Modules", stage, partsPane, components.extract(3));
-        PartDisplayButton v5 = new PartDisplayButton("Motherboards", stage, partsPane, components.extract(4));
-        PartDisplayButton v6 = new PartDisplayButton("PSUs", stage, partsPane, components.extract(5));
-        PartDisplayButton v7 = new PartDisplayButton("Storage Components", stage, partsPane, components.extract(6));
+        PartDisplayButton v1 = new PartDisplayButton("Cases", partsPane, components.extract(0));
+        PartDisplayButton v2 = new PartDisplayButton("CPUs", partsPane, components.extract(1));
+        PartDisplayButton v3 = new PartDisplayButton("GPUs", partsPane, components.extract(2));
+        PartDisplayButton v4 = new PartDisplayButton("Memory Modules", partsPane, components.extract(3));
+        PartDisplayButton v5 = new PartDisplayButton("Motherboards", partsPane, components.extract(4));
+        PartDisplayButton v6 = new PartDisplayButton("PSUs", partsPane, components.extract(5));
+        PartDisplayButton v7 = new PartDisplayButton("Storage Components", partsPane, components.extract(6));
 
         AutoBuildButton b1 = new AutoBuildButton("Auto Build Optimized Budget PC");
         AutoBuildButton b2 = new AutoBuildButton("Auto Build Optimized Gaming PC");
         AutoBuildButton b3 = new AutoBuildButton("Auto Build Optimized PowerSaver PC");
 
-        ReviewButton r1 = new ReviewButton("Show reviews window", stage);
+        //ReviewButton r1 = new ReviewButton("Show reviews window");
 
         file.getItems().addAll(f1, f2, f3);
         view.getItems().addAll(v1, v2, v3, v4, v5, v6, v7);
         build.getItems().addAll(b1, b2, b3);
-        review.getItems().addAll(r1);
+        //review.getItems().addAll(r1);
 
         MenuBar mb = new MenuBar();
-        mb.getMenus().addAll(file, view, build, review);
+        mb.getMenus().addAll(file, view, build);
         VBox menuVb = new VBox(mb);
 
         mainPane = new HBox();

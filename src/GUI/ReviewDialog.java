@@ -2,18 +2,52 @@ package GUI;
 
 // import javafx.scene.control.*;
 
+import discount.Cart;
+import discount.Customer;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import javafx.util.Pair;
+import loginService.LoginService;
 
-public class ReviewPage extends MenuItem {
-private Stage stage;
+import java.util.Optional;
 
+public class ReviewDialog extends MenuItem {
+//private Stage stage;
 
-    public void execute() {
+    public static void runDialog() {
+        Dialog<String> dialog = new Dialog<>();
 
+        Stage st = (Stage)dialog.getDialogPane().getScene().getWindow();
+        st.getIcons().add(new Image("/resources/case.png"));
+
+        dialog.setTitle("Review");
+
+        ButtonType reviewButtonType = new ButtonType("Place Review", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(reviewButtonType, ButtonType.CANCEL);
+
+        VBox vBox = new VBox();
+        vBox.setSpacing(10);
+        TextArea review = new TextArea();
+        review.setPromptText("Review");
+
+        vBox.getChildren().add(review);
+        dialog.getDialogPane().setContent(vBox);
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == reviewButtonType) {
+                return review.getText();
+            }
+            return null;
+        });
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(pair -> {
+                    System.out.println(pair);
+                }
+        );
+/*
         stage = new Stage();
         Dialog<String> dialog = new Dialog<>();
         // set title for the stage

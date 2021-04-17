@@ -11,11 +11,8 @@ import loginService.LoginService;
 
 import java.util.Optional;
 
-public class Loginpage extends MenuItem {
-    private Stage stage;
-
-
-    public void execute() {
+public class LoginDialog {
+    public static void runDialog() {
         Dialog<Pair<String, String>> dialog = new Dialog<>();
 
         Stage st = (Stage) dialog.getDialogPane().getScene().getWindow();
