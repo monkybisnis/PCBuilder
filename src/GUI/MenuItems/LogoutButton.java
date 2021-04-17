@@ -23,6 +23,7 @@ public class LogoutButton extends MenuItem implements Command {
         UI.points.setText("Points: 0");
         UI.state.setText("State: Bronze");
         LoginService.currentCustomer = null;
+        LoginService.login() ;
         UI.cartPane.getChildren().clear();
     }
 }

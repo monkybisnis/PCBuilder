@@ -61,9 +61,10 @@ public class LoginService {
         }
     }
 
-    public static void logout(){
-        currentCustomer = null;
-    }
+//    public static void logout(){
+//        currentCustomer = null;
+//        LoginService.login() ;
+//    }
 
     // if customer with this name already exists in pw file, returns null
     // otherwise returns customer object with name and points fields set

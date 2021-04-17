@@ -16,8 +16,10 @@ public class Dispatcher {
     }
 
     public void saveReview(String review){
+
         for (Interceptor interceptor : interceptors) {
-            interceptor.execute(review);
+            review = interceptor.execute(review);
+            System.out.println(review);
         }
         target.saveReview(review);
     }
