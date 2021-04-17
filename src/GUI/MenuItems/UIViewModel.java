@@ -17,8 +17,8 @@ public interface UIViewModel {
         LoginDialog.runDialog();
     }
 
-    default void displayReviewDialog() {
-        ReviewDialog.runDialog();
+    default void displayReviewDialog(Part item) {
+        ReviewDialog.runDialog(item);
         /* TemporaryReviewWindow temp = new TemporaryReviewWindow();
         temp.execute(); */
         //review.execute();

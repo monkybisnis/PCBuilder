@@ -2,6 +2,7 @@ package GUI;
 
 // import javafx.scene.control.*;
 
+import Components.Part.Part;
 import discount.Cart;
 import discount.Customer;
 import javafx.geometry.Insets;
@@ -18,7 +19,9 @@ import java.util.Optional;
 public class ReviewDialog extends MenuItem {
 //private Stage stage;
 
-    public static void runDialog() {
+    //Here need to add a review for an item, save to file so it can be viewed later etc
+
+    public static void runDialog(Part item) {
         Dialog<String> dialog = new Dialog<>();
 
         Stage st = (Stage)dialog.getDialogPane().getScene().getWindow();

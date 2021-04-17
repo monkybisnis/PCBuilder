@@ -3,7 +3,6 @@ package GUI.MenuItems;
 import Components.Part.Part;
 import GUI.Command;
 import javafx.scene.control.MenuItem;
-import javafx.stage.Stage;
 
 public class ReviewButton extends MenuItem implements Command {
     private Part item;
@@ -15,7 +14,7 @@ public class ReviewButton extends MenuItem implements Command {
     }
     @Override
     public void execute() {
-        displayReviewDialog();
+        displayReviewDialog(item);
     }
 }
 
