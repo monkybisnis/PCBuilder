@@ -1,5 +1,7 @@
 package interceptor;
 
+import Components.Part.Part;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Dispatcher {
     public Dispatcher(ReviewService target){
         this.target = target ;
     }
+    public Dispatcher(){}
 
     public void addInterceptor(Interceptor interceptor){
         interceptors.add(interceptor);
@@ -19,9 +22,18 @@ public class Dispatcher {
 
         for (Interceptor interceptor : interceptors) {
             review = interceptor.execute(review);
-            System.out.println(review);
+            //System.out.println(review);
         }
         target.saveReview(review);
+    }
+
+    public void addReview(Part item, String review){
+
+        for (Interceptor interceptor : interceptors) {
+            review = interceptor.execute(review);
+            //System.out.println(review);
+        }
+        target.addReview(item, review);
     }
 
     public void setTarget(ReviewService target){

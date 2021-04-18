@@ -3,16 +3,15 @@ package GUI;
 // import javafx.scene.control.*;
 
 import Components.Part.Part;
-import discount.Cart;
-import discount.Customer;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import PCBuilder.Main;
+import interceptor.ReviewService;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Pair;
-import loginService.LoginService;
 
 import java.util.Optional;
 
@@ -24,7 +23,7 @@ public class ReviewDialog {
     public static void runDialog(Part item) {
         Dialog<String> dialog = new Dialog<>();
 
-        Stage st = (Stage)dialog.getDialogPane().getScene().getWindow();
+        Stage st = (Stage) dialog.getDialogPane().getScene().getWindow();
         st.getIcons().add(new Image("/resources/case.png"));
 
         dialog.setTitle("Review");
@@ -46,8 +45,12 @@ public class ReviewDialog {
             return null;
         });
         Optional<String> result = dialog.showAndWait();
-        result.ifPresent(pair -> {
-                    System.out.println(pair);
+        result.ifPresent(reviewStr -> {
+                    System.out.println("Review String: " + reviewStr);
+                    System.out.println("Part serial number: " + item.getSerialNumber());
+
+                    Main.dispatcher.addReview(item, reviewStr);
+                    ReviewService.printReviews(item);
                 }
         );
 /*

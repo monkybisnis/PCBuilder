@@ -3,7 +3,7 @@ package PCBuilder;
 import Components.*;
 import Components.Part.*;
 import GUI.UI;
-import discount.Customer;
+import interceptor.*;
 import loginService.LoginService;
 
 import java.io.File;
@@ -20,6 +20,7 @@ public class Main {
     static StorageComponents storageComponents;
     static Fans fans;
     //static List<Component> components = new ArrayList<>();
+    public static Dispatcher dispatcher = new Dispatcher(new ReviewService()) ;
 
     public static void main(String[] args) throws Exception {
         components = new Components();
@@ -31,6 +32,11 @@ public class Main {
         psus = new PSUs();
         storageComponents = new StorageComponents();
         fans = new Fans();
+
+        Interceptor noCurse = new NoCurseInterceptor();
+        Interceptor sentiment = new SentimentInterceptor();
+        dispatcher.addInterceptor(noCurse);
+        dispatcher.addInterceptor(sentiment);
 
         components.addComponents(cases, cpus, gpus, memoryModules, motherboards, psus, storageComponents, fans);
 

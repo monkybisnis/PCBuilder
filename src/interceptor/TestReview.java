@@ -10,9 +10,9 @@ public class TestReview {
 
         Dispatcher dispatcher = new Dispatcher(rs);
         Interceptor noCurse = new NoCurseInterceptor();
-        //Interceptor sentiment = new SentimentInterceptor();
+        Interceptor sentiment = new SentimentInterceptor();
         dispatcher.addInterceptor(noCurse);
-        //dispatcher.addInterceptor(sentiment);
+        dispatcher.addInterceptor(sentiment);
 
         dispatcher.saveReview("good fine  product");
     }
