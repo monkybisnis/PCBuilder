@@ -39,10 +39,14 @@ public class ShowReviewsDialog {
         TextArea reviewTA = new TextArea();
         List<String> reviews = ReviewService.reviewsTable.get(item.getSerialNumber());
         String output = "";
-        for(String s: reviews){
-            output += s +" \n";
+        if(reviews == null){
+            output = "No reviews yet for this item";
         }
-
+        else {
+            for (String s : reviews) {
+                output += s + " \n";
+            }
+        }
         reviewTA.setText(output);
 
         vBox.getChildren().add(reviewTA);
