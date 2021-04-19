@@ -42,7 +42,8 @@ public interface UIViewModel {
         ContextMenu contextMenu = new ContextMenu();
         ItemActionButton item = new ItemActionButton("Add to Cart", c);
         ReviewButton review = new ReviewButton("Review Item", c);
-        contextMenu.getItems().addAll(item, review);
+        ShowReviewsButton showReviews = new ShowReviewsButton("Show Reviews", c);
+        contextMenu.getItems().addAll(item, review, showReviews);
         label.setOnContextMenuRequested(event -> contextMenu.show(label, event.getScreenX(), event.getScreenY()));
     }
 

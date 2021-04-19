@@ -11,7 +11,7 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class ReviewService {
-    static Hashtable<String, List<String>> reviewsTable = new Hashtable<String,List<String>>();
+    public static Hashtable<String, List<String>> reviewsTable = new Hashtable<String,List<String>>();
 
     public static void addReview(Part item, String review) {
         review = LoginService.currentCustomer.getName() + ": " + review ;
