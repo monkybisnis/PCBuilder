@@ -3,7 +3,7 @@ package interceptor;
 public class NoCurseInterceptor implements Interceptor {
     @Override
     public String execute(String request) {
-        System.out.println("No Curse Interceptor");
+        //System.out.println("No Curse Interceptor");
 
         String [] curseWords = {"damn", "feck", "crap"};
 

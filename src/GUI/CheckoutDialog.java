@@ -29,8 +29,10 @@ public class CheckoutDialog {
         dialog.getDialogPane().setContent(vBox);
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == payNowButtonType) {
+                PayNowDialog.runDialog(LoginService.currentCustomer);
                 System.out.println("Pay Now");
             } else if (dialogButton == payLaterButtonType) {
+                PayLaterDialog.runDialog(LoginService.currentCustomer);
                 System.out.println("Pay Later");
             }
             return null;

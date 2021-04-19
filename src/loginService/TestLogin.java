@@ -23,7 +23,7 @@ public class TestLogin {
             System.out.println("discounted price " + realPrice);
             Payment payment = new StagedPayment();
             payment.setPaymentImplementor(new PaypalImplementor());
-            payment.payForPC(realPrice);
+            payment.payForCart(realPrice);
         }
         else
         {

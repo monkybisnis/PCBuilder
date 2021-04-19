@@ -5,6 +5,7 @@ import Components.Part.Part;
 import GUI.CheckoutDialog;
 import GUI.LoginDialog;
 import GUI.ReviewDialog;
+import discount.Customer;
 import javafx.scene.Node;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ContextMenu;
@@ -28,6 +29,14 @@ public interface UIViewModel {
         temp.execute(); */
         //review.execute();
     }
+
+    default void displayPayNowDialog(Customer customer) {
+        // PayNowDialog.runDialog(customer);
+        /* TemporaryReviewWindow temp = new TemporaryReviewWindow();
+        temp.execute(); */
+        //review.execute();
+    }
+
 
     default void setClickEvent(Label label, Part c) {
         ContextMenu contextMenu = new ContextMenu();

@@ -4,8 +4,9 @@ public class FullPayment extends Payment {
 
 
     @Override
-    public void payForPC(double amount) {
+    public String payForCart(double amount) {
         paymentImplementor.processPaymentNow(amount);
+        return "";
     }
 }
 
