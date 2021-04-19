@@ -54,4 +54,11 @@ public class ReviewObject {
                 ", review='" + review + '\'' +
                 '}';
     }
+
+    public String toStringForCSV() {
+        return  itemID + "," +
+                itemType + "," +
+                userID + "," +
+                review;
+    }
 }

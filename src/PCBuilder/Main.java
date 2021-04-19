@@ -7,6 +7,9 @@ import interceptor.*;
 import loginService.LoginService;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +23,8 @@ public class Main {
     static StorageComponents storageComponents;
     static Fans fans;
     //static List<Component> components = new ArrayList<>();
-    public static Dispatcher dispatcher = new Dispatcher(new ReviewService()) ;
+    public static Dispatcher dispatcher = new Dispatcher(new ReviewService());
+
 
     public static void main(String[] args) throws Exception {
         components = new Components();
@@ -32,6 +36,10 @@ public class Main {
         psus = new PSUs();
         storageComponents = new StorageComponents();
         fans = new Fans();
+        ArrayList<ReviewObject> reviews;
+        reviews = readReviews();
+
+        writeReviews(reviews);
 
         ReviewService.readReviewsFromFile();
 
@@ -119,5 +127,70 @@ public class Main {
 
         LoginService.login();
         UI.run(components);
+    }
+
+    public static ArrayList<ReviewObject> readReviews(){
+        String line;
+        String[] fields;
+        ArrayList<ReviewObject> reviewsArrayList = new ArrayList<>();
+
+        // try and catch block attempt to read reviews from file in data folder
+        try {
+            Scanner sc = new Scanner(new File("data/joe.review"));
+
+            while (sc.hasNextLine()) {
+                line = sc.nextLine();
+                fields = line.split(",");
+
+                if(fields.length == 4){
+                    reviewsArrayList.add(new ReviewObject(fields[0], fields[1], fields[2], fields[3]));
+                }
+                else {
+                    String review = "";
+                    if(fields.length < 4){
+                        System.out.println("Review of this product is missing. We are sorry and can not show you this empty review. ");
+                    } else {
+                        for (int i = 3; fields.length > i; i++){
+                            review += fields[i];
+                            if(fields.length-1 > i){review += ",";}
+                        }
+                        reviewsArrayList.add(new ReviewObject(fields[0], fields[1], fields[2], review));
+                    }
+                }
+            }
+        } catch (Exception e){
+            System.out.println("File not found!");
+        }
+
+        return reviewsArrayList;
+    }
+
+    public static void writeReviews (ArrayList<ReviewObject> reviews) {
+
+        try {
+            File directoryOfReviews = new File("data/joe.review");
+            if (!directoryOfReviews.exists()){
+                 directoryOfReviews.createNewFile();
+            }
+            FileWriter reviewsFileWriter = new FileWriter(directoryOfReviews);
+            for(ReviewObject review: reviews){
+                reviewsFileWriter.write(review.toStringForCSV() + "\n");
+                System.out.println(review.toStringForCSV());
+            }
+            reviewsFileWriter.flush();
+            reviewsFileWriter.close();
+            int f=0;
+
+            /*
+            ObjectOutputStream EmployeesStream = new ObjectOutputStream(reviewsFile);
+
+            for (Employees employees :  reviews) {
+                EmployeesStream.writeObject(employees);
+            }
+            EmployeesStream.close(); */
+        }  catch (IOException e) {
+            System.out.println("Error occurred while saving a reviews");
+            e.printStackTrace();
+        }
     }
 }
