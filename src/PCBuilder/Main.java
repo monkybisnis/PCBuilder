@@ -33,6 +33,8 @@ public class Main {
         storageComponents = new StorageComponents();
         fans = new Fans();
 
+        ReviewService.readReviewsFromFile();
+
         Interceptor noCurse = new NoCurseInterceptor();
         Interceptor sentiment = new SentimentInterceptor();
         dispatcher.addInterceptor(noCurse);

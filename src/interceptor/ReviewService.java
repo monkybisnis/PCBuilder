@@ -3,15 +3,35 @@ package interceptor;
 import Components.Part.Part;
 import loginService.LoginService;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
 public class ReviewService {
-    public static Hashtable<String, List<String>> reviewsTable = new Hashtable<String,List<String>>();
+    public static Hashtable<String, List<String>> reviewsTable ;
+
+    public static void saveReviews2File() {
+        try {
+            FileOutputStream f = new FileOutputStream("data/reviews");
+            ObjectOutputStream out = new ObjectOutputStream(f);
+            out.writeObject(reviewsTable) ;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void readReviewsFromFile() {
+        try {
+            FileInputStream f = new FileInputStream("data/reviews");
+            ObjectInputStream in = new ObjectInputStream(f);
+            reviewsTable = (Hashtable<String, List<String>>) in.readObject();
+        } catch (FileNotFoundException e) {
+            reviewsTable = new Hashtable<String,List<String>>();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void addReview(Part item, String review) {
         review = LoginService.currentCustomer.getName() + ": " + review ;

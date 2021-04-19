@@ -1,6 +1,7 @@
 package GUI.MenuItems;
 
 import GUI.Command;
+import interceptor.ReviewService;
 import javafx.scene.control.MenuItem;
 
 public class ExitButton extends MenuItem implements Command {
@@ -11,6 +12,7 @@ public class ExitButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
+        ReviewService.saveReviews2File();
         System.exit(0);
     }
 }
