@@ -169,25 +169,14 @@ public class Main {
 
         try {
             File directoryOfReviews = new File("data/joe.review");
-            if (!directoryOfReviews.exists()){
-                 directoryOfReviews.createNewFile();
-            }
+            if (!directoryOfReviews.exists()){directoryOfReviews.createNewFile();}
+
             FileWriter reviewsFileWriter = new FileWriter(directoryOfReviews);
             for(ReviewObject review: reviews){
                 reviewsFileWriter.write(review.toStringForCSV() + "\n");
-                System.out.println(review.toStringForCSV());
             }
             reviewsFileWriter.flush();
             reviewsFileWriter.close();
-            int f=0;
-
-            /*
-            ObjectOutputStream EmployeesStream = new ObjectOutputStream(reviewsFile);
-
-            for (Employees employees :  reviews) {
-                EmployeesStream.writeObject(employees);
-            }
-            EmployeesStream.close(); */
         }  catch (IOException e) {
             System.out.println("Error occurred while saving a reviews");
             e.printStackTrace();
