@@ -3,53 +3,52 @@ package PCBuildInterface;
 import Components.*;
 import Components.Part.*;
 import PCBuilder.*;
-import loginService.LoginService;
 
 
 public class PowerSaver extends PC implements PC_Build {
 
 
-    private  Cases Cases= new Cases();
-    private  CPUs CPUs= new CPUs();
+    private  Cases cases = new Cases();
+    private  CPUs cpus = new CPUs();
 
 
-    private  Motherboards  Motherboards= new Motherboards();
-    private  MemoryModules MemoryModules= new MemoryModules();
-    private  StorageComponents StorageComponents = new StorageComponents();
-    private GPUs Gpus=new GPUs();
-    private PSUs PSUs= new PSUs();
+    private  Motherboards motherboards = new Motherboards();
+    private  MemoryModules memoryModules = new MemoryModules();
+    private  StorageComponents storageComponents = new StorageComponents();
+    private GPUs gpus =new GPUs();
+    private PSUs psus = new PSUs();
 
     public PowerSaver(Components components){
         for(Component component  : components.components){
             if(component instanceof Cases){
-                Cases=(Cases)component;
+                cases =(Cases)component;
             }
             if(component instanceof CPUs){
-                CPUs=(CPUs) component;
+                cpus =(CPUs) component;
             }
             if(component instanceof GPUs){
-                Gpus=(GPUs) component;
+                gpus =(GPUs) component;
             }
             if(component instanceof StorageComponents){
-                StorageComponents=(StorageComponents) component;
+                storageComponents =(StorageComponents) component;
             }
             if(component instanceof Motherboards){
-                Motherboards=(Motherboards) component;
+                motherboards =(Motherboards) component;
             }
             if(component instanceof MemoryModules){
-                MemoryModules=(MemoryModules) component;
+                memoryModules =(MemoryModules) component;
             }
             if(component instanceof PSUs){
-                PSUs=(PSUs) component;
+                psus =(PSUs) component;
             }
         }
-        System.out.println(Cases.size());
-       Case selectedCase=addCase(Cases);
-        CPU selectedCPU=addCPU(CPUs);
-      Motherboard selectedMotherBoard=addMotherBoard(Motherboards,selectedCPU);
-        MemoryModules RAM= addRam(MemoryModules);
-       StorageComponents disk=addStorage(StorageComponents);
-       PSU psu=addPSU(PSUs);
+        System.out.println(cases.size());
+       Case selectedCase=addCase(cases);
+        CPU selectedCPU=addCPU(cpus);
+      Motherboard selectedMotherBoard=addMotherBoard(motherboards,selectedCPU);
+        MemoryModules RAM= addRam(memoryModules);
+       StorageComponents disk=addStorage(storageComponents);
+       PSU psu=addPSU(psus);
 
 
         setaCase(selectedCase);

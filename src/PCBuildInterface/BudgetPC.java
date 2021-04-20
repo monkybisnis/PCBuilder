@@ -3,18 +3,17 @@ package PCBuildInterface;
 import Components.*;
 import Components.Part.*;
 import PCBuilder.PC;
-import loginService.LoginService;
 
 public class BudgetPC extends PC implements PC_Build {
 
     private  Cases Cases= new Cases();
     private  CPUs CPUs= new CPUs();
 
-    private  Motherboards  Motherboards= new Motherboards();
-    private  MemoryModules MemoryModules= new MemoryModules();
-    private  StorageComponents StorageComponents = new StorageComponents();
-    private GPUs Gpus=new GPUs();
-    private PSUs PSUs= new PSUs();
+    private  Motherboards motherboards = new Motherboards();
+    private  MemoryModules memoryModules = new MemoryModules();
+    private  StorageComponents storageComponents = new StorageComponents();
+    private GPUs gpu =new GPUs();
+    private PSUs psUs = new PSUs();
 
     public BudgetPC(Components components){
         for(Component component  : components.components){
@@ -25,28 +24,28 @@ public class BudgetPC extends PC implements PC_Build {
                 CPUs=(CPUs) component;
             }
             if(component instanceof GPUs){
-                Gpus=(GPUs) component;
+                gpu =(GPUs) component;
             }
             if(component instanceof StorageComponents){
-                StorageComponents=(StorageComponents) component;
+                storageComponents =(StorageComponents) component;
             }
             if(component instanceof Motherboards){
-                Motherboards=(Motherboards) component;
+                motherboards =(Motherboards) component;
             }
             if(component instanceof MemoryModules){
-                MemoryModules=(MemoryModules) component;
+                memoryModules =(MemoryModules) component;
             }
             if(component instanceof PSUs){
-                PSUs=(PSUs) component;
+                psUs =(PSUs) component;
             }
         }
 
        Case selectedCase=addCase(Cases);
        CPU selectedCPU=addCPU(CPUs);
-      Motherboard  selectedMotherBoard=addMotherBoard(Motherboards,selectedCPU);
-       MemoryModules RAM= addRam(MemoryModules);
-      StorageComponents  disks=addStorage(StorageComponents);
-      PSU  psu=addPSU(PSUs);
+      Motherboard  selectedMotherBoard=addMotherBoard(motherboards,selectedCPU);
+       MemoryModules RAM= addRam(memoryModules);
+      StorageComponents  disks=addStorage(storageComponents);
+      PSU  psu=addPSU(psUs);
 
         setaCase(selectedCase);
         setCpu(selectedCPU);
