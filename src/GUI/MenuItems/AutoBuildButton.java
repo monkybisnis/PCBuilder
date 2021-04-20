@@ -17,12 +17,12 @@ public class AutoBuildButton extends MenuItem implements Command {
         this.type=i;
          switch (type){
              case 1:
-         this.item= new BudgetPC(components);
+             { this.item= new BudgetPC(components); break;}
 
              case 2:
-                 this.item= new PowerSaver(components);
+             {this.item= new Gaming(components);break;}
              case 3:
-                 this.item= new Gaming(components);
+             { this.item= new PowerSaver(components); break;}
          }
 
         this.setOnAction(event -> this.execute());

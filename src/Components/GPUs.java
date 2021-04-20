@@ -1,6 +1,7 @@
 package Components;
 
 import Components.Part.GPU;
+import Components.Part.Memory;
 import Components.Part.Part;
 import Components.Part.Storage;
 import GUI.MenuItems.ItemActionButton;
@@ -45,11 +46,10 @@ public class GPUs implements Component, Serializable {
     @Override
     public String printDetails() {
         StringBuilder output = new StringBuilder(new String());
-        for(int i=0; i>GPUs.size();i++){
-            GPU g=GPUs.get(i);
-            output.append(g.getType()).append(",").append(g.getMemory()).append("\n");
+        GPU g = GPUs.get(0);
+        output.append(GPUs.size()).append("x").append(" ").append(g.getSerialNumber()).append(" ").append(g.getMemory()).append("Gb");
 
-        }
+
         return output.toString();
 
     }

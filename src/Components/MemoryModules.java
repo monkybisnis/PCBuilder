@@ -52,7 +52,7 @@ public class MemoryModules implements Component, Serializable {
         StringBuilder output = new StringBuilder(new String());
 
         Memory m=memoryModules.get(0);
-        output.append(memoryModules.size()).append("x").append(" ").append(m.getSerialNumber()).append(m.getSpeed());
+        output.append(memoryModules.size()).append("x").append(" ").append(m.getSerialNumber()).append(" ").append(m.getSpeed()).append("mhz");
 
         return output.toString();
     }
