@@ -1,5 +1,10 @@
 package interceptor;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class ReviewObject {
     private String itemID;
     private String itemType;
@@ -60,5 +65,23 @@ public class ReviewObject {
                 itemType + "," +
                 userID + "," +
                 review;
+    }
+
+    public static void writeReviews (ArrayList<ReviewObject> reviews) {
+
+        try {
+            File directoryOfReviews = new File("data/joe.review");
+            if (!directoryOfReviews.exists()){directoryOfReviews.createNewFile();}
+
+            FileWriter reviewsFileWriter = new FileWriter(directoryOfReviews);
+            for(ReviewObject review: reviews){
+                reviewsFileWriter.write(review.toStringForCSV() + "\n");
+            }
+            reviewsFileWriter.flush();
+            reviewsFileWriter.close();
+        }  catch (IOException e) {
+            System.out.println("Error occurred while saving a reviews");
+            e.printStackTrace();
+        }
     }
 }
