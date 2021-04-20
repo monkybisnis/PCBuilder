@@ -3,6 +3,7 @@ package GUI.MenuItems;
 import GUI.Command;
 import interceptor.ReviewService;
 import javafx.scene.control.MenuItem;
+import loginService.LoginService;
 
 public class ExitButton extends MenuItem implements Command {
     public ExitButton(String label) {
@@ -12,6 +13,8 @@ public class ExitButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
+        if(!(LoginService.currentCustomer.getName().equals("Guest"))){
+            LoginService.currentCustomer.getCart().saveCart();}
         ReviewService.saveReviews2File();
         System.exit(0);
     }
