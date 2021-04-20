@@ -37,6 +37,9 @@ public class ShowReviewsDialog {
         VBox vBox = new VBox();
         vBox.setSpacing(10);
         TextArea reviewTA = new TextArea();
+        reviewTA.setEditable(false);
+
+        ReviewService.readReviewsFromFile();
         List<String> reviews = ReviewService.reviewsTable.get(item.getSerialNumber());
         String output = "";
         if(reviews == null){

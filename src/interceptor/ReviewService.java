@@ -13,7 +13,7 @@ public class ReviewService {
 
     public static void saveReviews2File() {
         try {
-            FileOutputStream f = new FileOutputStream("data/reviews");
+            FileOutputStream f = new FileOutputStream("data/reviews.txt");
             ObjectOutputStream out = new ObjectOutputStream(f);
             out.writeObject(reviewsTable) ;
         } catch (IOException e) {
@@ -23,7 +23,7 @@ public class ReviewService {
 
     public static void readReviewsFromFile() {
         try {
-            FileInputStream f = new FileInputStream("data/reviews");
+            FileInputStream f = new FileInputStream("data/reviews.txt");
             ObjectInputStream in = new ObjectInputStream(f);
             reviewsTable = (Hashtable<String, List<String>>) in.readObject();
         } catch (FileNotFoundException e) {
@@ -48,6 +48,7 @@ public class ReviewService {
             reviews.add(review) ;
             reviewsTable.put(item.getSerialNumber(), reviews) ;
         }
+        saveReviews2File();
     }
 
     public static void printReviews(Part item) {
