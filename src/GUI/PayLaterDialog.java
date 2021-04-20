@@ -22,7 +22,7 @@ import java.util.Optional;
 public class PayLaterDialog {
 //private Stage stage;
 
-    //Here need to add a review for an item, save to file so it can be viewed later etc
+    // Here need to add a review for an item, save to file so it can be viewed later etc
 
     public static void runDialog(Customer customer) {
         Dialog<String> dialog = new Dialog<>();

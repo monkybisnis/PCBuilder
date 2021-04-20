@@ -122,7 +122,6 @@ public class Cart {
                 System.out.println("No PC in the Cart");
             }
 
-
         } catch (FileNotFoundException e) {
             System.out.println("No Cart");
         }  catch (Exception e) {
