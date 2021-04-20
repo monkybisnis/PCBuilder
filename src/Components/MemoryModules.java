@@ -49,7 +49,12 @@ public class MemoryModules implements Component, Serializable {
 
     @Override
     public String printDetails() {
-        return "";
+        StringBuilder output = new StringBuilder(new String());
+
+        Memory m=memoryModules.get(0);
+        output.append(memoryModules.size()).append("x").append(" ").append(m.getSerialNumber()).append(m.getSpeed());
+
+        return output.toString();
     }
     public int getWattage()
     {

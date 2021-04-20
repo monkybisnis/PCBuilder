@@ -3,6 +3,7 @@ package PCBuildInterface;
 import Components.*;
 import Components.Part.*;
 import PCBuilder.*;
+import loginService.LoginService;
 
 
 public class PowerSaver extends PC implements PC_Build {
@@ -57,7 +58,7 @@ public class PowerSaver extends PC implements PC_Build {
         setPsu(psu);
         setStorage(disk);
         setMotherboard(selectedMotherBoard);
-        ;
+
 
 
 
@@ -74,6 +75,7 @@ public class PowerSaver extends PC implements PC_Build {
             }
             i++;
         }
+
         return selectedCase;
     }
 

@@ -50,7 +50,17 @@ public class StorageComponents implements Component, Serializable {
 
     @Override
     public String printDetails() {
-        return "";
+        StringBuilder output = new StringBuilder(new String());
+        int x = StorageComponents.get(0).getStorageSize();
+        for(int i=1; i>StorageComponents.size();i++){
+            Storage s=StorageComponents.get(i);
+            x+=s.getStorageSize();
+
+
+
+        }
+        output.append(x);
+        return output.toString();
     }
 
     public int getWattage()

@@ -46,12 +46,8 @@ public class Cart {
     }
 
     public double getTotalPrice() {
-        double price;
-        if (pc != null) {
-            price = pc.getTotalPrice();
-        } else {
-            price = 0;
-        }
+        double price=0;
+
 
         for (Part p : parts) {
             price += p.getPrice();

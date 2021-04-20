@@ -3,6 +3,7 @@ package PCBuildInterface;
 import Components.*;
 import Components.Part.*;
 import PCBuilder.PC;
+import loginService.LoginService;
 
 public class BudgetPC extends PC implements PC_Build {
 
@@ -53,6 +54,10 @@ public class BudgetPC extends PC implements PC_Build {
         setPsu(psu);
         setStorage(disks);
         setMotherboard(selectedMotherBoard);
+        setIcon("Case.png");
+        double x= TotalPrice();
+        System.out.println(x);
+        setPrice(x);
 
 
 
@@ -114,12 +119,15 @@ public class BudgetPC extends PC implements PC_Build {
     @Override
     public StorageComponents addStorage(StorageComponents disks) {
         Storage selectedStorage= disks.extract(0);
+        System.out.println(selectedStorage.getStorageSize());
         int i=1;
         while( i< disks.size()) {
 
             Storage comparisonStorage= disks.extract(i);
-            if(selectedStorage.getPrice()> comparisonStorage.getPrice()){
+            if(selectedStorage.getPrice()> comparisonStorage.getPrice() && comparisonStorage.getStorageSize() !=0){
                 selectedStorage=comparisonStorage;
+                System.out.println(selectedStorage.getStorageSize());
+
             }
             i++;
         }

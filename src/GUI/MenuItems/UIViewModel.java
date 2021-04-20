@@ -53,7 +53,11 @@ public interface UIViewModel {
             Part c = (Part)component.extract(i);
             String display = c.toString();
             String path = "/resources/" + c.getIcon();
-            Label label = new Label(display, new ImageView(new Image(path)));
+
+            ImageView v = new ImageView(new Image(path));
+            v.setFitHeight(10);
+            v.setFitWidth(10);
+            Label label = new Label(display, v);
             label.setOnMouseClicked(event -> setClickEvent((Label)event.getSource(), c));
             label.setContentDisplay(ContentDisplay.TOP);
             label.setTextFill(Color.WHITE);

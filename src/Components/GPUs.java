@@ -2,6 +2,7 @@ package Components;
 
 import Components.Part.GPU;
 import Components.Part.Part;
+import Components.Part.Storage;
 import GUI.MenuItems.ItemActionButton;
 import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
@@ -43,7 +44,14 @@ public class GPUs implements Component, Serializable {
 
     @Override
     public String printDetails() {
-        return "";
+        StringBuilder output = new StringBuilder(new String());
+        for(int i=0; i>GPUs.size();i++){
+            GPU g=GPUs.get(i);
+            output.append(g.getType()).append(",").append(g.getMemory()).append("\n");
+
+        }
+        return output.toString();
+
     }
 
     @Override

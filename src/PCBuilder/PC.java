@@ -5,9 +5,10 @@ import Components.MemoryModules;
 import Components.Part.*;
 import Components.StorageComponents;
 
+import javax.swing.*;
 import java.io.Serializable;
 
-public  abstract class PC implements Serializable {
+public  abstract class PC extends Part {
     private CPU cpu;
     private GPUs gpu;
     private Motherboard motherboard;
@@ -15,8 +16,12 @@ public  abstract class PC implements Serializable {
     private PSU psu;
     private StorageComponents storage;
     private Case aCase;
+    private double price;
+    private String icon;
+    private double Price;
+//private String  icon;
+    public PC(CPU cpu, GPUs gpu, Motherboard motherboard, MemoryModules memory, PSU psu, StorageComponents storage, Case aCase ){
 
-    public PC(CPU cpu, GPUs gpu, Motherboard motherboard, MemoryModules memory, PSU psu, StorageComponents storage, Case aCase){
         this.cpu = cpu;
         this.gpu = gpu;
         this.motherboard = motherboard;
@@ -24,12 +29,12 @@ public  abstract class PC implements Serializable {
         this.psu = psu;
         this.storage = storage;
         this.aCase = aCase;
-    }
+       this.icon ="pc.png";
 
-    public double getTotalCost(){
-        return 0;
 
     }
+
+
 
     public Case getaCase() {
         return aCase;
@@ -87,7 +92,13 @@ public  abstract class PC implements Serializable {
         this.storage = storage;
     }
 
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
+    public String getIcon() {
+        return icon;
+    }
 
     public  PC(){}
 
@@ -98,8 +109,10 @@ public  abstract class PC implements Serializable {
 
         else{return cpu.getWattage()+ motherboard.getWattage()+ cpu.getWattage()+ aCase.getWattage()+storage.getWattage()+ memory.getWattage();}
 }
-
-    public double getTotalPrice() {
+    public void setPrice(double x){
+        price=x;
+    }
+    public double TotalPrice() {
         double memoryTotal = 0.0;
         double storageTotal = 0.0;
         for (int i = 0; i < storage.size(); i++) {
@@ -116,9 +129,41 @@ public  abstract class PC implements Serializable {
                 GPU g = (GPU)gpu.extract(i);
                 gpuTotal += g.getPrice();
             }
-            return cpu.getPrice() + gpuTotal + motherboard.getPrice() + cpu.getPrice() + aCase.getPrice()+storageTotal + memoryTotal;
+            return  cpu.getPrice() + gpuTotal + motherboard.getPrice() + cpu.getPrice() + aCase.getPrice()+storageTotal + memoryTotal;
         } else {
-            return cpu.getPrice() + motherboard.getPrice() + cpu.getPrice() + aCase.getPrice() + storageTotal + memoryTotal;
+            return
+                    cpu.getPrice() + motherboard.getPrice() + cpu.getPrice() + aCase.getPrice() + storageTotal + memoryTotal;
         }
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public String toString() {
+       if(gpu!=null) {return
+                "cpu=" + cpu.getSerialNumber() + "\n"+
+                ", gpu=" + gpu.printDetails()+"\n"+
+                ", motherboard=" + motherboard.getSerialNumber() +"\n"+
+                ", memory=" + memory.printDetails() +"\n"+
+                ", psu=" + psu.getSerialNumber()+"\n"+
+                ", storage=" + storage.printDetails() +"\n"+
+                ", aCase=" + aCase.getSerialNumber() +"\n"+
+                ", price=" + price
+
+                ;
+    }
+    else return
+               "cpu=" + cpu.getSerialNumber() +"\n"+
+               " motherboard=" + motherboard.getSerialNumber() +"\n"+
+               " memory=" + memory.printDetails() +"\n"+
+               " psu=" + psu.getSerialNumber()+"\n"+
+               " storage=" + storage.printDetails()+"\n"+
+               " aCase=" + aCase.getSerialNumber() +"\n"+
+               " price=" + price
+
+               ;
     }
 }
