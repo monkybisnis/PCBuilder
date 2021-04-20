@@ -97,33 +97,6 @@ public class Main {
 
         }
         sc.close();
-/*
-        BudgetPC test = new BudgetPC(components);
-
-        //String x = test.getStorage().printDetails();
-       // System.out.println(x);
-
-        double cost = test.getTotalCost();
-        System.out.println(cost);
-        cost = 1500;
-        System.out.println("list price " + cost);
-
-//        Customer customer = new Customer("joe");
-//        customer.addPoints(2000);
-
-        Customer customer = LoginService.login("joe", "1234");
-
-        Strategy saleStrategy = new SaleStrategy();
-        double discount = customer.calculateDiscount(cost, saleStrategy);
-        double realPrice = cost - discount;
-        System.out.println("discounted price " + realPrice);
-        Payment payment = new StagedPayment();
-        payment.setPaymentImplementor(new PaypalImplementor());
-        payment.payForPC(realPrice);
-
-        new Menu();
-
- */
 
         LoginService.login();
         UI.run(components);
