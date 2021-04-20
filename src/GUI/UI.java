@@ -54,9 +54,9 @@ public class UI extends Application {
         PartDisplayButton v6 = new PartDisplayButton("PSUs", partsPane, components.extract(5));
         PartDisplayButton v7 = new PartDisplayButton("Storage Components", partsPane, components.extract(6));
 
-        AutoBuildButton b1 = new AutoBuildButton("Auto Build Optimized Budget PC",components);
-        AutoBuildButton b2 = new AutoBuildButton("Auto Build Optimized Gaming PC",components);
-        AutoBuildButton b3 = new AutoBuildButton("Auto Build Optimized PowerSaver PC",components);
+        AutoBuildButton b1 = new AutoBuildButton("Auto Build Optimized Budget PC",components,1);
+        AutoBuildButton b2 = new AutoBuildButton("Auto Build Optimized Gaming PC",components,2);
+        AutoBuildButton b3 = new AutoBuildButton("Auto Build Optimized PowerSaver PC",components,3);
 
         //ReviewButton r1 = new ReviewButton("Show reviews window");
 

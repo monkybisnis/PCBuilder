@@ -58,7 +58,10 @@ public class PowerSaver extends PC implements PC_Build {
         setPsu(psu);
         setStorage(disk);
         setMotherboard(selectedMotherBoard);
-
+        setIcon("Case.png");
+        double x= TotalPrice();
+        System.out.println(x);
+        setPrice(x);
 
 
 

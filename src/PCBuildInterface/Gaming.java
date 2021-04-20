@@ -55,7 +55,10 @@ public class Gaming extends  PC implements PC_Build {
         setStorage(disk);
         setMotherboard(selectedMotherBoard);
         setGpus(gpu);
-
+        setIcon("Case.png");
+        double x= TotalPrice();
+        System.out.println(x);
+        setPrice(x);
 
 
     }

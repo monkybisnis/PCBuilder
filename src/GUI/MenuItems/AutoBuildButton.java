@@ -1,19 +1,32 @@
 package GUI.MenuItems;
 
-import Components.Component;
 import Components.Components;
 import Components.Part.Part;
 import GUI.Command;
 import PCBuildInterface.BudgetPC;
+import PCBuildInterface.Gaming;
+import PCBuildInterface.PowerSaver;
 import javafx.scene.control.MenuItem;
 import loginService.LoginService;
 
 public class AutoBuildButton extends MenuItem implements Command {
     private Part item;
-    public AutoBuildButton(String label, Components components ){
+    private int type=0;
+    public AutoBuildButton(String label, Components components, int i){
         super(label);
-          this.item= new BudgetPC(components);
+        this.type=i;
+         switch (type){
+             case 1:
+         this.item= new BudgetPC(components);
+
+             case 2:
+                 this.item= new PowerSaver(components);
+             case 3:
+                 this.item= new Gaming(components);
+         }
+
         this.setOnAction(event -> this.execute());
+
 
     }
 
@@ -21,6 +34,7 @@ public class AutoBuildButton extends MenuItem implements Command {
 
     @Override
     public void execute() {
+
         LoginService.currentCustomer.getCart().addToUICart(item);
     }
 }
