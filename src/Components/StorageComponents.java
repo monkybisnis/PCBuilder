@@ -59,7 +59,7 @@ public class StorageComponents implements Component, Serializable {
 
 
         }
-        output.append(x);
+        output.append(x).append("GB");
         return output.toString();
     }
 
