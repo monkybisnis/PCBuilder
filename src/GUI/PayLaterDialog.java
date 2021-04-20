@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import loginService.LoginService;
 import payment.CreditCardImplementor;
 import payment.PaymentImplementor;
 import payment.StagedPayment;
@@ -66,6 +67,7 @@ public class PayLaterDialog {
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(reviewStr -> {
                     System.out.println("Payment Made");
+                    LoginService.currentCustomer.getCart().clearCart();
                 }
         );
     }

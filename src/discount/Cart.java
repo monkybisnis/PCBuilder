@@ -102,6 +102,11 @@ public class Cart {
         this.parts = parts;
     }
 
+    public void clearCart(){
+        parts = new ArrayList<Part>() ;
+        setUICart();
+    }
+
     public void loadCart() {
         System.out.println("Load cart");
         String name = customer.getName();
